@@ -17,4 +17,11 @@ class User < ActiveRecord::Base
       where(conditions).first
     end
   end
+
+  def canceled_account
+    if self.is_active == 0
+      self.is_active = 1
+      self.save!
+    end
+  end
 end
