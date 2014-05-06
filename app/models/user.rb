@@ -19,8 +19,8 @@ class User < ActiveRecord::Base
   end
 
   def canceled_account
-    if self.is_active == 0
-      self.is_active = 1
+    if self.is_active == false
+      self.is_active = true
       self.save!
     end
   end

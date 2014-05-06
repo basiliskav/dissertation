@@ -5,7 +5,7 @@
         <span class="copyright">Πτυχιακή εργασία Καβάσης Βασίλειος 2013-2014</span>
       </div>
       <ul class="col-md-9 col-xs-12">
-        <li><%= link_to "Επικοινωνία", "#" %></li>
+        <li><%= link_to "Επικοινωνία", contact_path %></li>
         <% if Rails.env.development? %>
           <li><%= link_to "Debug", "javascript:$('#debug').toggle();$('html,body').animate({scrollTop : $('#debug').offset().top }, 'slow'); " %></li>
         <% end %>

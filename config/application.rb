@@ -6,6 +6,13 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+# config = YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
+# config.merge! config.fetch(Rails.env, {})
+# config.each do |key, value|
+#   ENV[key] = value unless value.kind_of? Hash
+# end
+
+
 module DissertionRb
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -17,8 +24,17 @@ module DissertionRb
     # config.time_zone = 'Central Time (US & Canada)'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    # config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}')]
     # config.i18n.default_locale = :de
+
+    # config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+
+    # config.before_configuration do
+    #   env_file = File.join(Rails.root, 'config', 'locales', '**', '*.{rb,yml}')
+    #   YAML.load(File.open(env_file)).each do |key, value|
+    #     ENV[key.to_s] = value
+    #   end if File.exists?(env_file)
+    # end
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
 
   end

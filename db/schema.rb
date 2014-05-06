@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20140505192803) do
     t.string   "confirmation_token"
     t.string   "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.integer  "is_active",              default: 1,     null: false
+    t.boolean  "is_active",              default: true,  null: false
     t.boolean  "admin",                  default: false, null: false
   end
 

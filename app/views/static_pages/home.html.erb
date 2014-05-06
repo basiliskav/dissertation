@@ -1,12 +1,9 @@
+<% provide(:title, 'Αρχική Σελίδα') %>
 <div class="center hero-unit">
-  <h1>Hello</h1>
-
+  <h1>Αρχική Σελίδα</h1>
   <h2>
   <p>Καλωσήρθατε στην Πτυχιακή εργασία μου</p>
   </h2>
-  <% unless signed_in? %>
-    <%= link_to 'Sign up', new_user_registration_path, method: :get %>
-  <% end %>
 </div>
 
 
