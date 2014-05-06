@@ -1,0 +1,15 @@
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <span class="copyright">Πτυχιακή εργασία Καβάσης Βασίλειος 2013-2014</span>
+      </div>
+      <ul class="col-md-9 col-xs-12">
+        <li><%= link_to "Επικοινωνία", "#" %></li>
+        <% if Rails.env.development? %>
+          <li><%= link_to "Debug", "javascript:$('#debug').toggle();$('html,body').animate({scrollTop : $('#debug').offset().top }, 'slow'); " %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</footer>
