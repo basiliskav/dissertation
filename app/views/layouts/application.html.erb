@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="el">
 <head>
-  <title>DissertionRb</title>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
+  <title>Πτυχιακή εργασία | <%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
-</body>
+  <body>
+    <div id="wrap">
+      <%= render 'layouts/header' %>
+      <div id="mainContent">
+        <div class="container">
+          <div>
+            <%= render 'layouts/flash_messages' %>
+          </div>
+          <%= yield %>
+        </div>
+      </div>
+      <div id="push"></div>
+    </div>
+    <%= render 'layouts/footer' %>
+    <%= render 'layouts/debug' %>
+  </body>
 </html>

@@ -1,0 +1,6 @@
+<li>
+  <%= user.username %>
+  <% if user_signed_in? && current_user.admin? && current_user.username != user.username %>
+    | <%= link_to "delete", user, :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+  <% end %>
+</li>
