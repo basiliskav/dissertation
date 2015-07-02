@@ -1,0 +1,6 @@
+        <%= Dir.foreach("#{current_user.username}") do |f| %>
+            <li>
+                <%= link_to f, folders_path(:file => f), :controller => 'folders_controller', :action => 'show' %> <%=link_to "Rename", folders_rename_path(:file => f) %> <%= link_to "Delete", folders_delete_path(:file => f)%>
+            </li>
+        <% end %>
+    <% end %>
