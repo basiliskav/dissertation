@@ -26,6 +26,8 @@ gem 'jbuilder', '1.0.2'
 
 gem 'devise'
 
+gem 'foreigner'
+
 group :test do
   gem 'capybara'
   gem 'cucumber-rails', '1.4.0' , :require => false

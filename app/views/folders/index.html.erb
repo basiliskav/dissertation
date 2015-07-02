@@ -1,0 +1,11 @@
+<% if @user.folders.count > 0 %>
+  <% @user.folders.each do |folder| %>
+    <ul>
+      <li><%= folder.name %></li>
+    </ul>
+  <% end %>
+<% else %>
+  <h4>You have no folders</h4>
+<% end %>
+
+<%= link_to "Δημιουργια Φακελου", new_folder_path, :class => "btn btn-large btn-primary" %>

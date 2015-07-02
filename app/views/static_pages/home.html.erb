@@ -2,5 +2,9 @@
 <div class="center hero-unit">
   <h1>Καλωσήρθατε στην Πτυχιακή εργασία μου</h1>
   <h2>Αυτή είναι η αρχική σελίδα της Πτυχιακής εργασίας μου!!!</h2>
-  <%= link_to "Εγγραφείτε Τώρα!!", new_user_registration_path, method: :get , class: "btn btn-large btn-primary" %>
+  <% if user_signed_in? %>
+    <%= link_to "Φακελοι", folders_path, method: :get , class: "btn btn-large btn-primary" %>
+  <% else %>
+    <%= link_to "Εγγραφείτε Τώρα!!", new_user_registration_path, method: :get , class: "btn btn-large btn-primary" %>
+  <% end %>
 </div>

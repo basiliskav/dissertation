@@ -11,7 +11,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140505192803) do
+ActiveRecord::Schema.define(version: 20150702211237) do
+
+  create_table "folders", force: true do |t|
+    t.string   "name",       null: false
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "folders", ["user_id"], name: "index_folders_on_user_id"
+
+  create_table "rm_repo_items", force: true do |t|
+    t.integer "owner_id"
+    t.string  "owner_type"
+    t.integer "sender_id"
+    t.string  "sender_type"
+    t.string  "ancestry"
+    t.integer "ancestry_depth", default: 0
+    t.string  "name"
+    t.float   "file_size"
+    t.string  "content_type"
+    t.string  "file"
+    t.string  "type"
+  end
+
+  add_index "rm_repo_items", ["owner_id", "owner_type"], name: "index_rm_repo_items_on_owner_id_and_owner_type"
+  add_index "rm_repo_items", ["sender_id", "sender_type"], name: "index_rm_repo_items_on_sender_id_and_sender_type"
+
+  create_table "rm_sharings", force: true do |t|
+    t.integer "owner_id"
+    t.string  "owner_type"
+    t.integer "creator_id"
+    t.string  "creator_type"
+    t.integer "repo_item_id"
+    t.boolean "can_create",   default: false
+    t.boolean "can_read",     default: false
+    t.boolean "can_update",   default: false
+    t.boolean "can_delete",   default: false
+    t.boolean "can_share",    default: false
+  end
+
+  add_index "rm_sharings", ["creator_id", "creator_type"], name: "index_rm_sharings_on_creator_id_and_creator_type"
+  add_index "rm_sharings", ["owner_id", "owner_type"], name: "index_rm_sharings_on_owner_id_and_owner_type"
+  add_index "rm_sharings", ["repo_item_id"], name: "index_rm_sharings_on_repo_item_id"
+
+  create_table "rm_sharings_members", force: true do |t|
+    t.integer "sharing_id"
+    t.integer "member_id"
+    t.string  "member_type"
+    t.boolean "can_add",     default: false
+    t.boolean "can_remove",  default: false
+  end
+
+  add_index "rm_sharings_members", ["member_id", "member_type"], name: "index_rm_sharings_members_on_member_id_and_member_type"
+  add_index "rm_sharings_members", ["sharing_id"], name: "index_rm_sharings_members_on_sharing_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false

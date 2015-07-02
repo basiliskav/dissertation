@@ -1,0 +1,6 @@
+<%= form_for @folder do |f| %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+    <% f.text_field :user_id, :value => current_user.id %>
+  <%= f.submit "Submit" %>
+<% end %>
