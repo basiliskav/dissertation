@@ -11,15 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150702211237) do
+ActiveRecord::Schema.define(version: 20150703205047) do
 
   create_table "folders", force: true do |t|
     t.string   "name",       null: false
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "parent_id"
   end
 
+  add_index "folders", ["parent_id"], name: "index_folders_on_parent_id"
   add_index "folders", ["user_id"], name: "index_folders_on_user_id"
 
   create_table "rm_repo_items", force: true do |t|

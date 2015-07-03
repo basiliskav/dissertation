@@ -7,6 +7,11 @@ class FoldersController < ApplicationController
     @folder = Folder.new
   end
 
+  def show
+    @user = current_user
+    @folder = Folder.find(params[:id])
+  end
+
   def create
     @folder = Folder.new(folder_params)
     @folder.user_id = current_user.id
