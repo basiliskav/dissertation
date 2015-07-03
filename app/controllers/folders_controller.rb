@@ -21,6 +21,26 @@ class FoldersController < ApplicationController
       render 'new'
     end
   end
+
+  def edit
+    @folder = Folder.find(params[:id])
+  end
+
+  def update
+    @folder = Folder.find(params[:id])
+    if @folder.update_attributes(folder_params)
+      redirect_to folders_path
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @folder = Folder.find(params[:id])  
+    @folder.destroy
+    redirect_to folders_url
+  end
+
   private
   def folder_params
     params.require(:folder).permit(:name)
