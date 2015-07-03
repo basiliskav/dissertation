@@ -11,5 +11,5 @@
 <% else %>
   <h4>You have no folders</h4>
 <% end %>
-
+<% req = request.fullpath() %>
 <%= link_to "Δημιουργια Φακελου", new_folder_path, :class => "btn btn-large btn-primary" %>

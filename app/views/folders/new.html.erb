@@ -1,6 +1,11 @@
 <%= form_for @folder do |f| %>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
-    <% f.text_field :user_id, :value => current_user.id %>
+    <% if @fid %>
+      <%= f.text_field :parent_id, value: @fid %>
+    <% else %>
+      <%= f.text_field :parent_id, value: 1 %>
+    <% end %>
+
   <%= f.submit "Submit" %>
 <% end %>

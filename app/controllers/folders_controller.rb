@@ -4,7 +4,8 @@ class FoldersController < ApplicationController
   end
 
   def new
-    @folder = Folder.new
+      @folder = Folder.new
+      @fid = params[:fid]
   end
 
   def show
@@ -43,6 +44,6 @@ class FoldersController < ApplicationController
 
   private
   def folder_params
-    params.require(:folder).permit(:name)
+    params.require(:folder).permit(:name, :parent_id)
   end
 end
