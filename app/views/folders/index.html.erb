@@ -13,7 +13,9 @@
 <% end %>
 <% @files.each do |file| %>
   <li>
-    <%= link_to file.name, archive_path(file) %>
+    <%= link_to file.name, archive_path(file) %> |
+    <%= link_to "DELETE", file, method: :delete, data: { confirm: "Are you sure ?" } %> |
+    <%= link_to "EDIT", edit_archive_path(file) %>
   </li>
 <% end %>
 <%= link_to "Δημιουργια Φακελου", new_folder_path, :class => "btn btn-large btn-primary" %>

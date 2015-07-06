@@ -19,6 +19,20 @@ class ArchivesController < ApplicationController
     @user = current_user.id
  end
 
+ 
+ def edit
+    @file = Archive.find(params[:id])
+ end
+
+ def update
+    @file = Archive.find(params[:id])
+    if @file.update_attributes(file_params)
+      redirect_to folders_path
+    else
+      render 'edit'
+    end
+ end
+
   private
 
   def file_params
