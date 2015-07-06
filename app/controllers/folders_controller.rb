@@ -1,6 +1,7 @@
 class FoldersController < ApplicationController
-  def index
+ def index
     @user = current_user
+    @files = @user.archives
   end
 
   def new
@@ -28,7 +29,7 @@ class FoldersController < ApplicationController
   end
 
   def update
-    @folder = Folder.find(params[:id])
+    @folder = Folder.find(params[:id]) 
     if @folder.update_attributes(folder_params)
       redirect_to folders_path
     else

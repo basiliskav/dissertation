@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150703205047) do
+ActiveRecord::Schema.define(version: 20150705225651) do
+
+  create_table "archives", force: true do |t|
+    t.string   "name"
+    t.text     "text"
+    t.integer  "user_id"
+    t.integer  "folder_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "archives", ["folder_id"], name: "index_archives_on_folder_id"
+  add_index "archives", ["user_id"], name: "index_archives_on_user_id"
 
   create_table "folders", force: true do |t|
     t.string   "name",       null: false

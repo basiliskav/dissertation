@@ -11,5 +11,10 @@
 <% else %>
   <h4>You have no folders</h4>
 <% end %>
-<% req = request.fullpath() %>
+<% @files.each do |file| %>
+  <li>
+    <%= link_to file.name, archive_path(file) %>
+  </li>
+<% end %>
 <%= link_to "Δημιουργια Φακελου", new_folder_path, :class => "btn btn-large btn-primary" %>
+<%= link_to "Δημιουργια Αρχειου", new_archive_path, :class => "btn btn-large btn-primary" %>

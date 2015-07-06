@@ -76,8 +76,6 @@ GEM
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
-    foreigner (1.7.4)
-      activerecord (>= 3.0.0)
     formatador (0.2.4)
     gherkin (2.12.2)
       multi_json (~> 1.3)
@@ -215,7 +213,6 @@ DEPENDENCIES
   cucumber-rails (= 1.4.0)
   devise
   figaro
-  foreigner
   guard-rspec (= 2.5.0)
   guard-spork (= 1.5.0)
   jbuilder (= 1.0.2)
