@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   validates :username, :uniqueness => {:case_sensitive => false}
 
   has_many :folders, dependent: :destroy
+  has_many :archives, dependent: :destroy
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
