@@ -3,8 +3,12 @@
 
 <% if @folder.subfolders %>
   <% @folder.subfolders.each do |folder| %>
-    <%= link_to folder.name, folder_path(folder) %>
-  <% end %>
+    <li>
+    <%= link_to folder.name, folder_path(folder) %> | 
+    <%= link_to "DELETE", folder, method: :delete, data: { confirm: "Are you sure ?" } %> |
+    <%= link_to "EDIT", edit_folder_path(folder) %>
+    </li>
+ <% end %>
 <% end %>
 
 <%= link_to "Δημιουργια Φακελου", new_folder_path(@folder, :fid => @folder.id), :class => "btn btn-large btn-primary" %>
