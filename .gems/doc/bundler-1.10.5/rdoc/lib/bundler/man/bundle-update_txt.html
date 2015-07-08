@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>bundle-update - bundler-1.10.5 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script src="../../../js/jquery.js"></script>
+<script src="../../../js/darkfish.js"></script>
+
+<link href="../../../css/fonts.css" rel="stylesheet">
+<link href="../../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../lib/bundler/man/bundle.html">bundle</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-config.html">bundle-config</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-config_txt.html">bundle-config</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-exec.html">bundle-exec</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-exec_txt.html">bundle-exec</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-install.html">bundle-install</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-install_txt.html">bundle-install</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-package.html">bundle-package</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-package_txt.html">bundle-package</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-platform.html">bundle-platform</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-platform_txt.html">bundle-platform</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-update.html">bundle-update</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-update_txt.html">bundle-update</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle_txt.html">bundle</a>
+  
+    <li><a href="../../../lib/bundler/man/gemfile_5.html">gemfile.5</a>
+  
+    <li><a href="../../../lib/bundler/man/gemfile_5_txt.html">gemfile.5</a>
+  
+    <li><a href="../../../lib/bundler/templates/Executable.html">Executable</a>
+  
+    <li><a href="../../../lib/bundler/templates/Executable_standalone.html">Executable.standalone</a>
+  
+    <li><a href="../../../lib/bundler/templates/Gemfile.html">Gemfile</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/CODE_OF_CONDUCT_md_tt.html">CODE_OF_CONDUCT.md.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/Gemfile_tt.html">Gemfile.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/LICENSE_txt_tt.html">LICENSE.txt.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/README_md_tt.html">README.md.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/Rakefile_tt.html">Rakefile.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/bin/console_tt.html">console.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/bin/setup_tt.html">setup.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/exe/newgem_tt.html">newgem.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/ext/newgem/extconf_rb_tt.html">extconf.rb.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/ext/newgem/newgem_c_tt.html">newgem.c.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/ext/newgem/newgem_h_tt.html">newgem.h.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/gitignore_tt.html">gitignore.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/lib/newgem_rb_tt.html">newgem.rb.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/lib/newgem/version_rb_tt.html">version.rb.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/newgem_gemspec_tt.html">newgem.gemspec.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/rspec_tt.html">rspec.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/spec/newgem_spec_rb_tt.html">newgem_spec.rb.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/spec/spec_helper_rb_tt.html">spec_helper.rb.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/test/newgem_test_rb_tt.html">newgem_test.rb.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/test/test_helper_rb_tt.html">test_helper.rb.tt</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page lib/bundler/man/bundle-update.txt">
+
+<p>BUNDLE-UPDATE(1)                                             
+BUNDLE-UPDATE(1)</p>
+
+<p>NAME</p>
+
+<pre>bundle-update - Update your gems to the latest available versions</pre>
+
+<p>SYNOPSIS</p>
+
+<pre>bundle update *gems [--group=NAME] [--source=NAME] [--local]</pre>
+
+<p>DESCRIPTION</p>
+
+<pre>Update  the  gems specified (all gems, if none are specified), ignoring
+the previously installed gems specified in the  Gemfile.lock.  In  gen-
+eral, you should use bundle install(1) bundle-install.1.html to install
+the same exact gems and versions across machines.
+
+You would use bundle update to explicitly update the version of a  gem.</pre>
+
+<p>OPTIONS</p>
+
+<pre>--group=&lt;name&gt;
+       Only  update  the gems in the specified group. For instance, you
+       can update all gems in the development group with bundle  update
+       --group  development.  You  can  also  call  bundle update rails
+       --group test to update the rails gem and all gems  in  the  test
+       group, for example.
+
+--source=&lt;name&gt;
+       The  name  of a :git or :path source used in the Gemfile(5). For
+       instance,       with       a        :git        source        of
+       http://github.com/rails/rails.git,  you would call bundle update
+       --source rails
+
+--local
+       Do not attempt to fetch gems remotely  and  use  the  gem  cache
+       instead.</pre>
+
+<p>UPDATING ALL GEMS</p>
+
+<pre>If  you  run  bundle update with no parameters, bundler will ignore any
+previously installed gems and resolve all dependencies again  based  on
+the latest versions of all gems available in the sources.
+
+Consider the following Gemfile(5):
+
+    source &quot;https://rubygems.org&quot;
+
+    gem &quot;rails&quot;, &quot;3.0.0.rc&quot;
+    gem &quot;nokogiri&quot;
+
+When  you  run  bundle install(1) bundle-install.1.html the first time,
+bundler will resolve all of the dependencies, all  the  way  down,  and
+install what you need:
+
+    Fetching gem metadata from https://rubygems.org/.........
+    Resolving dependencies...
+    Installing builder 2.1.2
+    Installing abstract 1.0.0
+    Installing rack 1.2.8
+    Using bundler 1.7.6
+    Installing rake 10.4.0
+    Installing polyglot 0.3.5
+    Installing mime-types 1.25.1
+    Installing i18n 0.4.2
+    Installing mini_portile 0.6.1
+    Installing tzinfo 0.3.42
+    Installing rack-mount 0.6.14
+    Installing rack-test 0.5.7
+    Installing treetop 1.4.15
+    Installing thor 0.14.6
+    Installing activesupport 3.0.0.rc
+    Installing erubis 2.6.6
+    Installing activemodel 3.0.0.rc
+    Installing arel 0.4.0
+    Installing mail 2.2.20
+    Installing activeresource 3.0.0.rc
+    Installing actionpack 3.0.0.rc
+    Installing activerecord 3.0.0.rc
+    Installing actionmailer 3.0.0.rc
+    Installing railties 3.0.0.rc
+    Installing rails 3.0.0.rc
+    Installing nokogiri 1.6.5
+
+    Bundle complete! 2 Gemfile dependencies, 26 gems total.
+    Use `bundle show [gemname]` to see where a bundled gem is installed.
+
+As  you  can see, even though you have just two gems in the Gemfile(5),
+your application actually needs 26 different  gems  in  order  to  run.
+Bundler  remembers the exact versions it installed in Gemfile.lock. The
+next time you  run  bundle  install(1)  bundle-install.1.html,  bundler
+skips  the  dependency  resolution  and  installs  the  same gems as it
+installed last time.
+
+After checking in the Gemfile.lock into version control and cloning  it
+on  another  machine,  running  bundle install(1) bundle-install.1.html
+will still install the gems that you installed  last  time.  You  don&#39;t
+need to worry that a new release of erubis or mail changes the gems you
+use.
+
+However, from time to time, you might want to update the gems  you  are
+using  to  the  newest  versions that still match the gems in your Gem-
+file(5).
+
+To do this, run bundle update, which will ignore the Gemfile.lock,  and
+resolve  all the dependencies again. Keep in mind that this process can
+result in a significantly different set of the 25 gems,  based  on  the
+requirements  of  new gems that the gem authors released since the last
+time you ran bundle update.</pre>
+
+<p>UPDATING A LIST OF GEMS</p>
+
+<pre>Sometimes, you want to update a single gem in the Gemfile(5), and leave
+the  rest  of the gems that you specified locked to the versions in the
+Gemfile.lock.
+
+For instance, in the scenario above,  imagine  that  nokogiri  releases
+version 1.4.4, and you want to update it without updating Rails and all
+of its dependencies. To do this, run bundle update nokogiri.
+
+Bundler will update nokogiri and any of  its  dependencies,  but  leave
+alone Rails and its dependencies.</pre>
+
+<p>OVERLAPPING DEPENDENCIES</p>
+
+<pre>Sometimes,  multiple  gems declared in your Gemfile(5) are satisfied by
+the same second-level dependency. For instance, consider  the  case  of
+thin and rack-perftools-profiler.
+
+    source &quot;https://rubygems.org&quot;
+
+    gem &quot;thin&quot;
+    gem &quot;rack-perftools-profiler&quot;
+
+The  thin  gem  depends  on  rack &gt;= 1.0, while rack-perftools-profiler
+depends on rack ~&gt; 1.0. If you run bundle install, you get:
+
+    Fetching source index for https://rubygems.org/
+    Installing daemons (1.1.0)
+    Installing eventmachine (0.12.10) with native extensions
+    Installing open4 (1.0.1)
+    Installing perftools.rb (0.4.7) with native extensions
+    Installing rack (1.2.1)
+    Installing rack-perftools_profiler (0.0.2)
+    Installing thin (1.2.7) with native extensions
+    Using bundler (1.0.0.rc.3)
+
+In this case, the two gems have their own set of dependencies, but they
+share  rack  in  common.  If  you  run bundle update thin, bundler will
+update daemons, eventmachine and rack, which are dependencies of  thin,
+but   not   open4   or   perftools.rb,   which   are   dependencies  of
+rack-perftools_profiler. Note that bundle update thin will update  rack
+even though it&#39;s also a dependency of rack-perftools_profiler.
+
+In  short,  when  you  update  a  gem using bundle update, bundler will
+update all dependencies of that gem,  including  those  that  are  also
+dependencies of another gem.
+
+In this scenario, updating the thin version manually in the Gemfile(5),
+and then running  bundle  install(1)  bundle-install.1.html  will  only
+update  daemons  and  eventmachine, but not rack. For more information,
+see  the  CONSERVATIVE  UPDATING  section  of  bundle  install(1)  bun-
+dle-install.1.html.</pre>
+
+<p>RECOMMENDED WORKFLOW</p>
+
+<pre>In  general, when working with an application managed with bundler, you
+should use the following workflow:
+
+o   After you create your Gemfile(5) for the first time, run
+
+    $ bundle install
+
+o   Check the resulting Gemfile.lock into version control
+
+    $ git add Gemfile.lock
+
+o   When checking out this repository on another  development  machine,
+    run
+
+    $ bundle install
+
+o   When checking out this repository on a deployment machine, run
+
+    $ bundle install --deployment
+
+o   After  changing  the  Gemfile(5)  to reflect a new or update depen-
+    dency, run
+
+    $ bundle install
+
+o   Make sure to check the updated Gemfile.lock into version control
+
+    $ git add Gemfile.lock
+
+o   If bundle install(1) bundle-install.1.html reports a conflict, man-
+    ually update the specific gems that you changed in the Gemfile(5)
+
+    $ bundle update rails thin
+
+o   If  you want to update all the gems to the latest possible versions
+    that still match the gems listed in the Gemfile(5), run
+
+    $ bundle update
+
+                            June 2015                  BUNDLE-UPDATE(1)</pre>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

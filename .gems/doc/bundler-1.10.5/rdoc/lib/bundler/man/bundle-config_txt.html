@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>bundle-config - bundler-1.10.5 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script src="../../../js/jquery.js"></script>
+<script src="../../../js/darkfish.js"></script>
+
+<link href="../../../css/fonts.css" rel="stylesheet">
+<link href="../../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../lib/bundler/man/bundle.html">bundle</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-config.html">bundle-config</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-config_txt.html">bundle-config</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-exec.html">bundle-exec</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-exec_txt.html">bundle-exec</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-install.html">bundle-install</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-install_txt.html">bundle-install</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-package.html">bundle-package</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-package_txt.html">bundle-package</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-platform.html">bundle-platform</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-platform_txt.html">bundle-platform</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-update.html">bundle-update</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-update_txt.html">bundle-update</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle_txt.html">bundle</a>
+  
+    <li><a href="../../../lib/bundler/man/gemfile_5.html">gemfile.5</a>
+  
+    <li><a href="../../../lib/bundler/man/gemfile_5_txt.html">gemfile.5</a>
+  
+    <li><a href="../../../lib/bundler/templates/Executable.html">Executable</a>
+  
+    <li><a href="../../../lib/bundler/templates/Executable_standalone.html">Executable.standalone</a>
+  
+    <li><a href="../../../lib/bundler/templates/Gemfile.html">Gemfile</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/CODE_OF_CONDUCT_md_tt.html">CODE_OF_CONDUCT.md.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/Gemfile_tt.html">Gemfile.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/LICENSE_txt_tt.html">LICENSE.txt.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/README_md_tt.html">README.md.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/Rakefile_tt.html">Rakefile.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/bin/console_tt.html">console.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/bin/setup_tt.html">setup.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/exe/newgem_tt.html">newgem.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/ext/newgem/extconf_rb_tt.html">extconf.rb.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/ext/newgem/newgem_c_tt.html">newgem.c.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/ext/newgem/newgem_h_tt.html">newgem.h.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/gitignore_tt.html">gitignore.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/lib/newgem_rb_tt.html">newgem.rb.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/lib/newgem/version_rb_tt.html">version.rb.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/newgem_gemspec_tt.html">newgem.gemspec.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/rspec_tt.html">rspec.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/spec/newgem_spec_rb_tt.html">newgem_spec.rb.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/spec/spec_helper_rb_tt.html">spec_helper.rb.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/test/newgem_test_rb_tt.html">newgem_test.rb.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/test/test_helper_rb_tt.html">test_helper.rb.tt</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page lib/bundler/man/bundle-config.txt">
+
+<p>BUNDLE-CONFIG(1)                                             
+BUNDLE-CONFIG(1)</p>
+
+<p>NAME</p>
+
+<pre>bundle-config - Set bundler configuration options</pre>
+
+<p>SYNOPSIS</p>
+
+<pre>bundle config [name [value]]</pre>
+
+<p>DESCRIPTION</p>
+
+<pre>This  command  allows you to interact with bundler&#39;s configuration sys-
+tem. Bundler retrieves its configuration  from  the  local  application
+(app/.bundle/config), environment variables, and the user&#39;s home direc-
+tory (~/.bundle/config), in that order of priority.
+
+Executing bundle config with no parameters will print  a  list  of  all
+bundler configuration for the current bundle, and where that configura-
+tion was set.
+
+Executing bundle config &lt;name&gt; will print the value of that  configura-
+tion setting, and where it was set.
+
+Executing  bundle  config &lt;name&gt; &lt;value&gt; will set that configuration to
+the value specified for all bundles executed as the current  user.  The
+configuration  will  be  stored in ~/.bundle/config. If name already is
+set, name will be overridden and user will be warned.
+
+Executing bundle config --global  &lt;name&gt;  &lt;value&gt;  works  the  same  as
+above.
+
+Executing bundle config --local &lt;name&gt; &lt;value&gt; will set that configura-
+tion to the local application. The  configuration  will  be  stored  in
+app/.bundle/config.
+
+Executing  bundle  config --delete &lt;name&gt; will delete the configuration
+in both local and global  sources.  Not  compatible  with  --global  or
+--local flag.
+
+Executing bundle with the BUNDLE_IGNORE_CONFIG environment variable set
+will cause it to ignore all configuration.
+
+Executing bundle config disable_multisource true upgrades  the  warning
+about the Gemfile containing multiple primary sources to an error. Exe-
+cuting bundle config --delete disable_multisource downgrades this error
+to a warning.</pre>
+
+<p>BUILD OPTIONS</p>
+
+<pre>You  can use bundle config to give bundler the flags to pass to the gem
+installer every time bundler tries to install a particular gem.
+
+A very common example, the mysql gem, requires Snow  Leopard  users  to
+pass  configuration  flags  to gem install to specify where to find the
+mysql_config executable.
+
+    gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config
+
+Since the specific location of that executable can change from  machine
+to machine, you can specify these flags on a per-machine basis.
+
+    bundle config build.mysql --with-mysql-config=/usr/local/mysql/bin/mysql_config
+
+After  running  this  command,  every time bundler needs to install the
+mysql gem, it will pass along the flags you specified.</pre>
+
+<p>CONFIGURATION KEYS</p>
+
+<pre>Configuration keys in bundler have two forms: the  canonical  form  and
+the environment variable form.
+
+For  instance,  passing  the  --without  flag to bundle install(1) bun-
+dle-install.1.html prevents  Bundler  from  installing  certain  groups
+specified  in  the Gemfile(5). Bundler persists this value in app/.bun-
+dle/config so that calls to Bundler.setup do not try to find gems  from
+the  Gemfile that you didn&#39;t install. Additionally, subsequent calls to
+bundle install(1) bundle-install.1.html remember this setting and  skip
+those groups.
+
+The  canonical  form of this configuration is &quot;without&quot;. To convert the
+canonical form to the environment variable  form,  capitalize  it,  and
+prepend  BUNDLE_.  The  environment  variable form of &quot;without&quot; is BUN-
+DLE_WITHOUT.
+
+Any periods in the configuration keys must be replaced with two  under-
+scores when setting it via environment variables. The configuration key
+local.rack becomes the environment variable BUNDLE_LOCAL__RACK.</pre>
+
+<p>LIST OF AVAILABLE KEYS</p>
+
+<pre>The following is a list of all configuration keys  and  their  purpose.
+You  can  learn  more  about  their operation in bundle install(1) bun-
+dle-install.1.html.
+
+o   path (BUNDLE_PATH): The location on disk to install gems.  Defaults
+    to  $GEM_HOME in development and vendor/bundle when --deployment is
+    used
+
+o   frozen (BUNDLE_FROZEN): Disallow changes to the  Gemfile.  Defaults
+    to true when --deployment is used.
+
+o   without  (BUNDLE_WITHOUT):  A :-separated list of groups whose gems
+    bundler should not install
+
+o   bin (BUNDLE_BIN): Install executables from gems in  the  bundle  to
+    the specified directory. Defaults to false.
+
+o   gemfile  (BUNDLE_GEMFILE): The name of the file that bundler should
+    use as the Gemfile. This location of this file also sets  the  root
+    of the project, which is used to resolve relative paths in the Gem-
+    file, among other things. By default, bundler will search  up  from
+    the current working directory until it finds a Gemfile.
+
+o   ssl_ca_cert  (BUNDLE_SSL_CA_CERT): Path to a designated CA certifi-
+    cate file or folder containing multiple  certificates  for  trusted
+    CAs in PEM format.
+
+o   ssl_client_cert (BUNDLE_SSL_CLIENT_CERT): Path to a designated file
+    containing a X.509 client certificate and key in PEM format.
+
+o   cache_path (BUNDLE_CACHE_PATH): The  directory  that  bundler  will
+    place  cached gems in when running bundle package, and that bundler
+    will look in when installing gems.
+
+o   disable_multisource (BUNDLE_DISABLE_MULTISOURCE):  When  set,  Gem-
+    files  containing  multiple  sources will produce errors instead of
+    warnings. Use bundle config --delete disable_multisource to  unset.
+
+o   ignore_messages (BUNDLE_IGNORE_MESSAGES): When set, no post install
+    messages will be printed. To silence a single gem, use dot notation
+    like ignore_messages.httparty true.
+
+In  general, you should set these settings per-application by using the
+applicable flag to the bundle install(1) bundle-install.1.html or  bun-
+dle package(1) bundle-package.1.html command.
+
+You  can  set  them globally either via environment variables or bundle
+config, whichever is preferable for your setup. If you use both,  envi-
+ronment variables will take preference over global settings.</pre>
+
+<p>LOCAL GIT REPOS</p>
+
+<pre>Bundler  also  allows  you  to  work  against  a git repository locally
+instead of using the remote version. This can be achieved by setting up
+a local override:
+
+    bundle config local.GEM_NAME /path/to/local/git/repository
+
+For example, in order to use a local Rack repository, a developer could
+call:
+
+    bundle config local.rack ~/Work/git/rack
+
+Now instead of checking out the remote git repository, the local  over-
+ride  will  be used. Similar to a path source, every time the local git
+repository change, changes will be automatically picked up by  Bundler.
+This  means  a commit in the local git repo will update the revision in
+the Gemfile.lock to the local git repo revision. This requires the same
+attention  as git submodules. Before pushing to the remote, you need to
+ensure the local override was pushed, otherwise you may point to a com-
+mit that only exists in your local machine.
+
+Bundler  does many checks to ensure a developer won&#39;t work with invalid
+references. Particularly, we force a developer to specify a  branch  in
+the  Gemfile  in  order to use this feature. If the branch specified in
+the Gemfile and the current branch in the local git repository  do  not
+match,  Bundler  will  abort.  This  ensures that a developer is always
+working against the correct branches, and prevents  accidental  locking
+to a different branch.
+
+Finally,  Bundler  also  ensures  that the current revision in the Gem-
+file.lock exists in the local git repository. By  doing  this,  Bundler
+forces you to fetch the latest changes in the remotes.</pre>
+
+<p>MIRRORS OF GEM SOURCES</p>
+
+<pre>Bundler  supports  overriding gem sources with mirrors. This allows you
+to configure rubygems.org as the gem source in your Gemfile while still
+using your mirror to fetch gems.
+
+    bundle config mirror.SOURCE_URL MIRROR_URL
+
+For example, to use a mirror of rubygems.org hosted at
+
+    bundle config mirror.http://rubygems.org http://rubygems-mirror.org</pre>
+
+<p>CREDENTIALS FOR GEM SOURCES</p>
+
+<pre>Bundler  allows  you to configure credentials for any gem source, which
+allows you to avoid putting secrets into your Gemfile.
+
+    bundle config SOURCE_HOSTNAME USERNAME:PASSWORD
+
+For example, to save the credentials of  user  claudette  for  the  gem
+source at gems.longerous.com, you would run:
+
+    bundle config gems.longerous.com claudette:s00pers3krit
+
+Or you can set the credentials as an environment variable like this:
+
+    export BUNDLE_GEMS__LONGEROUS__COM=&quot;claudette:s00pers3krit&quot;
+
+                            June 2015                  BUNDLE-CONFIG(1)</pre>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

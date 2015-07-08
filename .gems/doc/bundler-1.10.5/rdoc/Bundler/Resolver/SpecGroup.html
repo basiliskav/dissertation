@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Bundler::Resolver::SpecGroup - bundler-1.10.5 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/darkfish.js"></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Array
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="../GemHelpers.html">Bundler::GemHelpers</a>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-__dependencies">#__dependencies</a>
+    
+    <li ><a href="#method-i-activate_platform">#activate_platform</a>
+    
+    <li ><a href="#method-i-dependencies_for_activated_platforms">#dependencies_for_activated_platforms</a>
+    
+    <li ><a href="#method-i-for-3F">#for?</a>
+    
+    <li class="calls-super" ><a href="#method-i-initialize_copy">#initialize_copy</a>
+    
+    <li ><a href="#method-i-name">#name</a>
+    
+    <li ><a href="#method-i-platforms_for_dependency_named">#platforms_for_dependency_named</a>
+    
+    <li ><a href="#method-i-source">#source</a>
+    
+    <li ><a href="#method-i-to_s">#to_s</a>
+    
+    <li ><a href="#method-i-to_specs">#to_specs</a>
+    
+    <li ><a href="#method-i-version">#version</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Bundler::Resolver::SpecGroup">
+  <h1 id="class-Bundler::Resolver::SpecGroup" class="class">
+    class Bundler::Resolver::SpecGroup
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-activated" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">activated</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-required_by" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">required_by</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(a)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/bundler/resolver.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">a</span>)
+  <span class="ruby-keyword">super</span>
+  <span class="ruby-ivar">@required_by</span>  = []
+  <span class="ruby-ivar">@activated</span>    = []
+  <span class="ruby-ivar">@dependencies</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@specs</span>        = {}
+
+  <span class="ruby-constant">ALL</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@specs</span>[<span class="ruby-identifier">p</span>] = <span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">match_platform</span>(<span class="ruby-identifier">p</span>) }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-activate_platform" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">activate_platform</span><span
+            class="method-args">(platform)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="activate_platform-source">
+            <pre><span class="ruby-comment"># File lib/bundler/resolver.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">activate_platform</span>(<span class="ruby-identifier">platform</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@activated</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">platform</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">for?</span>(<span class="ruby-identifier">platform</span>)
+      <span class="ruby-ivar">@activated</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">platform</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">__dependencies</span>[<span class="ruby-identifier">platform</span>] <span class="ruby-operator">||</span> []
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  []
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-dependencies_for_activated_platforms" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dependencies_for_activated_platforms</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="dependencies_for_activated_platforms-source">
+            <pre><span class="ruby-comment"># File lib/bundler/resolver.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dependencies_for_activated_platforms</span>
+  <span class="ruby-ivar">@activated</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">__dependencies</span>[<span class="ruby-identifier">p</span>] }.<span class="ruby-identifier">flatten</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-for-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">for?</span><span
+            class="method-args">(platform)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="for-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/resolver.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">for?</span>(<span class="ruby-identifier">platform</span>)
+  <span class="ruby-ivar">@specs</span>[<span class="ruby-identifier">platform</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-initialize_copy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">initialize_copy</span><span
+            class="method-args">(o)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+          <div class="method-source-code" id="initialize_copy-source">
+            <pre><span class="ruby-comment"># File lib/bundler/resolver.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize_copy</span>(<span class="ruby-identifier">o</span>)
+  <span class="ruby-keyword">super</span>
+  <span class="ruby-ivar">@required_by</span> = <span class="ruby-identifier">o</span>.<span class="ruby-identifier">required_by</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-ivar">@activated</span>   = <span class="ruby-identifier">o</span>.<span class="ruby-identifier">activated</span>.<span class="ruby-identifier">dup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="name-source">
+            <pre><span class="ruby-comment"># File lib/bundler/resolver.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-ivar">@name</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">first</span>.<span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-platforms_for_dependency_named" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">platforms_for_dependency_named</span><span
+            class="method-args">(dependency)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="platforms_for_dependency_named-source">
+            <pre><span class="ruby-comment"># File lib/bundler/resolver.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">platforms_for_dependency_named</span>(<span class="ruby-identifier">dependency</span>)
+  <span class="ruby-identifier">__dependencies</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span>, <span class="ruby-identifier">deps</span><span class="ruby-operator">|</span> <span class="ruby-identifier">deps</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:name</span>).<span class="ruby-identifier">include?</span> <span class="ruby-identifier">dependency</span> }.<span class="ruby-identifier">keys</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-source" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">source</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="source-source">
+            <pre><span class="ruby-comment"># File lib/bundler/resolver.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">source</span>
+  <span class="ruby-ivar">@source</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">first</span>.<span class="ruby-identifier">source</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/bundler/resolver.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-node">&quot;#{name} (#{version})&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_specs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_specs</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_specs-source">
+            <pre><span class="ruby-comment"># File lib/bundler/resolver.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_specs</span>
+  <span class="ruby-identifier">specs</span> = {}
+
+  <span class="ruby-ivar">@activated</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span> = <span class="ruby-ivar">@specs</span>[<span class="ruby-identifier">p</span>]
+      <span class="ruby-identifier">platform</span> = <span class="ruby-identifier">generic</span>(<span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">s</span>.<span class="ruby-identifier">platform</span>))
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">specs</span>[<span class="ruby-identifier">platform</span>]
+
+      <span class="ruby-identifier">lazy_spec</span> = <span class="ruby-constant">LazySpecification</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">version</span>, <span class="ruby-identifier">platform</span>, <span class="ruby-identifier">source</span>)
+      <span class="ruby-identifier">lazy_spec</span>.<span class="ruby-identifier">dependencies</span>.<span class="ruby-identifier">replace</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">dependencies</span>
+      <span class="ruby-identifier">specs</span>[<span class="ruby-identifier">platform</span>] = <span class="ruby-identifier">lazy_spec</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">specs</span>.<span class="ruby-identifier">values</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-version" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">version</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="version-source">
+            <pre><span class="ruby-comment"># File lib/bundler/resolver.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">version</span>
+  <span class="ruby-ivar">@version</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">first</span>.<span class="ruby-identifier">version</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-__dependencies" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">__dependencies</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="__dependencies-source">
+            <pre><span class="ruby-comment"># File lib/bundler/resolver.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">__dependencies</span>
+  <span class="ruby-ivar">@dependencies</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">dependencies</span> = {}
+    <span class="ruby-constant">ALL</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">spec</span> = <span class="ruby-ivar">@specs</span>[<span class="ruby-identifier">p</span>]
+        <span class="ruby-identifier">dependencies</span>[<span class="ruby-identifier">p</span>] = []
+        <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">dependencies</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dep</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:development</span>
+          <span class="ruby-identifier">dependencies</span>[<span class="ruby-identifier">p</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">DepProxy</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">dep</span>, <span class="ruby-identifier">p</span>)
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">dependencies</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
