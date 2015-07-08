@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Bundler::CurrentRuby - bundler-1.10.5 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-jruby-3F">#jruby?</a>
+    
+    <li ><a href="#method-i-jruby_18-3F">#jruby_18?</a>
+    
+    <li ><a href="#method-i-jruby_19-3F">#jruby_19?</a>
+    
+    <li ><a href="#method-i-maglev-3F">#maglev?</a>
+    
+    <li ><a href="#method-i-mingw-3F">#mingw?</a>
+    
+    <li ><a href="#method-i-mingw_18-3F">#mingw_18?</a>
+    
+    <li ><a href="#method-i-mingw_19-3F">#mingw_19?</a>
+    
+    <li ><a href="#method-i-mingw_20-3F">#mingw_20?</a>
+    
+    <li ><a href="#method-i-mingw_21-3F">#mingw_21?</a>
+    
+    <li ><a href="#method-i-mingw_22-3F">#mingw_22?</a>
+    
+    <li ><a href="#method-i-mri-3F">#mri?</a>
+    
+    <li ><a href="#method-i-mri_18-3F">#mri_18?</a>
+    
+    <li ><a href="#method-i-mri_19-3F">#mri_19?</a>
+    
+    <li ><a href="#method-i-mri_20-3F">#mri_20?</a>
+    
+    <li ><a href="#method-i-mri_21-3F">#mri_21?</a>
+    
+    <li ><a href="#method-i-mri_22-3F">#mri_22?</a>
+    
+    <li ><a href="#method-i-mswin64-3F">#mswin64?</a>
+    
+    <li ><a href="#method-i-mswin64_19-3F">#mswin64_19?</a>
+    
+    <li ><a href="#method-i-mswin64_20-3F">#mswin64_20?</a>
+    
+    <li ><a href="#method-i-mswin64_21-3F">#mswin64_21?</a>
+    
+    <li ><a href="#method-i-mswin64_22-3F">#mswin64_22?</a>
+    
+    <li ><a href="#method-i-mswin-3F">#mswin?</a>
+    
+    <li ><a href="#method-i-mswin_18-3F">#mswin_18?</a>
+    
+    <li ><a href="#method-i-mswin_19-3F">#mswin_19?</a>
+    
+    <li ><a href="#method-i-mswin_20-3F">#mswin_20?</a>
+    
+    <li ><a href="#method-i-mswin_21-3F">#mswin_21?</a>
+    
+    <li ><a href="#method-i-mswin_22-3F">#mswin_22?</a>
+    
+    <li ><a href="#method-i-on_18-3F">#on_18?</a>
+    
+    <li ><a href="#method-i-on_19-3F">#on_19?</a>
+    
+    <li ><a href="#method-i-on_20-3F">#on_20?</a>
+    
+    <li ><a href="#method-i-on_21-3F">#on_21?</a>
+    
+    <li ><a href="#method-i-on_22-3F">#on_22?</a>
+    
+    <li ><a href="#method-i-rbx-3F">#rbx?</a>
+    
+    <li ><a href="#method-i-ruby-3F">#ruby?</a>
+    
+    <li ><a href="#method-i-ruby_18-3F">#ruby_18?</a>
+    
+    <li ><a href="#method-i-ruby_19-3F">#ruby_19?</a>
+    
+    <li ><a href="#method-i-ruby_20-3F">#ruby_20?</a>
+    
+    <li ><a href="#method-i-ruby_21-3F">#ruby_21?</a>
+    
+    <li ><a href="#method-i-ruby_22-3F">#ruby_22?</a>
+    
+    <li ><a href="#method-i-x64_mingw-3F">#x64_mingw?</a>
+    
+    <li ><a href="#method-i-x64_mingw_20-3F">#x64_mingw_20?</a>
+    
+    <li ><a href="#method-i-x64_mingw_21-3F">#x64_mingw_21?</a>
+    
+    <li ><a href="#method-i-x64_mingw_22-3F">#x64_mingw_22?</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Bundler::CurrentRuby">
+  <h1 id="class-Bundler::CurrentRuby" class="class">
+    class Bundler::CurrentRuby
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-jruby-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">jruby?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="jruby-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">jruby?</span>
+  <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">RUBY_ENGINE</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">RUBY_ENGINE</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;jruby&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-jruby_18-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">jruby_18?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="jruby_18-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">jruby_18?</span>
+  <span class="ruby-identifier">jruby?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_18?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-jruby_19-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">jruby_19?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="jruby_19-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">jruby_19?</span>
+  <span class="ruby-identifier">jruby?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_19?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-maglev-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">maglev?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="maglev-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">maglev?</span>
+  <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">RUBY_ENGINE</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">RUBY_ENGINE</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;maglev&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mingw-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mingw?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mingw-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mingw?</span>
+  <span class="ruby-constant">Bundler</span><span class="ruby-operator">::</span><span class="ruby-constant">WINDOWS</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span>.<span class="ruby-identifier">local</span>.<span class="ruby-identifier">os</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;mingw32&quot;</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span>.<span class="ruby-identifier">local</span>.<span class="ruby-identifier">cpu</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&#39;x64&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mingw_18-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mingw_18?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mingw_18-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mingw_18?</span>
+  <span class="ruby-identifier">mingw?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_18?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mingw_19-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mingw_19?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mingw_19-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mingw_19?</span>
+  <span class="ruby-identifier">mingw?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_19?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mingw_20-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mingw_20?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mingw_20-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 154</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mingw_20?</span>
+  <span class="ruby-identifier">mingw?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_20?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mingw_21-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mingw_21?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mingw_21-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 158</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mingw_21?</span>
+  <span class="ruby-identifier">mingw?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_21?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mingw_22-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mingw_22?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mingw_22-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mingw_22?</span>
+  <span class="ruby-identifier">mingw?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_22?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mri-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mri?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mri-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mri?</span>
+  <span class="ruby-operator">!</span><span class="ruby-identifier">mswin?</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-operator">!</span><span class="ruby-keyword">defined?</span>(<span class="ruby-constant">RUBY_ENGINE</span>) <span class="ruby-operator">||</span> <span class="ruby-constant">RUBY_ENGINE</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;ruby&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mri_18-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mri_18?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mri_18-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mri_18?</span>
+  <span class="ruby-identifier">mri?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_18?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mri_19-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mri_19?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mri_19-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mri_19?</span>
+  <span class="ruby-identifier">mri?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_19?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mri_20-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mri_20?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mri_20-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mri_20?</span>
+  <span class="ruby-identifier">mri?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_20?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mri_21-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mri_21?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mri_21-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mri_21?</span>
+  <span class="ruby-identifier">mri?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_21?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mri_22-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mri_22?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mri_22-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mri_22?</span>
+  <span class="ruby-identifier">mri?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_22?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mswin64-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mswin64?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mswin64-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mswin64?</span>
+  <span class="ruby-constant">Bundler</span><span class="ruby-operator">::</span><span class="ruby-constant">WINDOWS</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span>.<span class="ruby-identifier">local</span>.<span class="ruby-identifier">os</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;mswin64&quot;</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span>.<span class="ruby-identifier">local</span>.<span class="ruby-identifier">cpu</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;x64&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mswin64_19-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mswin64_19?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mswin64_19-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mswin64_19?</span>
+  <span class="ruby-identifier">mswin64?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_19?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mswin64_20-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mswin64_20?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mswin64_20-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mswin64_20?</span>
+  <span class="ruby-identifier">mswin64?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_20?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mswin64_21-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mswin64_21?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mswin64_21-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mswin64_21?</span>
+  <span class="ruby-identifier">mswin64?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_21?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mswin64_22-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mswin64_22?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mswin64_22-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mswin64_22?</span>
+  <span class="ruby-identifier">mswin64?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_22?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mswin-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mswin?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mswin-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mswin?</span>
+  <span class="ruby-constant">Bundler</span><span class="ruby-operator">::</span><span class="ruby-constant">WINDOWS</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mswin_18-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mswin_18?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mswin_18-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mswin_18?</span>
+  <span class="ruby-identifier">mswin?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_18?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mswin_19-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mswin_19?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mswin_19-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mswin_19?</span>
+  <span class="ruby-identifier">mswin?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_19?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mswin_20-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mswin_20?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mswin_20-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mswin_20?</span>
+  <span class="ruby-identifier">mswin?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_20?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mswin_21-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mswin_21?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mswin_21-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mswin_21?</span>
+  <span class="ruby-identifier">mswin?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_21?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mswin_22-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mswin_22?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mswin_22-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mswin_22?</span>
+  <span class="ruby-identifier">mswin?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_22?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-on_18-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_18?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="on_18-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_18?</span>
+  <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^1\.8/</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-on_19-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_19?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="on_19-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_19?</span>
+  <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^1\.9/</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-on_20-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_20?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="on_20-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_20?</span>
+  <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^2\.0/</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-on_21-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_21?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="on_21-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_21?</span>
+  <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^2\.1/</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-on_22-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_22?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="on_22-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_22?</span>
+  <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^2\.2/</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-rbx-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rbx?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="rbx-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rbx?</span>
+  <span class="ruby-identifier">ruby?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">RUBY_ENGINE</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">RUBY_ENGINE</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;rbx&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ruby-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ruby?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ruby-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ruby?</span>
+  <span class="ruby-operator">!</span><span class="ruby-identifier">mswin?</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-operator">!</span><span class="ruby-keyword">defined?</span>(<span class="ruby-constant">RUBY_ENGINE</span>) <span class="ruby-operator">||</span> <span class="ruby-constant">RUBY_ENGINE</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;ruby&quot;</span> <span class="ruby-operator">||</span> <span class="ruby-constant">RUBY_ENGINE</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;rbx&quot;</span> <span class="ruby-operator">||</span> <span class="ruby-constant">RUBY_ENGINE</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;maglev&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ruby_18-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ruby_18?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ruby_18-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ruby_18?</span>
+  <span class="ruby-identifier">ruby?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_18?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ruby_19-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ruby_19?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ruby_19-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ruby_19?</span>
+  <span class="ruby-identifier">ruby?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_19?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ruby_20-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ruby_20?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ruby_20-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ruby_20?</span>
+  <span class="ruby-identifier">ruby?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_20?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ruby_21-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ruby_21?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ruby_21-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ruby_21?</span>
+  <span class="ruby-identifier">ruby?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_21?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ruby_22-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ruby_22?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ruby_22-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ruby_22?</span>
+  <span class="ruby-identifier">ruby?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_22?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-x64_mingw-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">x64_mingw?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="x64_mingw-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 166</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">x64_mingw?</span>
+  <span class="ruby-constant">Bundler</span><span class="ruby-operator">::</span><span class="ruby-constant">WINDOWS</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span>.<span class="ruby-identifier">local</span>.<span class="ruby-identifier">os</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;mingw32&quot;</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span>.<span class="ruby-identifier">local</span>.<span class="ruby-identifier">cpu</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;x64&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-x64_mingw_20-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">x64_mingw_20?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="x64_mingw_20-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">x64_mingw_20?</span>
+  <span class="ruby-identifier">x64_mingw?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_20?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-x64_mingw_21-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">x64_mingw_21?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="x64_mingw_21-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">x64_mingw_21?</span>
+  <span class="ruby-identifier">x64_mingw?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_21?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-x64_mingw_22-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">x64_mingw_22?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="x64_mingw_22-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/current_ruby.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">x64_mingw_22?</span>
+  <span class="ruby-identifier">x64_mingw?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on_22?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

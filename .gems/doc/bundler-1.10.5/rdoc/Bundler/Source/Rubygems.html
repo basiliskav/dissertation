@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Bundler::Source::Rubygems - bundler-1.10.5 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/darkfish.js"></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="../Source.html">Bundler::Source</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-from_lock">::from_lock</a>
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-3D-3D">#==</a>
+    
+    <li ><a href="#method-i-add_remote">#add_remote</a>
+    
+    <li ><a href="#method-i-api_fetchers">#api_fetchers</a>
+    
+    <li ><a href="#method-i-builtin_gem-3F">#builtin_gem?</a>
+    
+    <li ><a href="#method-i-cache">#cache</a>
+    
+    <li ><a href="#method-i-cached-21">#cached!</a>
+    
+    <li ><a href="#method-i-cached_built_in_gem">#cached_built_in_gem</a>
+    
+    <li ><a href="#method-i-cached_gem">#cached_gem</a>
+    
+    <li ><a href="#method-i-cached_path">#cached_path</a>
+    
+    <li ><a href="#method-i-cached_specs">#cached_specs</a>
+    
+    <li ><a href="#method-i-can_lock-3F">#can_lock?</a>
+    
+    <li ><a href="#method-i-credless_remotes">#credless_remotes</a>
+    
+    <li ><a href="#method-i-eql-3F">#eql?</a>
+    
+    <li ><a href="#method-i-fetch_gem">#fetch_gem</a>
+    
+    <li ><a href="#method-i-fetchers">#fetchers</a>
+    
+    <li ><a href="#method-i-hash">#hash</a>
+    
+    <li ><a href="#method-i-include-3F">#include?</a>
+    
+    <li ><a href="#method-i-install">#install</a>
+    
+    <li ><a href="#method-i-installed-3F">#installed?</a>
+    
+    <li ><a href="#method-i-installed_specs">#installed_specs</a>
+    
+    <li ><a href="#method-i-loaded_from">#loaded_from</a>
+    
+    <li ><a href="#method-i-name">#name</a>
+    
+    <li ><a href="#method-i-normalize_uri">#normalize_uri</a>
+    
+    <li ><a href="#method-i-options">#options</a>
+    
+    <li ><a href="#method-i-remote-21">#remote!</a>
+    
+    <li ><a href="#method-i-remote_specs">#remote_specs</a>
+    
+    <li ><a href="#method-i-remotes_for_spec">#remotes_for_spec</a>
+    
+    <li ><a href="#method-i-replace_remotes">#replace_remotes</a>
+    
+    <li ><a href="#method-i-specs">#specs</a>
+    
+    <li ><a href="#method-i-suppress_configured_credentials">#suppress_configured_credentials</a>
+    
+    <li ><a href="#method-i-to_lock">#to_lock</a>
+    
+    <li ><a href="#method-i-to_s">#to_s</a>
+    
+    <li ><a href="#method-i-unmet_deps">#unmet_deps</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Bundler::Source::Rubygems">
+  <h1 id="class-Bundler::Source::Rubygems" class="class">
+    class Bundler::Source::Rubygems
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="API_REQUEST_LIMIT">API_REQUEST_LIMIT
+        
+        <dd><p>Use the API when installing less than X gems</p>
+        
+      
+        <dt id="API_REQUEST_SIZE">API_REQUEST_SIZE
+        
+        <dd><p>Ask for X gems per API request</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-caches" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">caches</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-remotes" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">remotes</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-from_lock" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">from_lock</span><span
+            class="method-args">(options)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="from_lock-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">from_lock</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">options</span>
+  <span class="ruby-ivar">@remotes</span> = []
+  <span class="ruby-ivar">@dependency_names</span> = []
+  <span class="ruby-ivar">@allow_remote</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@allow_cached</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@caches</span> = [<span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">app_cache</span>, <span class="ruby-operator">*</span><span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">rubygems</span>.<span class="ruby-identifier">gem_cache</span>]
+
+  <span class="ruby-constant">Array</span>(<span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;remotes&quot;</span>] <span class="ruby-operator">||</span> []).<span class="ruby-identifier">reverse_each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span> <span class="ruby-identifier">add_remote</span>(<span class="ruby-identifier">r</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-3D-3D" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">==</span><span
+            class="method-args">(o)</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Rubygems.html#method-i-eql-3F">eql?</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-add_remote" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_remote</span><span
+            class="method-args">(source)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_remote-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 197</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_remote</span>(<span class="ruby-identifier">source</span>)
+  <span class="ruby-identifier">uri</span> = <span class="ruby-identifier">normalize_uri</span>(<span class="ruby-identifier">source</span>)
+  <span class="ruby-ivar">@remotes</span>.<span class="ruby-identifier">unshift</span>(<span class="ruby-identifier">uri</span>) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@remotes</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">uri</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-cache" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cache</span><span
+            class="method-args">(spec, custom_path = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cache-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 173</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cache</span>(<span class="ruby-identifier">spec</span>, <span class="ruby-identifier">custom_path</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">builtin_gem?</span>(<span class="ruby-identifier">spec</span>)
+    <span class="ruby-identifier">cached_path</span> = <span class="ruby-identifier">cached_built_in_gem</span>(<span class="ruby-identifier">spec</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">cached_path</span> = <span class="ruby-identifier">cached_gem</span>(<span class="ruby-identifier">spec</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GemNotFound</span>, <span class="ruby-node">&quot;Missing gem file &#39;#{spec.full_name}.gem&#39;.&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">cached_path</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">cached_path</span>) <span class="ruby-operator">==</span> <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">app_cache</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;  * #{File.basename(cached_path)}&quot;</span>
+  <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">cp</span>(<span class="ruby-identifier">cached_path</span>, <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">app_cache</span>(<span class="ruby-identifier">custom_path</span>))
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EACCES</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">InstallError</span>, <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-cached-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cached!</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cached-21-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cached!</span>
+  <span class="ruby-ivar">@allow_cached</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-cached_built_in_gem" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cached_built_in_gem</span><span
+            class="method-args">(spec)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cached_built_in_gem-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cached_built_in_gem</span>(<span class="ruby-identifier">spec</span>)
+  <span class="ruby-identifier">cached_path</span> = <span class="ruby-identifier">cached_path</span>(<span class="ruby-identifier">spec</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">cached_path</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">remote_spec</span> = <span class="ruby-identifier">remote_specs</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">spec</span>).<span class="ruby-identifier">first</span>
+    <span class="ruby-identifier">cached_path</span> = <span class="ruby-identifier">fetch_gem</span>(<span class="ruby-identifier">remote_spec</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">cached_path</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-can_lock-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">can_lock?</span><span
+            class="method-args">(spec)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="can_lock-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">can_lock?</span>(<span class="ruby-identifier">spec</span>)
+  <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">source</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Rubygems</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-eql-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eql?</span><span
+            class="method-args">(o)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="eql-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">o</span>)
+  <span class="ruby-identifier">o</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Rubygems</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">credless_remotes</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">credless_remotes</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Rubygems.html#method-i-3D-3D">==</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-fetchers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fetchers</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fetchers-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 219</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fetchers</span>
+  <span class="ruby-ivar">@fetchers</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">remotes</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">uri</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">remote</span> = <span class="ruby-constant">Source</span><span class="ruby-operator">::</span><span class="ruby-constant">Rubygems</span><span class="ruby-operator">::</span><span class="ruby-constant">Remote</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">uri</span>)
+    <span class="ruby-constant">Bundler</span><span class="ruby-operator">::</span><span class="ruby-constant">Fetcher</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">remote</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hash</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="hash-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hash</span>
+  <span class="ruby-ivar">@remotes</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-include-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">include?</span><span
+            class="method-args">(o)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="include-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">include?</span>(<span class="ruby-identifier">o</span>)
+  <span class="ruby-identifier">o</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Rubygems</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">o</span>.<span class="ruby-identifier">credless_remotes</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">credless_remotes</span>).<span class="ruby-identifier">empty?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-install" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">install</span><span
+            class="method-args">(spec, opts = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="install-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">install</span>(<span class="ruby-identifier">spec</span>, <span class="ruby-identifier">opts</span> = {})
+  <span class="ruby-identifier">force</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:force</span>]
+  <span class="ruby-identifier">ensure_builtin_gems_cached</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:ensure_builtin_gems_cached</span>]
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">ensure_builtin_gems_cached</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">builtin_gem?</span>(<span class="ruby-identifier">spec</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">cached_path</span>(<span class="ruby-identifier">spec</span>)
+      <span class="ruby-identifier">cached_built_in_gem</span>(<span class="ruby-identifier">spec</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">remote</span>
+      <span class="ruby-identifier">force</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">loaded_from</span> = <span class="ruby-identifier">loaded_from</span>(<span class="ruby-identifier">spec</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">installed?</span>(<span class="ruby-identifier">spec</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-operator">!</span><span class="ruby-identifier">force</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">eql?</span>(<span class="ruby-string">&quot;bundler&quot;</span>))
+    <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;Using #{version_message(spec)}&quot;</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-comment"># no post-install message</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Download the gem to get the spec, because some specs that are returned</span>
+  <span class="ruby-comment"># by rubygems.org are broken and wrong.</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">remote</span>
+    <span class="ruby-comment"># Check for this spec from other sources</span>
+    <span class="ruby-identifier">uris</span> = [<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">remote</span>.<span class="ruby-identifier">anonymized_uri</span>]
+    <span class="ruby-identifier">uris</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">remotes_for_spec</span>(<span class="ruby-identifier">spec</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">remote</span><span class="ruby-operator">|</span> <span class="ruby-identifier">remote</span>.<span class="ruby-identifier">anonymized_uri</span> }
+    <span class="ruby-identifier">uris</span>.<span class="ruby-identifier">uniq!</span>
+    <span class="ruby-constant">Installer</span>.<span class="ruby-identifier">ambiguous_gems</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">uris</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">uris</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+
+    <span class="ruby-identifier">s</span> = <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">rubygems</span>.<span class="ruby-identifier">spec_from_gem</span>(<span class="ruby-identifier">fetch_gem</span>(<span class="ruby-identifier">spec</span>), <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">settings</span>[<span class="ruby-string">&quot;trust-policy&quot;</span>])
+    <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">__swap__</span>(<span class="ruby-identifier">s</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">settings</span>[<span class="ruby-value">:no_install</span>]
+    <span class="ruby-identifier">message</span> = <span class="ruby-node">&quot;Installing #{version_message(spec)}&quot;</span>
+    <span class="ruby-identifier">message</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot; with native extensions&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">extensions</span>.<span class="ruby-identifier">any?</span>
+    <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">confirm</span> <span class="ruby-identifier">message</span>
+
+    <span class="ruby-identifier">path</span> = <span class="ruby-identifier">cached_gem</span>(<span class="ruby-identifier">spec</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">requires_sudo?</span>
+      <span class="ruby-identifier">install_path</span> = <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">tmp</span>(<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">full_name</span>)
+      <span class="ruby-identifier">bin_path</span>     = <span class="ruby-identifier">install_path</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;bin&quot;</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">install_path</span> = <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">rubygems</span>.<span class="ruby-identifier">gem_dir</span>
+      <span class="ruby-identifier">bin_path</span>     = <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">system_bindir</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">installed_spec</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">rubygems</span>.<span class="ruby-identifier">preserve_paths</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">installed_spec</span> = <span class="ruby-constant">Bundler</span><span class="ruby-operator">::</span><span class="ruby-constant">GemInstaller</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">path</span>,
+        <span class="ruby-value">:install_dir</span>         =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">install_path</span>.<span class="ruby-identifier">to_s</span>,
+        <span class="ruby-value">:bin_dir</span>             =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">bin_path</span>.<span class="ruby-identifier">to_s</span>,
+        <span class="ruby-value">:ignore_dependencies</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>,
+        <span class="ruby-value">:wrappers</span>            =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>,
+        <span class="ruby-value">:env_shebang</span>         =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+      ).<span class="ruby-identifier">install</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># SUDO HAX</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">requires_sudo?</span>
+      <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">rubygems</span>.<span class="ruby-identifier">repository_subdirectories</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">src</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">install_path</span>, <span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;*&quot;</span>)
+        <span class="ruby-identifier">dst</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">rubygems</span>.<span class="ruby-identifier">gem_dir</span>, <span class="ruby-identifier">name</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;extensions&quot;</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-identifier">src</span>).<span class="ruby-identifier">any?</span>
+          <span class="ruby-identifier">src</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">src</span>, <span class="ruby-string">&quot;*/*&quot;</span>)
+          <span class="ruby-identifier">ext_src</span> = <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-identifier">src</span>).<span class="ruby-identifier">first</span>
+          <span class="ruby-identifier">ext_src</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-identifier">src</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">-6</span>], <span class="ruby-string">&#39;&#39;</span>)
+          <span class="ruby-identifier">dst</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">dst</span>, <span class="ruby-identifier">ext_src</span>))
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-identifier">dst</span>
+        <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">sudo</span> <span class="ruby-node">&quot;cp -R #{src} #{dst}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Dir</span>[<span class="ruby-identifier">src</span>].<span class="ruby-identifier">any?</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">executables</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">exe</span><span class="ruby-operator">|</span>
+        <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">system_bindir</span>
+        <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">sudo</span> <span class="ruby-node">&quot;cp -R #{install_path}/bin/#{exe} #{Bundler.system_bindir}/&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">installed_spec</span>.<span class="ruby-identifier">loaded_from</span> = <span class="ruby-identifier">loaded_from</span>(<span class="ruby-identifier">spec</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">loaded_from</span> = <span class="ruby-identifier">loaded_from</span>(<span class="ruby-identifier">spec</span>)
+
+  <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">post_install_message</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">rm_rf</span>(<span class="ruby-identifier">install_path</span>) <span class="ruby-keyword">if</span> <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">requires_sudo?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-name" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">name</span><span
+            class="method-args">()</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Rubygems.html#method-i-to_s">to_s</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">options</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="options-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">options</span>
+  { <span class="ruby-string">&quot;remotes&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@remotes</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">to_s</span> } }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-remote-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remote!</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="remote-21-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remote!</span>
+  <span class="ruby-ivar">@allow_remote</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-replace_remotes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">replace_remotes</span><span
+            class="method-args">(other_remotes)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="replace_remotes-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 202</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">replace_remotes</span>(<span class="ruby-identifier">other_remotes</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">other_remotes</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@remotes</span>
+
+  <span class="ruby-ivar">@remotes</span> = []
+  <span class="ruby-identifier">other_remotes</span>.<span class="ruby-identifier">reverse_each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">add_remote</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-specs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">specs</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="specs-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">specs</span>
+  <span class="ruby-ivar">@specs</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
+    <span class="ruby-comment"># remote_specs usually generates a way larger Index than the other</span>
+    <span class="ruby-comment"># sources, and large_idx.use small_idx is way faster than</span>
+    <span class="ruby-comment"># small_idx.use large_idx.</span>
+    <span class="ruby-identifier">idx</span> = <span class="ruby-ivar">@allow_remote</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">remote_specs</span>.<span class="ruby-identifier">dup</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Index</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">idx</span>.<span class="ruby-identifier">use</span>(<span class="ruby-identifier">cached_specs</span>, <span class="ruby-value">:override_dupes</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@allow_cached</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@allow_remote</span>
+    <span class="ruby-identifier">idx</span>.<span class="ruby-identifier">use</span>(<span class="ruby-identifier">installed_specs</span>, <span class="ruby-value">:override_dupes</span>)
+    <span class="ruby-identifier">idx</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_lock" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_lock</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_lock-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_lock</span>
+  <span class="ruby-identifier">out</span> = <span class="ruby-string">&quot;GEM\n&quot;</span>
+  <span class="ruby-identifier">remotes</span>.<span class="ruby-identifier">reverse_each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">remote</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;  remote: #{suppress_configured_credentials remote}\n&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;  specs:\n&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">remote_names</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">remotes</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">to_s</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;, &#39;</span>)
+  <span class="ruby-node">&quot;rubygems repository #{remote_names}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Rubygems.html#method-i-name">name</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-unmet_deps" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unmet_deps</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="unmet_deps-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 211</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unmet_deps</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@allow_remote</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">api_fetchers</span>.<span class="ruby-identifier">any?</span>
+    <span class="ruby-identifier">remote_specs</span>.<span class="ruby-identifier">unmet_dependency_names</span>
+  <span class="ruby-keyword">else</span>
+    []
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Protected Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-api_fetchers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">api_fetchers</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="api_fetchers-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 319</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">api_fetchers</span>
+  <span class="ruby-identifier">fetchers</span>.<span class="ruby-identifier">select</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:use_api</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-builtin_gem-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">builtin_gem?</span><span
+            class="method-args">(spec)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="builtin_gem-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 408</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">builtin_gem?</span>(<span class="ruby-identifier">spec</span>)
+  <span class="ruby-comment"># Ruby 2.1, where all included gems have this summary</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">summary</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/is bundled with Ruby/</span>
+
+  <span class="ruby-comment"># Ruby 2.0, where gemspecs are stored in specifications/default/</span>
+  <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">loaded_from</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">loaded_from</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;specifications/default/&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-cached_gem" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cached_gem</span><span
+            class="method-args">(spec)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cached_gem-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 243</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cached_gem</span>(<span class="ruby-identifier">spec</span>)
+  <span class="ruby-identifier">cached_gem</span> = <span class="ruby-identifier">cached_path</span>(<span class="ruby-identifier">spec</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">cached_gem</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Bundler</span><span class="ruby-operator">::</span><span class="ruby-constant">GemNotFound</span>, <span class="ruby-node">&quot;Could not find #{spec.file_name} for installation&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">cached_gem</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-cached_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cached_path</span><span
+            class="method-args">(spec)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cached_path-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 251</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cached_path</span>(<span class="ruby-identifier">spec</span>)
+  <span class="ruby-identifier">possibilities</span> = <span class="ruby-ivar">@caches</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{p}/#{spec.file_name}&quot;</span> }
+  <span class="ruby-identifier">possibilities</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">p</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-cached_specs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cached_specs</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cached_specs-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 303</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cached_specs</span>
+  <span class="ruby-ivar">@cached_specs</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">idx</span> = <span class="ruby-identifier">installed_specs</span>.<span class="ruby-identifier">dup</span>
+
+    <span class="ruby-identifier">path</span> = <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">app_cache</span>
+    <span class="ruby-constant">Dir</span>[<span class="ruby-node">&quot;#{path}/*.gem&quot;</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">gemfile</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">gemfile</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^bundler\-[\d\.]+?\.gem/</span>
+      <span class="ruby-identifier">s</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">rubygems</span>.<span class="ruby-identifier">spec_from_gem</span>(<span class="ruby-identifier">gemfile</span>)
+      <span class="ruby-identifier">s</span>.<span class="ruby-identifier">source</span> = <span class="ruby-keyword">self</span>
+      <span class="ruby-identifier">idx</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">s</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">idx</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-credless_remotes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">credless_remotes</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="credless_remotes-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 228</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">credless_remotes</span>
+  <span class="ruby-identifier">remotes</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">method</span>(<span class="ruby-value">:suppress_configured_credentials</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-fetch_gem" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fetch_gem</span><span
+            class="method-args">(spec)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fetch_gem-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 387</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fetch_gem</span>(<span class="ruby-identifier">spec</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">remote</span>
+  <span class="ruby-identifier">uri</span> = <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">remote</span>.<span class="ruby-identifier">uri</span>
+  <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">fetch_platform</span>
+
+  <span class="ruby-identifier">download_path</span> = <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">requires_sudo?</span> <span class="ruby-operator">?</span> <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">tmp</span>(<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">full_name</span>) <span class="ruby-operator">:</span> <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">rubygems</span>.<span class="ruby-identifier">gem_dir</span>
+  <span class="ruby-identifier">gem_path</span> = <span class="ruby-node">&quot;#{Bundler.rubygems.gem_dir}/cache/#{spec.full_name}.gem&quot;</span>
+
+  <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span>(<span class="ruby-node">&quot;#{download_path}/cache&quot;</span>)
+  <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">rubygems</span>.<span class="ruby-identifier">download_gem</span>(<span class="ruby-identifier">spec</span>, <span class="ruby-identifier">uri</span>, <span class="ruby-identifier">download_path</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">requires_sudo?</span>
+    <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-node">&quot;#{Bundler.rubygems.gem_dir}/cache&quot;</span>
+    <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">sudo</span> <span class="ruby-node">&quot;mv #{download_path}/cache/#{spec.full_name}.gem #{gem_path}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">gem_path</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">rm_rf</span>(<span class="ruby-identifier">download_path</span>) <span class="ruby-keyword">if</span> <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">requires_sudo?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-installed-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">installed?</span><span
+            class="method-args">(spec)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="installed-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 416</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">installed?</span>(<span class="ruby-identifier">spec</span>)
+  <span class="ruby-identifier">installed_specs</span>[<span class="ruby-identifier">spec</span>].<span class="ruby-identifier">any?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-installed_specs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">installed_specs</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="installed_specs-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 273</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">installed_specs</span>
+  <span class="ruby-ivar">@installed_specs</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">idx</span> = <span class="ruby-constant">Index</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">have_bundler</span> = <span class="ruby-keyword">false</span>
+    <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">rubygems</span>.<span class="ruby-identifier">all_specs</span>.<span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">spec</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;bundler&#39;</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">version</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">!=</span> <span class="ruby-constant">VERSION</span>
+      <span class="ruby-identifier">have_bundler</span> = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;bundler&#39;</span>
+      <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">source</span> = <span class="ruby-keyword">self</span>
+      <span class="ruby-identifier">idx</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">spec</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Always have bundler locally</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">have_bundler</span>
+     <span class="ruby-comment"># We&#39;re running bundler directly from the source</span>
+     <span class="ruby-comment"># so, let&#39;s create a fake gemspec for it (it&#39;s a path)</span>
+     <span class="ruby-comment"># gemspec</span>
+     <span class="ruby-identifier">bundler</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+       <span class="ruby-identifier">s</span>.<span class="ruby-identifier">name</span>     = <span class="ruby-string">&#39;bundler&#39;</span>
+       <span class="ruby-identifier">s</span>.<span class="ruby-identifier">version</span>  = <span class="ruby-constant">VERSION</span>
+       <span class="ruby-identifier">s</span>.<span class="ruby-identifier">platform</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span><span class="ruby-operator">::</span><span class="ruby-constant">RUBY</span>
+       <span class="ruby-identifier">s</span>.<span class="ruby-identifier">source</span>   = <span class="ruby-keyword">self</span>
+       <span class="ruby-identifier">s</span>.<span class="ruby-identifier">authors</span>  = [<span class="ruby-string">&quot;bundler team&quot;</span>]
+       <span class="ruby-identifier">s</span>.<span class="ruby-identifier">loaded_from</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-string">&quot;..&quot;</span>, <span class="ruby-keyword">__FILE__</span>)
+     <span class="ruby-keyword">end</span>
+     <span class="ruby-identifier">idx</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">bundler</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">idx</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-loaded_from" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">loaded_from</span><span
+            class="method-args">(spec)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="loaded_from-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 239</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">loaded_from</span>(<span class="ruby-identifier">spec</span>)
+  <span class="ruby-node">&quot;#{Bundler.rubygems.gem_dir}/specifications/#{spec.full_name}.gemspec&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-normalize_uri" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">normalize_uri</span><span
+            class="method-args">(uri)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="normalize_uri-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 256</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">normalize_uri</span>(<span class="ruby-identifier">uri</span>)
+  <span class="ruby-identifier">uri</span> = <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">uri</span> = <span class="ruby-node">&quot;#{uri}/&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">uri</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r&#39;/$&#39;</span>
+  <span class="ruby-identifier">uri</span> = <span class="ruby-constant">URI</span>(<span class="ruby-identifier">uri</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;The source must be an absolute URI&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">absolute?</span>
+  <span class="ruby-identifier">uri</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-remote_specs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remote_specs</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="remote_specs-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 323</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remote_specs</span>
+  <span class="ruby-ivar">@remote_specs</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Index</span>.<span class="ruby-identifier">build</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">idx</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">index_fetchers</span> = <span class="ruby-identifier">fetchers</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">api_fetchers</span>
+
+    <span class="ruby-comment"># gather lists from non-api sites</span>
+    <span class="ruby-identifier">index_fetchers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+      <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;Fetching source index from #{f.uri}&quot;</span>
+      <span class="ruby-identifier">idx</span>.<span class="ruby-identifier">use</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">specs</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-keyword">self</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># because ensuring we have all the gems we need involves downloading</span>
+    <span class="ruby-comment"># the gemspecs of those gems, if the non-api sites contain more than</span>
+    <span class="ruby-comment"># about 100 gems, we just treat all sites as non-api for speed.</span>
+    <span class="ruby-identifier">allow_api</span> = <span class="ruby-identifier">idx</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">API_REQUEST_LIMIT</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">dependency_names</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">API_REQUEST_LIMIT</span>
+    <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;Need to query more than #{API_REQUEST_LIMIT} gems.&quot;</span>              <span class="ruby-string">&quot; Downloading full index instead...&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">allow_api</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">allow_api</span>
+      <span class="ruby-identifier">api_fetchers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+        <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;Fetching gem metadata from #{f.uri}&quot;</span>, <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">debug?</span>
+        <span class="ruby-identifier">idx</span>.<span class="ruby-identifier">use</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">specs</span>(<span class="ruby-identifier">dependency_names</span>, <span class="ruby-keyword">self</span>)
+        <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">info</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">debug?</span> <span class="ruby-comment"># new line now that the dots are over</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-comment"># Suppose the gem Foo depends on the gem Bar.  Foo exists in Source A.  Bar has some versions that exist in both</span>
+      <span class="ruby-comment"># sources A and B.  At this point, the API request will have found all the versions of Bar in source A,</span>
+      <span class="ruby-comment"># but will not have found any versions of Bar from source B, which is a problem if the requested version</span>
+      <span class="ruby-comment"># of Foo specifically depends on a version of Bar that is only found in source B. This ensures that for</span>
+      <span class="ruby-comment"># each spec we found, we add all possible versions from all sources to the index.</span>
+      <span class="ruby-keyword">begin</span>
+        <span class="ruby-identifier">idxcount</span> = <span class="ruby-identifier">idx</span>.<span class="ruby-identifier">size</span>
+        <span class="ruby-identifier">api_fetchers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+          <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;Fetching version metadata from #{f.uri}&quot;</span>, <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">debug?</span>
+          <span class="ruby-identifier">idx</span>.<span class="ruby-identifier">use</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">specs</span>(<span class="ruby-identifier">idx</span>.<span class="ruby-identifier">dependency_names</span>, <span class="ruby-keyword">self</span>), <span class="ruby-keyword">true</span>
+          <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">info</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">debug?</span> <span class="ruby-comment"># new line now that the dots are over</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span> <span class="ruby-keyword">until</span> <span class="ruby-identifier">idxcount</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">idx</span>.<span class="ruby-identifier">size</span>
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">api_fetchers</span>.<span class="ruby-identifier">any?</span>
+        <span class="ruby-comment"># it&#39;s possible that gems from one source depend on gems from some</span>
+        <span class="ruby-comment"># other source, so now we download gemspecs and iterate over those</span>
+        <span class="ruby-comment"># dependencies, looking for gems we don&#39;t have info on yet.</span>
+        <span class="ruby-identifier">unmet</span> = <span class="ruby-identifier">idx</span>.<span class="ruby-identifier">unmet_dependency_names</span>
+
+        <span class="ruby-comment"># if there are any cross-site gems we missed, get them now</span>
+        <span class="ruby-identifier">api_fetchers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+          <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;Fetching dependency metadata from #{f.uri}&quot;</span>, <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">debug?</span>
+          <span class="ruby-identifier">idx</span>.<span class="ruby-identifier">use</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">specs</span>(<span class="ruby-identifier">unmet</span>, <span class="ruby-keyword">self</span>)
+          <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">info</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">debug?</span> <span class="ruby-comment"># new line now that the dots are over</span>
+        <span class="ruby-keyword">end</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">unmet</span>.<span class="ruby-identifier">any?</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">allow_api</span> = <span class="ruby-keyword">false</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">allow_api</span>
+      <span class="ruby-identifier">api_fetchers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+        <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;Fetching source index from #{f.uri}&quot;</span>
+        <span class="ruby-identifier">idx</span>.<span class="ruby-identifier">use</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">specs</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-keyword">self</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-remotes_for_spec" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remotes_for_spec</span><span
+            class="method-args">(spec)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="remotes_for_spec-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 232</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remotes_for_spec</span>(<span class="ruby-identifier">spec</span>)
+  <span class="ruby-identifier">specs</span>.<span class="ruby-identifier">search_all</span>(<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">name</span>).<span class="ruby-identifier">inject</span>([]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">uris</span>, <span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">uris</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">remote</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">remote</span>
+    <span class="ruby-identifier">uris</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-suppress_configured_credentials" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">suppress_configured_credentials</span><span
+            class="method-args">(remote)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="suppress_configured_credentials-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source/rubygems.rb, line 264</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">suppress_configured_credentials</span>(<span class="ruby-identifier">remote</span>)
+  <span class="ruby-identifier">remote_nouser</span> = <span class="ruby-identifier">remote</span>.<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">tap</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">uri</span><span class="ruby-operator">|</span> <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">user</span> = <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">password</span> = <span class="ruby-keyword">nil</span> }.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">remote</span>.<span class="ruby-identifier">userinfo</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">remote</span>.<span class="ruby-identifier">userinfo</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">settings</span>[<span class="ruby-identifier">remote_nouser</span>]
+    <span class="ruby-identifier">remote_nouser</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">remote</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

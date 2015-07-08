@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>gemfile.5 - bundler-1.10.5 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script src="../../../js/jquery.js"></script>
+<script src="../../../js/darkfish.js"></script>
+
+<link href="../../../css/fonts.css" rel="stylesheet">
+<link href="../../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../lib/bundler/man/bundle.html">bundle</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-config.html">bundle-config</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-config_txt.html">bundle-config</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-exec.html">bundle-exec</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-exec_txt.html">bundle-exec</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-install.html">bundle-install</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-install_txt.html">bundle-install</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-package.html">bundle-package</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-package_txt.html">bundle-package</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-platform.html">bundle-platform</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-platform_txt.html">bundle-platform</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-update.html">bundle-update</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle-update_txt.html">bundle-update</a>
+  
+    <li><a href="../../../lib/bundler/man/bundle_txt.html">bundle</a>
+  
+    <li><a href="../../../lib/bundler/man/gemfile_5.html">gemfile.5</a>
+  
+    <li><a href="../../../lib/bundler/man/gemfile_5_txt.html">gemfile.5</a>
+  
+    <li><a href="../../../lib/bundler/templates/Executable.html">Executable</a>
+  
+    <li><a href="../../../lib/bundler/templates/Executable_standalone.html">Executable.standalone</a>
+  
+    <li><a href="../../../lib/bundler/templates/Gemfile.html">Gemfile</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/CODE_OF_CONDUCT_md_tt.html">CODE_OF_CONDUCT.md.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/Gemfile_tt.html">Gemfile.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/LICENSE_txt_tt.html">LICENSE.txt.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/README_md_tt.html">README.md.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/Rakefile_tt.html">Rakefile.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/bin/console_tt.html">console.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/bin/setup_tt.html">setup.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/exe/newgem_tt.html">newgem.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/ext/newgem/extconf_rb_tt.html">extconf.rb.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/ext/newgem/newgem_c_tt.html">newgem.c.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/ext/newgem/newgem_h_tt.html">newgem.h.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/gitignore_tt.html">gitignore.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/lib/newgem_rb_tt.html">newgem.rb.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/lib/newgem/version_rb_tt.html">version.rb.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/newgem_gemspec_tt.html">newgem.gemspec.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/rspec_tt.html">rspec.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/spec/newgem_spec_rb_tt.html">newgem_spec.rb.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/spec/spec_helper_rb_tt.html">spec_helper.rb.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/test/newgem_test_rb_tt.html">newgem_test.rb.tt</a>
+  
+    <li><a href="../../../lib/bundler/templates/newgem/test/test_helper_rb_tt.html">test_helper.rb.tt</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page lib/bundler/man/gemfile.5">
+
+<p>.&quot; generated with Ronn/v0.7.3 .&quot; <a
+href="http://github.com/rtomayko/ronn/tree/0.7.3">github.com/rtomayko/ronn/tree/0.7.3</a>
+. .TH “GEMFILE” “5” “June 2015” “” “” . .SH “NAME” fBGemfilefR - A format
+for describing gem dependencies for Ruby programs . .SH “SYNOPSIS” A
+fBGemfilefR describes the gem dependencies required to execute associated
+Ruby code. . .P Place the fBGemfilefR in the root of the directory
+containing the associated code. For instance, in a Rails application, place
+the fBGemfilefR in the same directory as the fBRakefilefR. . .SH “SYNTAX” A
+fBGemfilefR is evaluated as Ruby code, in a context which makes available a
+number of methods used to describe the gem requirements. . .SH “GLOBAL
+SOURCES (#source)” At the top of the fBGemfilefR, add a line for the
+fBRubygemsfR source that contains the gems listed in the fBGemfilefR. . .IP
+“” 4 . .nf</p>
+
+<p>source “<a href="https://rubygems\.org">rubygems.org</a>” . .fi . .IP “” 0
+. .P It is possible, but not recommended as of <a
+href="../../../Bundler.html">Bundler</a> 1.7, to add multiple global
+fBsourcefR lines. Each of these fBsourcefRs fBMUSTfR be a valid Rubygems
+repository. . .P Sources are checked for gems following the heuristics
+described in fISOURCE PRIORITYfR. If a gem is found in more than one global
+source, <a href="../../../Bundler.html">Bundler</a> will print a warning
+after installing the gem indicating which source was used, and listing the
+other sources where the gem is available. A specific source can be selected
+for gems that need to use a non-standard repository, suppressing this
+warning, by using the fIfB:sourcefR optionfR or a fIfBsourcefR blockfR. .
+.SS “CREDENTIALS (#credentials)” Some gem sources require a username and
+password. Use fBbundle configfR to set the username and password for any
+sources that need it. The command must be run once on each computer that
+will install the <a href="../templates/Gemfile.html">Gemfile</a>, but this
+keeps the credentials from being stored in plain text in version control. .
+.IP “” 4 . .nf</p>
+
+<p>bundle config gems.example.com user:password . .fi . .IP “” 0 . .P For some
+sources, like a company Gemfury account, it may be easier to simply include
+the credentials in the <a href="../templates/Gemfile.html">Gemfile</a> as
+part of the source URL. . .IP “” 4 . .nf</p>
+
+<p>source “<a
+href="https://user:password@gems\.example\.com">user:password@gems.example.com</a>”
+. .fi . .IP “” 0 . .P Credentials in the source URL will take precedence
+over credentials set using fBconfigfR. . .SH “RUBY (#ruby)” If your
+application requires a specific Ruby version or engine, specify your
+requirements using the fBrubyfR method, with the following arguments. All
+parameters are fBOPTIONALfR unless otherwise specified. . .SS “VERSION
+(required)” The version of Ruby that your application requires. If your
+application requires an alternate Ruby engine, such as JRuby or Rubinius,
+this should be the Ruby version that the engine is compatible with. . .IP
+“” 4 . .nf</p>
+
+<p>ruby “1.9.3” . .fi . .IP “” 0 . .SS “ENGINE (:engine)” Each application
+fImayfR specify a Ruby engine. If an engine is specified, an engine version
+fImustfR also be specified. . .SS “ENGINE VERSION (:engine_version)” Each
+application fImayfR specify a Ruby engine version. If an engine version is
+specified, an engine fImustfR also be specified. If the engine is “ruby”
+the engine version specified fImustfR match the Ruby version. . .IP “” 4 .
+.nf</p>
+
+<p>ruby “1.8.7”, :engine =&gt; “jruby”, :engine_version =&gt; “1.6.7” . .fi .
+.IP “” 0 . .SS “PATCHLEVEL (:patchlevel)” Each application fImayfR specify
+a Ruby patchlevel. . .IP “” 4 . .nf</p>
+
+<p>ruby “2.0.0”, :patchlevel =&gt; “247” . .fi . .IP “” 0 . .SH “GEMS (#gem)”
+Specify gem requirements using the fBgemfR method, with the following
+arguments. All parameters are fBOPTIONALfR unless otherwise specified. .
+.SS “NAME (required)” For each gem requirement, list a single fIgemfR line.
+. .IP “” 4 . .nf</p>
+
+<p>gem “nokogiri” . .fi . .IP “” 0 . .SS “VERSION” Each fIgemfR fBMAYfR have
+one or more version specifiers. . .IP “” 4 . .nf</p>
+
+<p>gem “nokogiri”, “&gt;= 1.4.2” gem “RedCloth”, “&gt;= 4.1.0”, “&lt; 4.2.0” .
+.fi . .IP “” 0 . .SS “REQUIRE AS (:require)” Each fIgemfR fBMAYfR specify
+files that should be used when autorequiring via fBBundler.requirefR. You
+may pass an array with multiple files or fBtruefR if file you want
+fBrequiredfR has same name as fIgemfR or fBfalsefR to prevent any file from
+being autorequired. . .IP “” 4 . .nf</p>
+
+<p>gem “redis”, :require =&gt; [“redis/connection/hiredis”, “redis”] gem
+“webmock”, :require =&gt; false gem “debugger”, :require =&gt; true . .fi .
+.IP “” 0 . .P The argument defaults to the name of the gem. For example,
+these are identical: . .IP “” 4 . .nf</p>
+
+<p>gem “nokogiri” gem “nokogiri”, :require =&gt; “nokogiri” gem “nokogiri”,
+:require =&gt; true . .fi . .IP “” 0 . .SS “GROUPS (:group or :groups)”
+Each fIgemfR fBMAYfR specify membership in one or more groups. Any fIgemfR
+that does not specify membership in any group is placed in the fBdefaultfR
+group. . .IP “” 4 . .nf</p>
+
+<p>gem “rspec”, :group =&gt; :test gem “wirble”, :groups =&gt; [:development,
+:test] . .fi . .IP “” 0 . .P The <a
+href="../../../Bundler.html">Bundler</a> runtime allows its two main
+methods, fBBundler.setupfR and fBBundler.requirefR, to limit their impact
+to particular groups. . .IP “” 4 . .nf</p>
+
+<p># setup adds gems to Ruby&#39;s load path Bundler.setup                   
+# defaults to all groups require “bundler/setup”          # same as
+Bundler.setup Bundler.setup(:default)          # only set up the
+<em>default</em> group Bundler.setup(:test)             # only set up the
+<em>test</em> group (but `not` <em>default</em>) Bundler.setup(:default,
+:test)   # set up the <em>default</em> and <em>test</em> groups, but no
+others</p>
+
+<p># require requires all of the gems in the specified groups Bundler.require 
+# defaults to just the <em>default</em> group Bundler.require(:default)    
+# identical Bundler.require(:default, :test) # requires the
+<em>default</em> and <em>test</em> groups Bundler.require(:test)          
+# requires just the <em>test</em> group . .fi . .IP “” 0 . .P The <a
+href="../../../Bundler.html">Bundler</a> CLI allows you to specify a list
+of groups whose gems fBbundle installfR should not install with the
+fB--withoutfR option. To specify multiple groups to ignore, specify a list
+of groups separated by spaces. . .IP “” 4 . .nf</p>
+
+<p>bundle install --without test bundle install --without development test .
+.fi . .IP “” 0 . .P After running fBbundle install --without testfR,
+bundler will remember that you excluded the test group in the last
+installation. The next time you run fBbundle installfR, without any
+fB--without optionfR, bundler will recall it. . .P Also, calling
+fBBundler.setupfR with no parameters, or calling fBrequire
+“bundler/setup”fR will setup all groups except for the ones you excluded
+via fB--withoutfR (since they are obviously not available). . .P Note that
+on fBbundle installfR, bundler downloads and evaluates all gems, in order
+to create a single canonical list of all of the required gems and their
+dependencies. This means that you cannot list different versions of the
+same gems in different groups. For more details, see Understanding <a
+href="../../../Bundler.html">Bundler</a> fI<a
+href="http://bundler\.io/rationale\.html\fR">bundler.io/rationale.htmlfR</a>.
+. .SS “PLATFORMS (:platforms)” If a gem should only be used in a particular
+platform or set of platforms, you can specify them. Platforms are
+essentially identical to groups, except that you do not need to use the
+fB--withoutfR install-time flag to exclude groups of gems for other
+platforms. . .P There are a number of fBGemfilefR platforms: . .TP fBrubyfR
+C Ruby (MRI) or Rubinius, but fBNOTfR Windows . .TP fBruby_18fR fIrubyfR
+fBANDfR version 1.8 . .TP fBruby_19fR fIrubyfR fBANDfR version 1.9 . .TP
+fBruby_20fR fIrubyfR fBANDfR version 2.0 . .TP fBruby_21fR fIrubyfR fBANDfR
+version 2.1 . .TP fBruby_22fR fIrubyfR fBANDfR version 2.2 . .TP fBmrifR
+Same as fIrubyfR, but not Rubinius . .TP fBmri_18fR fImrifR fBANDfR version
+1.8 . .TP fBmri_19fR fImrifR fBANDfR version 1.9 . .TP fBmri_20fR fImrifR
+fBANDfR version 2.0 . .TP fBmri_21fR fImrifR fBANDfR version 2.1 . .TP
+fBmri_22fR fImrifR fBANDfR version 2.2 . .TP fBrbxfR Same as fIrubyfR, but
+only Rubinius (not MRI) . .TP fBjrubyfR JRuby . .TP fBmswinfR Windows . .TP
+fBmingwfR Windows 32 bit 'mingw32&#39; platform (aka RubyInstaller) . .TP
+fBmingw_18fR fImingwfR fBANDfR version 1.8 . .TP fBmingw_19fR fImingwfR
+fBANDfR version 1.9 . .TP fBmingw_20fR fImingwfR fBANDfR version 2.0 . .TP
+fBmingw_21fR fImingwfR fBANDfR version 2.1 . .TP fBmingw_22fR fImingwfR
+fBANDfR version 2.2 . .TP fBx64_mingwfR Windows 64 bit 'mingw32&#39;
+platform (aka RubyInstaller x64) . .TP fBx64_mingw_20fR fIx64_mingwfR
+fBANDfR version 2.0 . .TP fBx64_mingw_21fR fIx64_mingwfR fBANDfR version
+2.1 . .TP fBx64_mingw_22fR fIx64_mingwfR fBANDfR version 2.2 . .P As with
+groups, you can specify one or more platforms: . .IP “” 4 . .nf</p>
+
+<p>gem “weakling”,   :platforms =&gt; :jruby gem “ruby-debug”, :platforms
+=&gt; :mri_18 gem “nokogiri”,   :platforms =&gt; [:mri_18, :jruby] . .fi .
+.IP “” 0 . .P All operations involving groups (fBbundle installfR,
+fBBundler.setupfR, fBBundler.requirefR) behave exactly the same as if any
+groups not matching the current platform were explicitly excluded. . .SS
+“SOURCE (:source)” You can select an alternate Rubygems repository for a
+gem using the ':source&#39; option. . .IP “” 4 . .nf</p>
+
+<p>gem “some_internal_gem”, :source =&gt; “<a
+href="https://gems\.example\.com">gems.example.com</a>” . .fi . .IP “” 0 .
+.P This forces the gem to be loaded from this source and ignores any global
+sources declared at the top level of the file. If the gem does not exist in
+this source, it will not be installed. . .P <a
+href="../../../Bundler.html">Bundler</a> will search for child dependencies
+of this gem by first looking in the source selected for the parent, but if
+they are not found there, it will fall back on global sources using the
+ordering described in fISOURCE PRIORITYfR. . .P Selecting a specific source
+repository this way also suppresses the ambiguous gem warning described
+above in fIGLOBAL SOURCES (#source)fR. . .SS “GIT (:git)” If necessary, you
+can specify that a gem is located at a particular git repository using the
+fB:gitfR parameter. The repository can be accessed via several protocols: .
+.TP fBHTTP(S)fR gem “rails”, :git =&gt; “<a
+href="https://github\.com/rails/rails\.git">github.com/rails/rails.git</a>”
+. .TP fBSSHfR gem “rails”, :git =&gt; “git@github.com:rails/rails.git” .
+.TP fBgitfR gem “rails”, :git =&gt; “git://github.com/rails/rails.git” . .P
+If using SSH, the user that you use to run fBbundle installfR fBMUSTfR have
+the appropriate keys available in their fB$HOME/.sshfR. . .P fBNOTEfR: fB<a
+href="http://\fR">fR</a> and fBgit://fR URLs should be avoided if at all
+possible. These protocols are unauthenticated, so a man-in-the-middle
+attacker can deliver malicious code and compromise your system. HTTPS and
+SSH are strongly preferred. . .P The fBgroupfR, fBplatformsfR, and
+fBrequirefR options are available and behave exactly the same as they would
+for a normal gem. . .P A git repository fBSHOULDfR have at least one file,
+at the root of the directory containing the gem, with the extension
+fB.gemspecfR. This file fBMUSTfR contain a valid gem specification, as
+expected by the fBgem buildfR command. . .P If a git repository does not
+have a fB.gemspecfR, bundler will attempt to create one, but it will not
+contain any dependencies, executables, or C extension compilation
+instructions. As a result, it may fail to properly integrate into your
+application. . .P If a git repository does have a fB.gemspecfR for the gem
+you attached it to, a version specifier, if provided, means that the git
+repository is only valid if the fB.gemspecfR specifies a version matching
+the version specifier. If not, bundler will print a warning. . .IP “” 4 .
+.nf</p>
+
+<p>gem “rails”, “2.3.8”, :git =&gt; “<a
+href="https://github\.com/rails/rails\.git">github.com/rails/rails.git</a>”
+# bundle install will fail, because the .gemspec in the rails #
+repository&#39;s master branch specifies version 3.0.0 . .fi . .IP “” 0 .
+.P If a git repository does fBnotfR have a fB.gemspecfR for the gem you
+attached it to, a version specifier fBMUSTfR be provided. <a
+href="../../../Bundler.html">Bundler</a> will use this version in the
+simple fB.gemspecfR it creates. . .P Git repositories support a number of
+additional options. . .TP fBbranchfR, fBtagfR, and fBreffR You fBMUSTfR
+only specify at most one of these options. The default is fB:branch =&gt;
+“master”fR . .TP fBsubmodulesfR Specify fB:submodules =&gt; truefR to cause
+bundler to expand any submodules included in the git repository . .P If a
+git repository contains multiple fB.gemspecsfR, each fB.gemspecfR
+represents a gem located at the same place in the file system as the
+fB.gemspecfR. . .IP “” 4 . .nf</p>
+
+<p>|~rails                   [git root] | |-rails.gemspec         [rails gem
+located here] |~actionpack | |-actionpack.gemspec    [actionpack gem
+located here] |~activesupport | |-activesupport.gemspec [activesupport gem
+located here] |... . .fi . .IP “” 0 . .P To install a gem located in a git
+repository, bundler changes to the directory containing the gemspec, runs
+fBgem build name.gemspecfR and then installs the resulting gem. The fBgem
+buildfR command, which comes standard with Rubygems, evaluates the
+fB.gemspecfR in the context of the directory in which it is located. . .SS
+“GIT SOURCE (:git_source)” A custom git source can be defined via the
+fBgit_sourcefR method. Provide the source&#39;s name as an argument, and a
+block which receives a single argument and interpolates it into a string to
+return the full repo address: . .IP “” 4 . .nf</p>
+
+<p>git_source(:stash){ |repo_name| “<a
+href="https://stash\.corp\.acme\.pl/#{repo_name}\.git">stash.corp.acme.pl/#{repo_name}.git</a>”
+} gem 'rails&#39;, :stash =&gt; 'forks/rails&#39; . .fi . .IP “” 0 . .P In
+addition, if you wish to choose a specific branch: . .IP “” 4 . .nf</p>
+
+<p>gem “rails”, :stash =&gt; “forks/rails”, :branch =&gt; “branch_name” . .fi
+. .IP “” 0 . .SS “GITHUB (:github)” fBNOTEfR: This shorthand should be
+avoided until <a href="../../../Bundler.html">Bundler</a> 2.0, since it
+currently expands to an insecure fBgit://fR URL. This allows a
+man-in-the-middle attacker to compromise your system. . .P If the git
+repository you want to use is hosted on GitHub and is public, you can use
+the :github shorthand to specify just the github username and repository
+name (without the trailing “.git”), separated by a slash. If both the
+username and repository name are the same, you can omit one. . .IP “” 4 .
+.nf</p>
+
+<p>gem “rails”, :github =&gt; “rails/rails” gem “rails”, :github =&gt; “rails”
+. .fi . .IP “” 0 . .P Are both equivalent to . .IP “” 4 . .nf</p>
+
+<p>gem “rails”, :git =&gt; “git://github.com/rails/rails.git” . .fi . .IP “” 0
+. .P Since the fBgithubfR method is a specialization of fBgit_sourcefR, it
+accepts a fB:branchfR named argument. . .SS “GIST (:gist)” If the git
+repository you want to use is hosted as a Github Gist and is public, you
+can use the :gist shorthand to specify just the gist identifier (without
+the trailing “.git”). . .IP “” 4 . .nf</p>
+
+<p>gem “the_hatch”, :gist =&gt; “4815162342” . .fi . .IP “” 0 . .P Is
+equivalent to: . .IP “” 4 . .nf</p>
+
+<p>gem “the_hatch”, :git =&gt; “<a
+href="https://gist\.github\.com/4815162342\.git">gist.github.com/4815162342.git</a>”
+. .fi . .IP “” 0 . .P Since the fBgistfR method is a specialization of
+fBgit_sourcefR, it accepts a fB:branchfR named argument. . .SS “BITBUCKET
+(:bitbucket)” If the git repository you want to use is hosted on Bitbucket
+and is public, you can use the :bitbucket shorthand to specify just the
+bitbucket username and repository name (without the trailing “.git”),
+separated by a slash. If both the username and repository name are the
+same, you can omit one. . .IP “” 4 . .nf</p>
+
+<p>gem “rails”, :bitbucket =&gt; “rails/rails” gem “rails”, :bitbucket =&gt;
+“rails” . .fi . .IP “” 0 . .P Are both equivalent to . .IP “” 4 . .nf</p>
+
+<p>gem “rails”, :git =&gt; “<a
+href="https://rails@bitbucket\.org/rails/rails\.git">rails@bitbucket.org/rails/rails.git</a>”
+. .fi . .IP “” 0 . .P Since the fBbitbucketfR method is a specialization of
+fBgit_sourcefR, it accepts a fB:branchfR named argument. . .SS “PATH
+(:path)” You can specify that a gem is located in a particular location on
+the file system. Relative paths are resolved relative to the directory
+containing the fBGemfilefR. . .P Similar to the semantics of the fB:gitfR
+option, the fB:pathfR option requires that the directory in question either
+contains a fB.gemspecfR for the gem, or that you specify an explicit
+version that bundler should use. . .P Unlike fB:gitfR, bundler does not
+compile C extensions for gems specified as paths. . .IP “” 4 . .nf</p>
+
+<p>gem “rails”, :path =&gt; “vendor/rails” . .fi . .IP “” 0 . .P If you would
+like to use multiple local gems directly from the filesystem, you can set a
+global fBpathfR option to the path containing the gem&#39;s files. This
+will automatically load gemspec files from subdirectories. . .IP “” 4 . .nf</p>
+
+<p>path 'components&#39; do</p>
+
+<pre>gem \&#39;admin_ui\&#39;
+gem \&#39;public_ui\&#39;</pre>
+
+<p>end . .fi . .IP “” 0 . .SH “BLOCK FORM OF SOURCE, GIT, PATH, GROUP and
+PLATFORMS” The fB:sourcefR, fB:gitfR, fB:pathfR, fB:groupfR, and
+fB:platformsfR options may be applied to a group of gems by using block
+form. . .IP “” 4 . .nf</p>
+
+<p>source “<a href="https://gems\.example\.com">gems.example.com</a>” do</p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;some_internal_gem&quot;</span>
+<span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;another_internal_gem&quot;</span>
+</pre>
+
+<p>end</p>
+
+<p>git “<a
+href="https://github\.com/rails/rails\.git">github.com/rails/rails.git</a>”
+do</p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;activesupport&quot;</span>
+<span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;actionpack&quot;</span>
+</pre>
+
+<p>end</p>
+
+<p>platforms :ruby do</p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;ruby\-debug&quot;</span>
+<span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;sqlite3&quot;</span>
+</pre>
+
+<p>end</p>
+
+<p>group :development, :optional =&gt; true do</p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;wirble&quot;</span>
+<span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;faker&quot;</span>
+</pre>
+
+<p>end . .fi . .IP “” 0 . .P In the case of the group block form the :optional
+option can be given to prevent a group from being installed unless listed
+in the fB--withfR option given to the fBbundle installfR command. . .P In
+the case of the fBgitfR block form, the fB:reffR, fB:branchfR, fB:tagfR,
+and fB:submodulesfR options may be passed to the fBgitfR method, and all
+gems in the block will inherit those options. . .SH “INSTALL_IF
+(#install_if)” The fBinstall_iffR method allows gems to be installed based
+on a proc or lambda. This is especially useful for optional gems that can
+only be used if certain software is installed or some other conditions are
+met. . .IP “” 4 . .nf</p>
+
+<p>install_if -&gt; { RUBY_PLATFORM =~ /darwin/ } do</p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;pasteboard&quot;</span>
+</pre>
+
+<p>end . .fi . .IP “” 0 . .SH “GEMSPEC (#gemspec)” If you wish to use <a
+href="../../../Bundler.html">Bundler</a> to help install dependencies for a
+gem while it is being developed, use the fBgemspecfR method to pull in the
+dependencies listed in the fB.gemspecfR file. . .P The fBgemspecfR method
+adds any runtime dependencies as gem requirements in the default group. It
+also adds development dependencies as gem requirements in the
+fBdevelopmentfR group. Finally, it adds a gem requirement on your project
+(fB:path =&gt; '.&#39;fR). In conjunction with fBBundler.setupfR, this
+allows you to require project files in your test code as you would if the
+project were installed as a gem; you need not manipulate the load path
+manually or require project files via relative paths. . .P The fBgemspecfR
+method supports optional fB:pathfR, fB:globfR, fB:namefR, and
+fB:development_groupfR options, which control where bundler looks for the
+fB.gemspecfR, the glob it uses to look for the gemspec (defaults to:
+“{,fI,fR/*}.gemspec”), what named fB.gemspecfR it uses (if more than one is
+present), and which group development dependencies are included in. . .SH
+“SOURCE PRIORITY” When attempting to locate a gem to satisfy a gem
+requirement, bundler uses the following priority order: . .IP “1.” 4 The
+source explicitly attached to the gem (using fB:sourcefR, fB:pathfR, or
+fB:gitfR) . .IP “2.” 4 For implicit gems (dependencies of explicit gems),
+any source, git, or path repository declared on the parent. This results in
+bundler prioritizing the ActiveSupport gem from the Rails git repository
+over ones from fBrubygems.orgfR . .IP “3.” 4 The sources specified via
+global fBsourcefR lines, searching each source in your fBGemfilefR from
+last added to first added. . .IP “” 0</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

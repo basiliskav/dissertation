@@ -1,0 +1,2256 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Bundler::RubygemsIntegration - bundler-1.10.5 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-provides-3F">::provides?</a>
+    
+    <li ><a href="#method-c-version">::version</a>
+    
+    <li ><a href="#method-i-backport_base_dir">#backport_base_dir</a>
+    
+    <li ><a href="#method-i-backport_cache_file">#backport_cache_file</a>
+    
+    <li ><a href="#method-i-backport_segment_generation">#backport_segment_generation</a>
+    
+    <li ><a href="#method-i-backport_spec_file">#backport_spec_file</a>
+    
+    <li ><a href="#method-i-backport_yaml_initialize">#backport_yaml_initialize</a>
+    
+    <li ><a href="#method-i-bin_path">#bin_path</a>
+    
+    <li ><a href="#method-i-build">#build</a>
+    
+    <li ><a href="#method-i-build_args">#build_args</a>
+    
+    <li ><a href="#method-i-build_args-3D">#build_args=</a>
+    
+    <li ><a href="#method-i-build_gem">#build_gem</a>
+    
+    <li ><a href="#method-i-clear_paths">#clear_paths</a>
+    
+    <li ><a href="#method-i-config_map">#config_map</a>
+    
+    <li ><a href="#method-i-configuration">#configuration</a>
+    
+    <li ><a href="#method-i-download_gem">#download_gem</a>
+    
+    <li ><a href="#method-i-ext_lock">#ext_lock</a>
+    
+    <li ><a href="#method-i-fetch_all_remote_specs">#fetch_all_remote_specs</a>
+    
+    <li ><a href="#method-i-fetch_prerelease_specs">#fetch_prerelease_specs</a>
+    
+    <li ><a href="#method-i-fetch_specs">#fetch_specs</a>
+    
+    <li ><a href="#method-i-gem_bindir">#gem_bindir</a>
+    
+    <li ><a href="#method-i-gem_cache">#gem_cache</a>
+    
+    <li ><a href="#method-i-gem_dir">#gem_dir</a>
+    
+    <li ><a href="#method-i-gem_from_path">#gem_from_path</a>
+    
+    <li ><a href="#method-i-gem_path">#gem_path</a>
+    
+    <li ><a href="#method-i-inflate">#inflate</a>
+    
+    <li ><a href="#method-i-loaded_gem_paths">#loaded_gem_paths</a>
+    
+    <li ><a href="#method-i-loaded_specs">#loaded_specs</a>
+    
+    <li ><a href="#method-i-mark_loaded">#mark_loaded</a>
+    
+    <li ><a href="#method-i-marshal_spec_dir">#marshal_spec_dir</a>
+    
+    <li ><a href="#method-i-path">#path</a>
+    
+    <li ><a href="#method-i-platforms">#platforms</a>
+    
+    <li ><a href="#method-i-preserve_paths">#preserve_paths</a>
+    
+    <li ><a href="#method-i-provides-3F">#provides?</a>
+    
+    <li ><a href="#method-i-read_binary">#read_binary</a>
+    
+    <li ><a href="#method-i-redefine_method">#redefine_method</a>
+    
+    <li ><a href="#method-i-replace_bin_path">#replace_bin_path</a>
+    
+    <li ><a href="#method-i-replace_entrypoints">#replace_entrypoints</a>
+    
+    <li ><a href="#method-i-replace_gem">#replace_gem</a>
+    
+    <li ><a href="#method-i-replace_refresh">#replace_refresh</a>
+    
+    <li ><a href="#method-i-repository_subdirectories">#repository_subdirectories</a>
+    
+    <li ><a href="#method-i-reverse_rubygems_kernel_mixin">#reverse_rubygems_kernel_mixin</a>
+    
+    <li ><a href="#method-i-ruby_engine">#ruby_engine</a>
+    
+    <li ><a href="#method-i-security_policies">#security_policies</a>
+    
+    <li ><a href="#method-i-security_policy_keys">#security_policy_keys</a>
+    
+    <li ><a href="#method-i-sources">#sources</a>
+    
+    <li ><a href="#method-i-sources-3D">#sources=</a>
+    
+    <li ><a href="#method-i-spec_cache_dirs">#spec_cache_dirs</a>
+    
+    <li ><a href="#method-i-spec_from_gem">#spec_from_gem</a>
+    
+    <li ><a href="#method-i-stub_source_index">#stub_source_index</a>
+    
+    <li ><a href="#method-i-ui-3D">#ui=</a>
+    
+    <li ><a href="#method-i-user_home">#user_home</a>
+    
+    <li ><a href="#method-i-validate">#validate</a>
+    
+    <li ><a href="#method-i-version">#version</a>
+    
+    <li ><a href="#method-i-with_build_args">#with_build_args</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Bundler::RubygemsIntegration">
+  <h1 id="class-Bundler::RubygemsIntegration" class="class">
+    class Bundler::RubygemsIntegration
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="EXT_LOCK">EXT_LOCK
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-provides-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">provides?</span><span
+            class="method-args">(req_str)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="provides-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">provides?</span>(<span class="ruby-identifier">req_str</span>)
+  <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">req_str</span>).<span class="ruby-identifier">satisfied_by?</span>(<span class="ruby-identifier">version</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-version" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">version</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="version-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">version</span>
+  <span class="ruby-ivar">@version</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Version</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-backport_base_dir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">backport_base_dir</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This backports base_dir which replaces installation path Rubygems 1.8+</p>
+          
+          
+
+          
+          <div class="method-source-code" id="backport_base_dir-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 403</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">backport_base_dir</span>
+  <span class="ruby-identifier">redefine_method</span>(<span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span>, <span class="ruby-value">:base_dir</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">dir</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">loaded_from</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span> <span class="ruby-identifier">loaded_from</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-backport_cache_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">backport_cache_file</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="backport_cache_file-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 410</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">backport_cache_file</span>
+  <span class="ruby-identifier">redefine_method</span>(<span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span>, <span class="ruby-value">:cache_dir</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@cache_dir</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">base_dir</span>, <span class="ruby-string">&quot;cache&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">redefine_method</span>(<span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span>, <span class="ruby-value">:cache_file</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@cache_file</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">cache_dir</span>, <span class="ruby-node">&quot;#{full_name}.gem&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-backport_segment_generation" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">backport_segment_generation</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This backports the correct segment generation code from Rubygems 1.4+ by
+monkeypatching it into the method in Rubygems 1.3.6 and 1.3.7.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="backport_segment_generation-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 384</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">backport_segment_generation</span>
+  <span class="ruby-identifier">redefine_method</span>(<span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Version</span>, <span class="ruby-value">:segments</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@segments</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@version</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/[0-9]+|[a-z]+/i</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+      <span class="ruby-regexp">/^\d+$/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">s</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-backport_spec_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">backport_spec_file</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="backport_spec_file-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 420</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">backport_spec_file</span>
+  <span class="ruby-identifier">redefine_method</span>(<span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span>, <span class="ruby-value">:spec_dir</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@spec_dir</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">base_dir</span>, <span class="ruby-string">&quot;specifications&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">redefine_method</span>(<span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span>, <span class="ruby-value">:spec_file</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@spec_file</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">spec_dir</span>, <span class="ruby-node">&quot;#{full_name}.gemspec&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-backport_yaml_initialize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">backport_yaml_initialize</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This backport fixes the marshaling of @segments.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="backport_yaml_initialize-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 393</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">backport_yaml_initialize</span>
+  <span class="ruby-identifier">redefine_method</span>(<span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Version</span>, <span class="ruby-value">:yaml_initialize</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">tag</span>, <span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@version</span> = <span class="ruby-identifier">map</span>[<span class="ruby-string">&#39;version&#39;</span>]
+    <span class="ruby-ivar">@segments</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@hash</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-bin_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">bin_path</span><span
+            class="method-args">(gem, bin, ver)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="bin_path-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 141</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bin_path</span>(<span class="ruby-identifier">gem</span>, <span class="ruby-identifier">bin</span>, <span class="ruby-identifier">ver</span>)
+  <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">bin_path</span>(<span class="ruby-identifier">gem</span>, <span class="ruby-identifier">bin</span>, <span class="ruby-identifier">ver</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-build" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">build</span><span
+            class="method-args">(spec, skip_validation = false)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="build-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 226</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">build</span>(<span class="ruby-identifier">spec</span>, <span class="ruby-identifier">skip_validation</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;rubygems/builder&#39;</span>
+  <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Builder</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">spec</span>).<span class="ruby-identifier">build</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-build_args" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">build_args</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="build_args-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">build_args</span>
+  <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Command</span>.<span class="ruby-identifier">build_args</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-build_args-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">build_args=</span><span
+            class="method-args">(args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="build_args-3D-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">build_args=</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Command</span>.<span class="ruby-identifier">build_args</span> = <span class="ruby-identifier">args</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-build_gem" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">build_gem</span><span
+            class="method-args">(gem_dir, spec)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="build_gem-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">build_gem</span>(<span class="ruby-identifier">gem_dir</span>, <span class="ruby-identifier">spec</span>)
+   <span class="ruby-identifier">build</span>(<span class="ruby-identifier">spec</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-clear_paths" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">clear_paths</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="clear_paths-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">clear_paths</span>
+  <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">clear_paths</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-config_map" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">config_map</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="config_map-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">config_map</span>
+  <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">ConfigMap</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-configuration" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">configuration</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="configuration-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">configuration</span>
+  <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">configuration</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">SystemExitException</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;#{e.class}: #{e.message}&quot;</span>
+  <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">trace</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">SystemExitException</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-download_gem" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">download_gem</span><span
+            class="method-args">(spec, uri, path)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="download_gem-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 235</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">download_gem</span>(<span class="ruby-identifier">spec</span>, <span class="ruby-identifier">uri</span>, <span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">uri</span> = <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">settings</span>.<span class="ruby-identifier">mirror_for</span>(<span class="ruby-identifier">uri</span>)
+  <span class="ruby-identifier">fetcher</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">RemoteFetcher</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">configuration</span>[<span class="ruby-value">:http_proxy</span>])
+  <span class="ruby-identifier">fetcher</span>.<span class="ruby-identifier">download</span>(<span class="ruby-identifier">spec</span>, <span class="ruby-identifier">uri</span>, <span class="ruby-identifier">path</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ext_lock" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ext_lock</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ext_lock-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 167</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ext_lock</span>
+  <span class="ruby-constant">EXT_LOCK</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-fetch_all_remote_specs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fetch_all_remote_specs</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fetch_all_remote_specs-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fetch_all_remote_specs</span>
+  <span class="ruby-comment"># Fetch all specs, minus prerelease specs</span>
+  <span class="ruby-identifier">spec_list</span> = <span class="ruby-identifier">fetch_specs</span>(<span class="ruby-keyword">true</span>, <span class="ruby-keyword">false</span>)
+  <span class="ruby-comment"># Then fetch the prerelease specs</span>
+  <span class="ruby-identifier">fetch_prerelease_specs</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">spec_list</span>[<span class="ruby-identifier">k</span>] <span class="ruby-operator">+=</span> <span class="ruby-identifier">v</span> }
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">spec_list</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-fetch_prerelease_specs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fetch_prerelease_specs</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fetch_prerelease_specs-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 177</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fetch_prerelease_specs</span>
+  <span class="ruby-identifier">fetch_specs</span>(<span class="ruby-keyword">false</span>, <span class="ruby-keyword">true</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">RemoteFetcher</span><span class="ruby-operator">::</span><span class="ruby-constant">FetchError</span>
+  [] <span class="ruby-comment"># if we can&#39;t download them, there aren&#39;t any</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-fetch_specs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fetch_specs</span><span
+            class="method-args">(all, pre) { || ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fetch_specs-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fetch_specs</span>(<span class="ruby-identifier">all</span>, <span class="ruby-identifier">pre</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">specs</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">SpecFetcher</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">list</span>(<span class="ruby-identifier">all</span>, <span class="ruby-identifier">pre</span>)
+  <span class="ruby-identifier">specs</span>.<span class="ruby-identifier">each</span> { <span class="ruby-keyword">yield</span> } <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-identifier">specs</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-gem_bindir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gem_bindir</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="gem_bindir-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gem_bindir</span>
+  <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">bindir</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-gem_cache" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gem_cache</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="gem_cache-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gem_cache</span>
+  <span class="ruby-identifier">gem_path</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-string">&quot;cache&quot;</span>, <span class="ruby-identifier">p</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-gem_dir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gem_dir</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="gem_dir-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gem_dir</span>
+  <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">dir</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-gem_from_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gem_from_path</span><span
+            class="method-args">(path, policy = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="gem_from_path-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 204</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gem_from_path</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">policy</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;rubygems/format&#39;</span>
+  <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Format</span>.<span class="ruby-identifier">from_file_by_path</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">policy</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-gem_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gem_path</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="gem_path-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gem_path</span>
+  <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">path</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-inflate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inflate</span><span
+            class="method-args">(obj)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inflate-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inflate</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">inflate</span>(<span class="ruby-identifier">obj</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-loaded_gem_paths" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">loaded_gem_paths</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="loaded_gem_paths-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">loaded_gem_paths</span>
+  <span class="ruby-comment"># RubyGems 2.2+ can put binary extension into dedicated folders,</span>
+  <span class="ruby-comment"># therefore use RubyGems facilities to obtain their load paths.</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span>.<span class="ruby-identifier">method_defined?</span> <span class="ruby-value">:full_require_paths</span>
+    <span class="ruby-identifier">loaded_gem_paths</span> = <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">loaded_specs</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">n</span>, <span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">full_require_paths</span>}
+    <span class="ruby-identifier">loaded_gem_paths</span>.<span class="ruby-identifier">flatten</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">$LOAD_PATH</span>.<span class="ruby-identifier">select</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+      <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">rubygems</span>.<span class="ruby-identifier">gem_path</span>.<span class="ruby-identifier">any?</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">gp</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span> <span class="ruby-operator">=~</span> <span class="ruby-node">/^#{Regexp.escape(gp)}/</span> }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-loaded_specs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">loaded_specs</span><span
+            class="method-args">(name)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="loaded_specs-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">loaded_specs</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">loaded_specs</span>[<span class="ruby-identifier">name</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mark_loaded" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mark_loaded</span><span
+            class="method-args">(spec)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mark_loaded-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mark_loaded</span>(<span class="ruby-identifier">spec</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:activated=</span>)
+    <span class="ruby-identifier">current</span> = <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">loaded_specs</span>[<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">name</span>]
+    <span class="ruby-identifier">current</span>.<span class="ruby-identifier">activated</span> = <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">current</span>
+    <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">activated</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">loaded_specs</span>[<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">spec</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-marshal_spec_dir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">marshal_spec_dir</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="marshal_spec_dir-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">marshal_spec_dir</span>
+  <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">MARSHAL_SPEC_DIR</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">path</span><span
+            class="method-args">(obj)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="path-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">path</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-platforms" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">platforms</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="platforms-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">platforms</span>
+  <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">platforms</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-preserve_paths" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">preserve_paths</span><span
+            class="method-args">() { || ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="preserve_paths-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">preserve_paths</span>
+  <span class="ruby-comment"># this is a no-op outside of Rubygems 1.8</span>
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-provides-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">provides?</span><span
+            class="method-args">(req_str)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="provides-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">provides?</span>(<span class="ruby-identifier">req_str</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">provides?</span>(<span class="ruby-identifier">req_str</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-read_binary" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">read_binary</span><span
+            class="method-args">(path)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="read_binary-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">read_binary</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">read_binary</span>(<span class="ruby-identifier">path</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-redefine_method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">redefine_method</span><span
+            class="method-args">(klass, method, &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="redefine_method-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 430</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">redefine_method</span>(<span class="ruby-identifier">klass</span>, <span class="ruby-identifier">method</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">instance_methods</span>(<span class="ruby-keyword">false</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">method</span>)
+    <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:remove_method</span>, <span class="ruby-identifier">method</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:define_method</span>, <span class="ruby-identifier">method</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-replace_bin_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">replace_bin_path</span><span
+            class="method-args">(specs)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Used to make bin stubs that are not created by bundler work under bundler.
+The new Gem.bin_path only considers gems in <code>specs</code></p>
+          
+          
+
+          
+          <div class="method-source-code" id="replace_bin_path-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 332</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">replace_bin_path</span>(<span class="ruby-identifier">specs</span>)
+  <span class="ruby-identifier">gem_class</span> = (<span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Gem</span> ; <span class="ruby-keyword">self</span> ; <span class="ruby-keyword">end</span>)
+  <span class="ruby-identifier">redefine_method</span>(<span class="ruby-identifier">gem_class</span>, <span class="ruby-value">:bin_path</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">exec_name</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">exec_name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;bundle&#39;</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">&#39;BUNDLE_BIN_PATH&#39;</span>]
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">spec</span> = <span class="ruby-keyword">nil</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">exec_name</span>
+      <span class="ruby-identifier">spec</span> = <span class="ruby-identifier">specs</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">executables</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">exec_name</span>) }
+      <span class="ruby-identifier">spec</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;can&#39;t find executable #{exec_name}&quot;</span>
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span>
+        <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;Bundler is using a binstub that was created for a different gem.\n&quot;</span>                <span class="ruby-node">&quot;This is deprecated, in future versions you may need to `bundle binstub #{name}` &quot;</span>                <span class="ruby-string">&quot;to work around a system/bundle conflict.&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">spec</span> = <span class="ruby-identifier">specs</span>.<span class="ruby-identifier">find</span>  { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span> }
+      <span class="ruby-identifier">exec_name</span> = <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">default_executable</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;no default executable for #{spec.full_name}&quot;</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">gem_bin</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">full_gem_path</span>, <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">bindir</span>, <span class="ruby-identifier">exec_name</span>)
+    <span class="ruby-identifier">gem_from_path_bin</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">loaded_from</span>), <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">bindir</span>, <span class="ruby-identifier">exec_name</span>)
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">gem_bin</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">gem_bin</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">gem_from_path_bin</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-replace_entrypoints" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">replace_entrypoints</span><span
+            class="method-args">(specs)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Replace or hook into Rubygems to provide a bundlerized view of the world.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="replace_entrypoints-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 371</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">replace_entrypoints</span>(<span class="ruby-identifier">specs</span>)
+  <span class="ruby-identifier">replace_gem</span>(<span class="ruby-identifier">specs</span>)
+
+  <span class="ruby-identifier">stub_rubygems</span>(<span class="ruby-identifier">specs</span>)
+
+  <span class="ruby-identifier">replace_bin_path</span>(<span class="ruby-identifier">specs</span>)
+  <span class="ruby-identifier">replace_refresh</span>
+
+  <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">clear_paths</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-replace_gem" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">replace_gem</span><span
+            class="method-args">(specs)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="replace_gem-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 266</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">replace_gem</span>(<span class="ruby-identifier">specs</span>)
+  <span class="ruby-identifier">reverse_rubygems_kernel_mixin</span>
+
+  <span class="ruby-identifier">executables</span> = <span class="ruby-identifier">specs</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">executables</span> }.<span class="ruby-identifier">flatten</span>
+
+  <span class="ruby-operator">::</span><span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:define_method</span>, <span class="ruby-value">:gem</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dep</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">reqs</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">executables</span>.<span class="ruby-identifier">include?</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">caller</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;:&#39;</span>).<span class="ruby-identifier">first</span>)
+      <span class="ruby-keyword">return</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">reqs</span>.<span class="ruby-identifier">pop</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">reqs</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:name</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:requirement</span>)
+      <span class="ruby-identifier">dep</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Dependency</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">dep</span>, <span class="ruby-identifier">reqs</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">spec</span> = <span class="ruby-identifier">specs</span>.<span class="ruby-identifier">find</span>  { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">name</span> }
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">nil?</span>
+
+      <span class="ruby-identifier">e</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">LoadError</span>.<span class="ruby-identifier">new</span> <span class="ruby-node">&quot;#{dep.name} is not part of the bundle. Add it to Gemfile.&quot;</span>
+      <span class="ruby-identifier">e</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">name</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:requirement=</span>)
+        <span class="ruby-identifier">e</span>.<span class="ruby-identifier">requirement</span> = <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">requirement</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">e</span>.<span class="ruby-identifier">version_requirement</span> = <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">requirement</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">dep</span> <span class="ruby-operator">!~</span> <span class="ruby-identifier">spec</span>
+      <span class="ruby-identifier">e</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">LoadError</span>.<span class="ruby-identifier">new</span> <span class="ruby-node">&quot;can&#39;t activate #{dep}, already activated #{spec.full_name}. &quot;</span>                                   <span class="ruby-string">&quot;Make sure all dependencies are added to Gemfile.&quot;</span>
+      <span class="ruby-identifier">e</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">name</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:requirement=</span>)
+        <span class="ruby-identifier">e</span>.<span class="ruby-identifier">requirement</span> = <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">requirement</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">e</span>.<span class="ruby-identifier">version_requirement</span> = <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">requirement</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-replace_refresh" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">replace_refresh</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Because <a href="../Bundler.html">Bundler</a> has a static view of what
+specs are available, we don&#39;t refresh, so stub it out.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="replace_refresh-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 364</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">replace_refresh</span>
+  <span class="ruby-identifier">gem_class</span> = (<span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Gem</span> ; <span class="ruby-keyword">self</span> ; <span class="ruby-keyword">end</span>)
+  <span class="ruby-identifier">redefine_method</span>(<span class="ruby-identifier">gem_class</span>, <span class="ruby-value">:refresh</span>) { }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-repository_subdirectories" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">repository_subdirectories</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="repository_subdirectories-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">repository_subdirectories</span>
+  <span class="ruby-node">%w[cache doc gems specifications]</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-reverse_rubygems_kernel_mixin" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reverse_rubygems_kernel_mixin</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="reverse_rubygems_kernel_mixin-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 254</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reverse_rubygems_kernel_mixin</span>
+  <span class="ruby-comment"># Disable rubygems&#39; gem activation system</span>
+  <span class="ruby-operator">::</span><span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">private_method_defined?</span>(<span class="ruby-value">:gem_original_require</span>)
+      <span class="ruby-keyword">alias</span> <span class="ruby-identifier">rubygems_require</span> <span class="ruby-identifier">require</span>
+      <span class="ruby-keyword">alias</span> <span class="ruby-identifier">require</span> <span class="ruby-identifier">gem_original_require</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">undef</span> <span class="ruby-identifier">gem</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ruby_engine" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ruby_engine</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ruby_engine-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ruby_engine</span>
+  <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">ruby_engine</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-security_policies" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">security_policies</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="security_policies-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 245</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">security_policies</span>
+  <span class="ruby-ivar">@security_policies</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;rubygems/security&#39;</span>
+    <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Security</span><span class="ruby-operator">::</span><span class="ruby-constant">Policies</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-constant">NameError</span>
+    {}
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-security_policy_keys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">security_policy_keys</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="security_policy_keys-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 241</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">security_policy_keys</span>
+  <span class="ruby-node">%w{High Medium Low AlmostNo No}</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">level</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{level}Security&quot;</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-sources" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sources</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="sources-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sources</span>
+  <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">sources</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-sources-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sources=</span><span
+            class="method-args">(val)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="sources-3D-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sources=</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-comment"># Gem.configuration creates a new Gem::ConfigFile, which by default will read ~/.gemrc</span>
+  <span class="ruby-comment"># If that file exists, its settings (including sources) will overwrite the values we</span>
+  <span class="ruby-comment"># are about to set here. In order to avoid that, we force memoizing the config file now.</span>
+  <span class="ruby-identifier">configuration</span>
+
+  <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">sources</span> = <span class="ruby-identifier">val</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-spec_cache_dirs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">spec_cache_dirs</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="spec_cache_dirs-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">spec_cache_dirs</span>
+  <span class="ruby-ivar">@spec_cache_dirs</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">dirs</span> = <span class="ruby-identifier">gem_path</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-string">&#39;specifications&#39;</span>)}
+    <span class="ruby-identifier">dirs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">spec_cache_dir</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:spec_cache_dir</span>) <span class="ruby-comment"># Not in Rubygems 2.0.3 or earlier</span>
+    <span class="ruby-identifier">dirs</span>.<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">select</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">dir</span>}
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-spec_from_gem" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">spec_from_gem</span><span
+            class="method-args">(path, policy = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="spec_from_gem-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 209</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">spec_from_gem</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">policy</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;rubygems/security&#39;</span>
+  <span class="ruby-identifier">gem_from_path</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">security_policies</span>[<span class="ruby-identifier">policy</span>]).<span class="ruby-identifier">spec</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Package</span><span class="ruby-operator">::</span><span class="ruby-constant">FormatError</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GemspecError</span>, <span class="ruby-node">&quot;Could not read gem at #{path}. It may be corrupted.&quot;</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span>, <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span>, <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Security</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Security</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span>) <span class="ruby-operator">||</span>
+      <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/unknown trust policy|unsigned gem/i</span> <span class="ruby-operator">||</span>
+      <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/couldn&#39;t verify (meta)?data signature/i</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">SecurityError</span>,
+      <span class="ruby-node">&quot;The gem #{File.basename(path, &#39;.gem&#39;)} can&#39;t be installed because &quot;</span>            <span class="ruby-node">&quot;the security policy didn&#39;t allow it, with the message: #{e.message}&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-stub_source_index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">stub_source_index</span><span
+            class="method-args">(specs)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="stub_source_index-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 309</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stub_source_index</span>(<span class="ruby-identifier">specs</span>)
+  <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">SourceIndex</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:alias_method</span>, <span class="ruby-value">:old_initialize</span>, <span class="ruby-value">:initialize</span>)
+  <span class="ruby-identifier">redefine_method</span>(<span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">SourceIndex</span>, <span class="ruby-value">:initialize</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">args</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@gems</span> = {}
+    <span class="ruby-comment"># You&#39;re looking at this thinking: Oh! This is how I make those</span>
+    <span class="ruby-comment"># rubygems deprecations go away!</span>
+    <span class="ruby-comment">#</span>
+    <span class="ruby-comment"># You&#39;d be correct BUT using of this method in production code</span>
+    <span class="ruby-comment"># must be approved by the rubygems team itself!</span>
+    <span class="ruby-comment">#</span>
+    <span class="ruby-comment"># This is your warning. If you use this and don&#39;t have approval</span>
+    <span class="ruby-comment"># we can&#39;t protect you.</span>
+    <span class="ruby-comment">#</span>
+    <span class="ruby-constant">Deprecate</span>.<span class="ruby-identifier">skip_during</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">spec_dirs</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>
+      <span class="ruby-identifier">add_specs</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">specs</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ui-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ui=</span><span
+            class="method-args">(obj)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ui-3D-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ui=</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">DefaultUserInteraction</span>.<span class="ruby-identifier">ui</span> = <span class="ruby-identifier">obj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-user_home" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">user_home</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="user_home-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">user_home</span>
+  <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">user_home</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-validate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">validate</span><span
+            class="method-args">(spec)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="validate-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">validate</span>(<span class="ruby-identifier">spec</span>)
+  <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">silence</span> { <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">validate</span>(<span class="ruby-keyword">false</span>) }
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-version" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">version</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="version-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">version</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">version</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-with_build_args" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">with_build_args</span><span
+            class="method-args">(args) { || ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="with_build_args-source">
+            <pre><span class="ruby-comment"># File lib/bundler/rubygems_integration.rb, line 192</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">with_build_args</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">ext_lock</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">old_args</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">build_args</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">build_args</span> = <span class="ruby-identifier">args</span>
+      <span class="ruby-keyword">yield</span>
+    <span class="ruby-keyword">ensure</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">build_args</span> = <span class="ruby-identifier">old_args</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
