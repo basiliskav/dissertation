@@ -15,17 +15,17 @@ class ArchivesController < ApplicationController
  end
 
  def show
-    @file = Archive.find(params[:id])
+    find_archive
     @user = current_user.id
  end
 
  
  def edit
-    @file = Archive.find(params[:id])
+    find_archive
  end
 
  def update
-    @file = Archive.find(params[:id])
+    find_archive
     if @file.update_attributes(file_params)
       redirect_to folders_path
     else
@@ -33,9 +33,19 @@ class ArchivesController < ApplicationController
     end
  end
 
+ def destroy
+ 	find_archive
+ 	@file.destroy
+ 	redirect_to folders_path
+ end
+
   private
 
   def file_params
     params.require(:archive).permit(:name, :text, :folder_id) 
+  end
+
+  def find_archive
+  	@file = Archive.find(params[:id])
   end
 end
