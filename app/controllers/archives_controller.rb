@@ -1,51 +1,54 @@
 class ArchivesController < ApplicationController
-  def new
-    @file = Archive.new
-    @fid = params[:fid]
-  end 
 
- def create
-    @file = Archive.new(file_params)
-    @file.user_id = current_user.id
-    if @file.save
-      redirect_to archive_path(@file)
+  def new
+    @archive = Archive.new
+    @fid = params[:fid]
+  end
+
+  def create
+    @archive = Archive.new(archive_params)
+    @archive.user_id = current_user.id
+    @archive.folder_id = 1 if @archive.folder_id.nil?
+    if @archive.save
+      redirect_to folders_path #folder_archive_path(current_user.id)
     else
       render 'new'
     end
- end
+  end
 
- def show
-    find_archive
-    @user = current_user.id
- end
+  def show
+    @user = current_user
+    @archive = @user.archives.find(16)
+    # find_archive
+  end
 
- 
- def edit
+  def edit
     find_archive
- end
+  end
 
- def update
+  def update
     find_archive
-    if @file.update_attributes(file_params)
+    if @archive.update_attributes(archive_params)
       redirect_to folders_path
     else
       render 'edit'
     end
- end
+  end
 
- def destroy
- 	find_archive
- 	@file.destroy
- 	redirect_to folders_path
- end
+  def destroy
+    @folder = Folder.find(params[:folder_id])
+    @archive = @folder.archives.find(params[:id])
+   	@archive.destroy
+   	redirect_to folders_path(@folder)
+  end
 
   private
-
-  def file_params
-    params.require(:archive).permit(:name, :text, :folder_id) 
+  def archive_params
+    params.require(:archive).permit(:name, :text, :folder_id)
   end
 
   def find_archive
-  	@file = Archive.find(params[:id])
+    @archive = Archive.find(params[:id])
   end
+
 end

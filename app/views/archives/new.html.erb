@@ -1,4 +1,4 @@
-<%= form_for @file do |f| %>
+<%= form_for @archive, url:folder_archives_path do |f| %>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
     <%= f.label :text %><br />
@@ -8,7 +8,7 @@
       <%= f.hidden_field :folder_id, value: @fid %>
     <% else %>
       <%= f.hidden_field :folder_id, value: nil %>
-      
+
     <% end %>
 
     <%= f.submit "Submit" %>

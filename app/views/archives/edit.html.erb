@@ -1,8 +1,8 @@
-<%= form_for @file do |f| %>
+<%= form_for @archive do |f| %>
   <%= f.label :name %> <br />
-  <%= f.text_field :name, value: @file.name %>
+  <%= f.text_field :name, value: @archive.name %>
   <%= f.label :text %> <br />
-  <%= f.text_area :text, value: @file.text %>
+  <%= f.text_area :text, value: @archive.text %>
 
    <%= f.submit "Update"  %>
 <% end %>

@@ -1,12 +1,13 @@
 class FoldersController < ApplicationController
+
  def index
     @user = current_user
-    @files = @user.archives
+    @archives = @user.archives
   end
 
   def new
-      @folder = Folder.new
-      @fid = params[:fid]
+    @folder = Folder.new
+    @fid = params[:fid]
   end
 
   def show
@@ -29,7 +30,7 @@ class FoldersController < ApplicationController
   end
 
   def update
-    @folder = Folder.find(params[:id]) 
+    @folder = Folder.find(params[:id])
     if @folder.update_attributes(folder_params)
       redirect_to folders_path
     else
@@ -38,7 +39,7 @@ class FoldersController < ApplicationController
   end
 
   def destroy
-    @folder = Folder.find(params[:id])  
+    @folder = Folder.find(params[:id])
     @folder.destroy
     redirect_to folders_url
   end
