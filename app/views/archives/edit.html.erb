@@ -1,4 +1,4 @@
-<%= form_for @archive do |f| %>
+<%= form_for @archive, url:folder_archive_path(@archive.folder_id, @archive.id) do |f| %>
   <%= f.label :name %> <br />
   <%= f.text_field :name, value: @archive.name %>
   <%= f.label :text %> <br />

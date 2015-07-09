@@ -6,8 +6,8 @@ class ArchivesController < ApplicationController
   end
 
   def create
-    @archive = Archive.new(archive_params)
-    @archive.user_id = current_user.id
+    @user = current_user
+    @archive = @user.archives.create(archive_params)
     @archive.folder_id = 1 if @archive.folder_id.nil?
     if @archive.save
       redirect_to folders_path #folder_archive_path(current_user.id)
@@ -17,9 +17,7 @@ class ArchivesController < ApplicationController
   end
 
   def show
-    @user = current_user
-    @archive = @user.archives.find(16)
-    # find_archive
+    find_archive
   end
 
   def edit
@@ -36,10 +34,9 @@ class ArchivesController < ApplicationController
   end
 
   def destroy
-    @folder = Folder.find(params[:folder_id])
-    @archive = @folder.archives.find(params[:id])
-   	@archive.destroy
-   	redirect_to folders_path(@folder)
+    find_archive
+    @archive.destroy
+    redirect_to folders_path(@folder)
   end
 
   private
@@ -48,7 +45,7 @@ class ArchivesController < ApplicationController
   end
 
   def find_archive
-    @archive = Archive.find(params[:id])
+    @user = current_user
+    @archive = @user.archives.find(params[:id])
   end
-
 end
