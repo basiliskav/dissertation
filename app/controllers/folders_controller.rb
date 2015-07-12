@@ -39,7 +39,13 @@ class FoldersController < ApplicationController
 
   def destroy
     find_folder
-    @folder.destroy
+    begin
+      return if @_destroy_callback_already_called
+      @_destroy_callback_already_called = true
+      @folder.destroy
+    ensure
+      @_destroy_callback_already_called = false
+    end
     redirect_to folders_url
   end
 

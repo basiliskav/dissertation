@@ -1,15 +1,14 @@
 <%= form_for @archive, url:folder_archives_path do |f| %>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-    <%= f.label :text %><br />
-    <%= f.text_area :text %>
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+  <%= f.label :text %><br />
+  <%= f.text_area :text %>
 
-    <% if @fid %>
-      <%= f.hidden_field :folder_id, value: @fid %>
-    <% else %>
-      <%= f.hidden_field :folder_id, value: nil %>
+  <% if @fid %>
+    <%= f.hidden_field :folder_id, :value => @fid %>
+  <% else %>
+    <%= f.hidden_field :folder_id, :value => 1 %>
+  <% end %>
 
-    <% end %>
-
-    <%= f.submit "Submit" %>
+  <%= f.submit "Submit" %>
 <% end %>

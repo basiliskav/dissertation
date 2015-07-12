@@ -8,9 +8,8 @@ class ArchivesController < ApplicationController
   def create
     @user = current_user
     @archive = @user.archives.create(archive_params)
-    @archive.folder_id = 1 if @archive.folder_id.nil?
     if @archive.save
-      redirect_to folders_path #folder_archive_path(current_user.id)
+      redirect_to folder_archive_path(@archive.folder_id, @archive.id)
     else
       render 'new'
     end
