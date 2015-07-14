@@ -1,11 +1,12 @@
 <%= form_for @folder do |f| %>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-    <% if @fid %>
-      <%= f.hidden_field :parent_id, value: @fid %>
-    <% else %>
-      <%= f.hidden_field :parent_id, value: 1 %>
-    <% end %>
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+
+  <% if @fid %>
+    <%= f.hidden_field :parent_id, value: @fid %>
+  <% else %>
+    <%= f.hidden_field :parent_id, value: 1 %>
+  <% end %>
 
   <%= f.submit "Submit" %>
 <% end %>

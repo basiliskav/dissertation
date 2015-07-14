@@ -5,15 +5,17 @@ DissertionRb::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :users, :only => [:index, :destroy]
-  resources :folders
-  resources :archives
+  resources :folders do
+    resources :archives
+  end
+
   match '/users', :to => 'users#index', :via => 'get'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  
+
   root "static_pages#home"
   # get "registrations/update"
-  match '/update', to: 'registrations#update', via: 'get' 
+  match '/update', to: 'registrations#update', via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
 
   # Example of regular route:
