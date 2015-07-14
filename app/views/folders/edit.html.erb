@@ -2,4 +2,6 @@
   <%= f.label :name %> <br />
   <%= f.text_field :name, value: @folder.name %>
   <%= f.submit "Update it !" %>
+  <br>
+  <%= link_to "Φάκελοι / Αρχεία", folders_path, method: :get , class: "btn btn-large btn-primary" %>
 <% end %>
