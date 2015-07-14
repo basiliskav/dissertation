@@ -4,5 +4,7 @@
   <%= f.label :text %> <br />
   <%= f.text_area :text, value: @archive.text %>
 
-   <%= f.submit "Update"  %>
+  <%= f.submit "Update"  %>
+  <br>
+  <%= link_to "Φάκελοι / Αρχεία", folders_path, method: :get , class: "btn btn-large btn-primary" %>
 <% end %>
