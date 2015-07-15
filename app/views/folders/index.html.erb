@@ -1,6 +1,7 @@
 <% if @user.folders.count == 0 && @user.archives.count == 0 %>
   <p><strong>You have no Folders or Files</strong></p>
 <% end %>
+
 <% @user.folders.each do |folder| %>
  <% if folder.parent_id == 1 %>
  <li>
