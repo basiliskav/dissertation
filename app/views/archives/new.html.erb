@@ -1,5 +1,7 @@
 
 <%= form_for @archive, url:folder_archives_path do |f| %>
+      <%= render 'layouts/flash_messages' %>
+
   <%= f.label :name %><br />
   <%= f.text_field :name %>
   <%= f.label :text %><br />
