@@ -1,4 +1,7 @@
 <%= form_for @folder do |f| %>
+
+  <%= render "error_messages" %>
+
   <%= f.label :name %> <br />
   <%= f.text_field :name, value: @folder.name %>
   <br>
