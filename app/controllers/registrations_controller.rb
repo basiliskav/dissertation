@@ -14,21 +14,15 @@ class RegistrationsController < Devise::RegistrationsController
       is_valid = @user.update_with_password(new_params)
     else
       @user.update_without_password(new_params)
+      flash.now[:notice] = "User Updated"
     end
     if is_valid
-      set_flash_message :notice, :updated
       sign_in @user, :bypass => true
       redirect_to after_update_path_for(@user)
     else
-      render "edit"
+      render "users/show"
     end
   end
 
-  def destroy
-    @user = User.find(current_user.id)
-    @user.is_active = false
-    @user.save!
-    flash[:success] = "User deleted."
-    redirect_to users_url
-  end
+
 end
