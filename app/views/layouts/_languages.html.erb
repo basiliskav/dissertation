@@ -1,8 +1,7 @@
-<% if Rails.env.development? %>
-   <div class="secondaryNav-inner  pull-left">
-     <span>
-       <%= link_to_unless_current "English", locale: "en" %> |
-       <%= link_to_unless_current "Ελληνικά", locale: "el" %>
-     </span>
-   </div>
- <% end %>
+<div class="secondaryNav-inner  pull-right">
+  <span>
+    <%= link_to "English", locale: "en" %>
+    <span style="color:white"> | </span>
+    <%= link_to "Ελληνικά", locale: "el" %>
+  </span>
+</div>

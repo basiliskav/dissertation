@@ -5,11 +5,16 @@ class UsersController < ApplicationController
     @users = User.where(:is_active => true )
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
+
   def destroy
     @user = User.find(params[:id])
     @user.is_active = false
     @user.save!
-    flash[:success] = "User deleted."
+    flash.now[:success] = "User deleted."
     redirect_to users_url
   end
 end

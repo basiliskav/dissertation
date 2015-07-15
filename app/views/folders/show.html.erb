@@ -19,7 +19,8 @@
     </li>
   <% end %>
 <% end %>
-<%= link_to "Δημιουργια Φακελου", new_folder_path(@folder, :fid => @folder.id), :class => "btn btn-large btn-primary" %>
-<%= link_to "Δημιουργια Αρχειου", new_folder_archive_path(@folder, :fid => @folder.id), :class => "btn btn-large btn-primary" %>
-<%= link_to "Φάκελοι / Αρχεία", folders_path, method: :get , class: "btn btn-large btn-primary" %>
+<br>
+<%= link_to "Δημιουργια Φακελου", new_folder_path(@folder, :fid => @folder.id), class: "btn btn-primary" %>
+<%= link_to "Δημιουργια Αρχειου", new_folder_archive_path(@folder, :fid => @folder.id), class: "btn btn-primary" %>
+<%= link_to "Φάκελοι / Αρχεία", folders_path, method: :get, class: "btn btn-primary" %>
 
