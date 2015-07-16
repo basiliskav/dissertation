@@ -7,4 +7,7 @@
   <br>
   <%= f.submit "Update it !", class: "btn btn-primary" %>
   <%= link_to "Φάκελοι / Αρχεία", folders_path, method: :get , class: "btn btn-primary" %>
+  <%= link_to "back", folder_path(Folder.find(@folder.parent_id)), class: "btn btn-primary" if @folder.parent_id != 1 %>
+  <%= link_to "back", folders_path, method: :get, class: "btn btn-primary" if @folder.parent_id == 1 %>
+
 <% end %>
