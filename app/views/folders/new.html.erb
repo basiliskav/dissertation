@@ -1,4 +1,6 @@
 <%= form_for @folder do |f| %>
+  <%= render "error_messages" %>
+
   <%= f.label :name %><br />
   <%= f.text_field :name %>
 
@@ -10,4 +12,6 @@
   <br>
   <%= f.submit "Submit", class: "btn btn-primary" %>
   <%= link_to "Φάκελοι / Αρχεία", folders_path, method: :get , class: "btn btn-primary" %>
+  <%= link_to "back", folder_path(Folder.where(id: @fid).take), class: "btn btn-primary" if @fid %>
+  <%= link_to "back", folders_path, method: :get, class: "btn btn-primary" if !@fid %>
 <% end %>

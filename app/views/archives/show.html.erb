@@ -4,3 +4,5 @@
 </p>
 <br>
 <%= link_to "Φάκελοι / Αρχεία", folders_path, method: :get, class: "btn btn-primary" %>
+<%= link_to "back", folder_path(Folder.find(@archive.folder_id)), class: "btn btn-primary" if @archive.folder_id != 1 %>
+<%= link_to "back", folders_path, method: :get, class: "btn btn-primary" if @archive.folder_id == 1 %>
