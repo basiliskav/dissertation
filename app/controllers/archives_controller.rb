@@ -1,22 +1,23 @@
 class ArchivesController < ApplicationController
 
+  def show
+    find_archive
+  end
+
   def new
-    @archive = Archive.new
+    curr_user
+    @archive = @user.archives.new
     @fid = params[:fid]
   end
 
   def create
-    @user = current_user
+    curr_user
     @archive = @user.archives.create(archive_params)
     if @archive.save
       redirect_to folder_archive_path(@archive.folder_id, @archive.id)
     else
       render 'new'
     end
-  end
-
-  def show
-    find_archive
   end
 
   def edit
@@ -44,7 +45,11 @@ class ArchivesController < ApplicationController
   end
 
   def find_archive
+    curr_user
+    @archive = @user.archives.where(id: params[:id],user_id: @user.id).take
+  end
+
+  def curr_user
     @user = current_user
-    @archive = @user.archives.find(params[:id])
   end
 end

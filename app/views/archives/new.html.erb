@@ -1,4 +1,3 @@
-
 <%= form_for @archive, url:folder_archives_path do |f| %>
 
   <%= render "error_messages" %>
@@ -11,7 +10,7 @@
   <% if @fid %>
     <%= f.hidden_field :folder_id, :value => @fid %>
   <% else %>
-    <%= f.hidden_field :folder_id, :value => 1 %>
+    <%= f.hidden_field :folder_id, :value => 1000 %>
   <% end %>
   <br>
   <%= f.submit "Submit", class: "btn btn-primary"%>

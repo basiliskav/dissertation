@@ -1,22 +1,26 @@
 class FoldersController < ApplicationController
 
- def index
-    @user = current_user
+  def index
+    curr_user
     @archives = @user.archives
-  end
-
-  def new
-    @folder = Folder.new
-    @fid = params[:fid]
+    @folders = @user.folders
   end
 
   def show
     find_folder
+    @subfolders = @folder.subfolders.where(user_id: @user.id)
+    @archives = @folder.archives.where(user_id: @user.id)
+  end
+
+  def new
+    curr_user
+    @folder = @user.folders.new
+    @fid = params[:fid]
   end
 
   def create
-    @folder = Folder.new(folder_params)
-    @folder.user_id = current_user.id
+    curr_user
+    @folder = @user.folders.create(folder_params)
     if @folder.save
       redirect_to folder_path(@folder)
     else
@@ -49,6 +53,11 @@ class FoldersController < ApplicationController
   end
 
   def find_folder
-    @folder = Folder.find(params[:id])
+    curr_user
+    @folder = @user.folders.where(id: params[:id],user_id: @user.id).take
+  end
+
+  def curr_user
+    @user = current_user
   end
 end
