@@ -1,21 +1,21 @@
 class FoldersController < ApplicationController
 
- def index
+  def index
     curr_user
     @archives = @user.archives
     @folders = @user.folders
-  end
-
-  def new
-    curr_user
-    @folder = @user.folders.new
-    @fid = params[:fid]
   end
 
   def show
     find_folder
     @subfolders = @folder.subfolders.where(user_id: @user.id)
     @archives = @folder.archives.where(user_id: @user.id)
+  end
+
+  def new
+    curr_user
+    @folder = @user.folders.new
+    @fid = params[:fid]
   end
 
   def create

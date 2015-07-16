@@ -1,5 +1,9 @@
 class ArchivesController < ApplicationController
 
+  def show
+    find_archive
+  end
+
   def new
     curr_user
     @archive = @user.archives.new
@@ -14,10 +18,6 @@ class ArchivesController < ApplicationController
     else
       render 'new'
     end
- end
-
-  def show
-    find_archive
   end
 
   def edit
