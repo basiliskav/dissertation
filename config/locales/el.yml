@@ -1,0 +1,16 @@
+el:
+  activerecord:
+    models:
+      archive: "Αρχείο"
+      folder: "Φάκελος"
+    attributes:
+      archive:
+        name: "Όνομα"
+      folder:
+        name: "Όνομα"
+    errors:
+      models:
+        archive:
+          blank: "δεν μπορεί να είναι κενό"
+        folder:
+          blank: "δεν μπορεί να είναι κενό"
