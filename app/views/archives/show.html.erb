@@ -1,15 +1,10 @@
 <% provide(:title, @archive.name) %>
 <h2><%= @archive.name %></h2>
 
-<%= form_for @archive, url: folder_archives_path  do |f| %>
-<%= f.text_area :text, :id => "editor", :value => @archive.text %>
-<% end %>
+<p>
+  <%= @archive.text %>
+</p>
 <br>
 <%= link_to "Φάκελοι / Αρχεία", folders_path, method: :get, class: "btn btn-primary" %>
 <%= link_to "back", folder_path(Folder.find(@archive.folder_id)), class: "btn btn-primary" if @archive.folder_id != 1000 %>
 <%= link_to "back", folders_path, method: :get, class: "btn btn-primary" if @archive.folder_id == 1000 %>
-<script type="text/javascript" charset="utf-8">
-$(function(){
-  $('#editor').editable({inlineMode: false})
-});
-</script>
