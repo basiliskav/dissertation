@@ -1,4 +1,6 @@
-<h1><%= @archive.name %></h1>
+<% provide(:title, @archive.name) %>
+<h2><%= @archive.name %></h2>
+
 <p>
   <%= @archive.text %>
 </p>

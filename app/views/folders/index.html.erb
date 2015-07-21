@@ -1,13 +1,16 @@
+<% provide(:title, t('index')) %>
+<h2><%= t('index') %></h2>
+
 <% if @folders.count == 0 && @user.archives.count == 0 %>
-  <p><strong>You have no Folders or Files</strong></p>
+  <p><strong><%= t('empty') %></strong></p>
 <% end %>
 
 <% @folders.each do |folder| %>
   <% if folder.parent_id == 1000 %>
     <li>
       F - <%= link_to folder.name, folder_path(folder) %> |
-      <%= link_to "DELETE", folder, method: :delete, data: { confirm: "You sure?" } %> |
-      <%= link_to "EDIT", edit_folder_path(folder) %>
+      <%= link_to t('delete'), folder, method: :delete, data: { confirm: "#{t('confirm')}" } %> |
+      <%= link_to t('edit'), edit_folder_path(folder) %>
     </li>
   <% end %>
 <% end %>
@@ -16,11 +19,11 @@
   <% if archive.folder_id == 1000 %>
     <li>
       A - <%= link_to archive.name, folder_archive_path(archive.folder_id, archive.id) %> |
-      <%= link_to "DELETE", folder_archive_path(archive.folder_id, archive.id), method: :delete, data: { confirm: "Are you sure ?" } %> |
-      <%= link_to "EDIT", edit_folder_archive_path(archive.folder_id, archive.id) %>
+      <%= link_to t('delete'), folder_archive_path(archive.folder_id, archive.id), method: :delete, data: { confirm: "#{t('confirm')}" } %> |
+      <%= link_to t('edit'), edit_folder_archive_path(archive.folder_id, archive.id) %>
     </li>
   <% end %>
 <% end %>
 <br>
-<%= link_to "Δημιουργια Φακελου", new_folder_path, :class => "btn btn-large btn-primary" %>
-<%= link_to "Δημιουργια Αρχειου", new_folder_archive_path(:folder_id), :class => "btn btn-large btn-primary" %>
+<%= link_to t('new_folder'), new_folder_path, :class => "btn btn-large btn-primary" %>
+<%= link_to t('new_archive'), new_folder_archive_path(:folder_id), :class => "btn btn-large btn-primary" %>

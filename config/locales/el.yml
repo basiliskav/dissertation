@@ -1,0 +1,66 @@
+el:
+  title: "Πτυχιακή εργασία"
+  home: "Αρχική Σελίδα"
+  welcome_message: "Καλωσήρθατε στην Πτυχιακή εργασία μου"
+  copyright: "Πτυχιακή εργασία Βασίλειος Καβάσης 2014-2015"
+  contact: "Επικοινωνία"
+  contact_details: "Επικοινωνήστε μαζί μου στο email basiliskavasis@gmail.com"
+  dissertation: "Πτυχιακή Εργασία"
+  sign_out: "Αποσύνδεση"
+  edit_profile: "Επεξεργασία Λογαριασμού"
+  sign_in: "Είσοδος"
+  sign_up: "Εγγραφή"
+  or: "ή"
+  back: "Πίσω"
+  folders_archives: "Φάκελοι / Αρχεία"
+  create: "Δημιουργία"
+  update: "Ενημέρωση"
+  delete: "Διαγραφή"
+  edit: "Επεξεργασία"
+  confirm: "Είστε σίγουρος;"
+  users: "Χρήστες"
+  index: "Κατάλογος"
+  empty: "Δεν έχετε Αρχεία ή Φακέλους"
+  new_archive: "Δημιουργία Αρχείου"
+  new_folder: "Δημιουργία Φακέλου"
+  edit_archive: "Επεξεργασία Αρχείου"
+  edit_folder: "Επεξεργασία Φακέλου"
+  edit_profile: "Επεξεργασία Χρήστη"
+  leave_blank_password: "(αφήστε το κενό αν δεν θέλετε να το αλλάξετε)"
+  confirm_current_password: "(τρέχων κωδικός για επιβεβαίωση αλλαγών)"
+  resend_confirmation_instructions: "Επανάληψη Αποστολής Οδηγιών Επιβεβαίωσης"
+  cancel_account: "Απενεργοποιήση Λογαριασμού"
+  forgot_password: "Ξεχάσατε τον κωδικό σας;"
+  confiramtion_instructions: "Δεν λάβατε οδηγίες επιβεβαίωσης;"
+  unlock_instructions: "Δεν λάβατε οδηγίες ξεκλειδώματος;"
+  resend_unlock_instructions: "Επανάληψη Αποστολής Οδηγιών Ξεκλειδώματος"
+  new_password: "Ξεχάσατε τον Κωδικό σας;"
+  reset_password: "Αποστολή Οδηγιών Επαναφοράς Κωδικού"
+  change_password: "Αλλαγή Κωδικού"
+  activerecord:
+    models:
+      archive: "Αρχείο"
+      folder: "Φάκελος"
+      user: "Χρήστη"
+    attributes:
+      archive:
+        name: "Όνομα"
+        text: "Κείμενο"
+      folder:
+        name: "Όνομα"
+      user:
+        email: "Email"
+        username: "Όνομα Χρήστη"
+        password: "Κωδικός"
+        password_confirmation: "Επιβεβαίωση Κωδικού"
+        current_password: "Παλιός Κωδικός"
+        signin: "Email"
+    errors:
+      models:
+        archive:
+          blank: "δεν μπορεί να είναι κενό"
+        folder:
+          blank: "δεν μπορεί να είναι κενό"
+        user:
+          blank: "δεν μπορεί να είναι κενό"
+          taken: "χρησιμοποιείται ήδη"

@@ -1,23 +1,39 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  title: "Dissertation"
+  home: "Home Page"
+  welcome_message: "Welcome to my Dissertation"
+  copyright: "Dissertation Vasileios Kavasis 2014-2015"
+  contact: "Contact"
+  contact_details: "Contact me by email basiliskavasis@gmail.com"
+  dissertation: "Dissertation"
+  sign_out: "Sign out"
+  edit_profile: "Edit profile"
+  sign_in: "Sign in"
+  sign_up: "Sign up"
+  or: "or"
+  back: "Back"
+  folders_archives: "Folders / Archives"
+  create: "Create"
+  delete: "Delete"
+  edit: "Edit"
+  update: "Update"
+  confirm: "Are you sure?"
+  users: "Users"
+  index: "Index"
+  empty: "You have no Folders or Files"
+  new_archive: "New Archive"
+  new_folder: "New Folder"
+  edit_archive: "Edit Archive"
+  edit_folder: "Edit Folder"
+  edit_profile: "Edit Profile"
+  leave_blank_password: "(leave blank if you don't want to change it)"
+  confirm_current_password: "(we need your current password to confirm your changes)"
+  resend_confirmation_instructions: "Resend Confirmation Instructions"
+  cancel_account: "Cancel my account"
+  forgot_password: "Forgot your password?"
+  confiramtion_instructions: "Didn't receive confirmation instructions?"
+  unlock_instructions: "Didn't receive unlock instructions?"
+  resend_unlock_instructions: "Resend unlock instructions"
+  new_password: "Forgot your password?"
+  reset_password: "Send me reset password instructions"
+  change_password: "Change your password"

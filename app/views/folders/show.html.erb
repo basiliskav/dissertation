@@ -1,11 +1,12 @@
-<h1><%= @folder.name %></h1>
+<% provide(:title, @folder.name) %>
+<h2><%= @folder.name %></h2>
 
 <% if @subfolders %>
   <% @subfolders.each do |subfolder| %>
     <li>
       F - <%= link_to subfolder.name, folder_path(subfolder) %> |
-      <%= link_to "DELETE", subfolder, method: :delete, data: { confirm: "Are you sure ?" } %> |
-      <%= link_to "EDIT", edit_folder_path(subfolder) %>
+      <%= link_to t('delete'), subfolder, method: :delete, data: { confirm: "#{t('confirm')}" } %> |
+      <%= link_to t('edit'), edit_folder_path(subfolder) %>
     </li>
   <% end %>
 <% end %>
@@ -14,17 +15,15 @@
   <% @archives.each do |archive| %>
     <li>
       A - <%= link_to archive.name, folder_archive_path(archive.folder_id, archive.id) %> |
-      <%= link_to "DELETE", folder_archive_path(archive.folder_id, archive.id), method: :delete, data: { confirm: "Are you sure ?" } %> |
-      <%= link_to "EDIT", edit_folder_archive_path(archive.folder_id, archive.id) %>
+      <%= link_to t('delete'), folder_archive_path(archive.folder_id, archive.id), method: :delete, data: { confirm: "#{t('confirm')}" } %> |
+      <%= link_to t('edit'), edit_folder_archive_path(archive.folder_id, archive.id) %>
     </li>
   <% end %>
 <% end %>
+
 <br>
-<%= link_to "Δημιουργια Φακελου", new_folder_path(@folder, :fid => @folder.id), class: "btn btn-primary" %>
-<%= link_to "Δημιουργια Αρχειου", new_folder_archive_path(@folder, :fid => @folder.id), class: "btn btn-primary" %>
-<%= link_to "Φάκελοι / Αρχεία", folders_path, method: :get, class: "btn btn-primary" %>
-<%= link_to "back", folder_path(Folder.find(@folder.parent_id)), class: "btn btn-primary" if @folder.parent_id != 1000 %>
-<%= link_to "back", folders_path, method: :get, class: "btn btn-primary" if @folder.parent_id == 1000 %>
-
-
-
+<%= link_to t('new_folder'), new_folder_path(@folder, :fid => @folder.id), class: "btn btn-primary" %>
+<%= link_to t('new_archive'), new_folder_archive_path(@folder, :fid => @folder.id), class: "btn btn-primary" %>
+<%= link_to t('folders_archives'), folders_path, method: :get, class: "btn btn-primary" %>
+<%= link_to t('back'), folder_path(@back_folder), class: "btn btn-primary" if @folder.parent_id != 1000 %>
+<%= link_to t('back'), folders_path, method: :get, class: "btn btn-primary" if @folder.parent_id == 1000 %>

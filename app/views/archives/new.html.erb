@@ -1,6 +1,9 @@
+<% provide(:title, t('new_archive')) %>
+<h2><%= t('new_archive') %></h2>
+
 <%= form_for @archive, url:folder_archives_path do |f| %>
 
-  <%= render "error_messages" %>
+  <%= render "shared/error_messages", source: @archive %>
 
   <%= f.label :name %><br />
   <%= f.text_field :name %>
@@ -12,9 +15,10 @@
   <% else %>
     <%= f.hidden_field :folder_id, :value => 1000 %>
   <% end %>
+
   <br>
-  <%= f.submit "Submit", class: "btn btn-primary"%>
-  <%= link_to "Φάκελοι / Αρχεία", folders_path, method: :get , class: "btn btn-primary" %>
-  <%= link_to "back", folder_path(Folder.where(id: @fid).take), class: "btn btn-primary" if @fid %>
-  <%= link_to "back", folders_path, method: :get, class: "btn btn-primary" if !@fid %>
+  <%= f.submit t('create'), class: "btn btn-primary"%>
+  <%= link_to t('folders_archives'), folders_path, method: :get , class: "btn btn-primary" %>
+  <%= link_to t('back'), folder_path(@back_folder), class: "btn btn-primary" if @fid %>
+  <%= link_to t('back'), folders_path, method: :get, class: "btn btn-primary" if !@fid %>
 <% end %>
