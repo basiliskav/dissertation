@@ -8,7 +8,7 @@
   <%= f.label :name %><br />
   <%= f.text_field :name %>
   <%= f.label :text %><br />
-  <%= f.text_area :text %>
+  <%= f.text_area :text, :id => "editor" %>
 
   <% if @fid %>
     <%= f.hidden_field :folder_id, :value => @fid %>
@@ -22,3 +22,9 @@
   <%= link_to t('back'), folder_path(@back_folder), class: "btn btn-primary" if @fid %>
   <%= link_to t('back'), folders_path, method: :get, class: "btn btn-primary" if !@fid %>
 <% end %>
+  <script>
+      $(function() {
+        $('#editor').editable({inlineMode: false})
+      });
+  </script>
+  
