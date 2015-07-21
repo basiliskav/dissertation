@@ -5,8 +5,22 @@
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
+    <!-- Include Editor style. -->
+    <link href="/assets/froala_editor.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/froala_style.min.css" rel="stylesheet" type="text/css" />
+    <!-- Include Font Awesome. -->
+    <link href="/assets/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- Basic formatting for image, video, table, code and quote. -->
+    <link href="assets/froala_content.min.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+
+<!-- Include jQuery. -->
+<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+
+<!-- Include JS files. -->
+<script src="/assets/froala_editor.min.js"></script>
     <%= render 'layouts/header' %>
     <div class="container">
       <%= render "layouts/flash_messages" %>
