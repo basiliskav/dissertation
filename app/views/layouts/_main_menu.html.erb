@@ -1,5 +1,7 @@
 <div class="secondaryNav-inner pull-left">
-  <%= link_to "Πτυχιακή εργασία", root_path, id: "logo" %>
+  <%= link_to t('dissertation'), root_path, id: "logo" %>
 </div>
-<%= render 'layouts/languages' %>
+<% if !user_signed_in? %>
+  <%= render 'layouts/languages' %>
+<% end %>
 

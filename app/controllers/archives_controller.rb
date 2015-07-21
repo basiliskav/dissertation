@@ -8,6 +8,7 @@ class ArchivesController < ApplicationController
     curr_user
     @archive = @user.archives.new
     @fid = params[:fid]
+    @back_folder = Folder.where(id: @fid).take if @fid
   end
 
   def create
@@ -22,6 +23,7 @@ class ArchivesController < ApplicationController
 
   def edit
     find_archive
+    @back_folder = Folder.find(@archive.folder_id) if @archive.folder_id != 1000
   end
 
   def update

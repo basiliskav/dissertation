@@ -10,12 +10,14 @@ class FoldersController < ApplicationController
     find_folder
     @subfolders = @folder.subfolders.where(user_id: @user.id)
     @archives = @folder.archives.where(user_id: @user.id)
+    @back_folder = Folder.find(@folder.parent_id) if @folder.parent_id != 1000
   end
 
   def new
     curr_user
     @folder = @user.folders.new
     @fid = params[:fid]
+    @back_folder = Folder.where(id: @fid).take if @fid
   end
 
   def create
@@ -30,6 +32,7 @@ class FoldersController < ApplicationController
 
   def edit
     find_folder
+    @back_folder = Folder.find(@folder.parent_id) if @folder.parent_id != 1000
   end
 
   def update

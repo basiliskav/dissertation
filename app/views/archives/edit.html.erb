@@ -1,15 +1,18 @@
+<% provide(:title, t('edit_archive')) %>
+<h2><%= t('edit_archive') %></h2>
+
 <%= form_for @archive, url:folder_archive_path(@archive.folder_id, @archive.id) do |f| %>
 
-  <%= render "error_messages" %>
+  <%= render "shared/error_messages", source: @archive %>
 
   <%= f.label :name %> <br />
   <%= f.text_field :name, value: @archive.name %>
   <%= f.label :text %> <br />
   <%= f.text_area :text, value: @archive.text %>
   <br>
-  <%= f.submit "Update", class: "btn btn-primary"  %>
-  <%= link_to "Φάκελοι / Αρχεία", folders_path, method: :get , class: "btn btn-primary" %>
-  <%= link_to "back", folder_path(Folder.find(@archive.folder_id)), class: "btn btn-primary" if @archive.folder_id != 1000 %>
-  <%= link_to "back", folders_path, method: :get, class: "btn btn-primary" if @archive.folder_id == 1000 %>
+  <%= f.submit t('update'), class: "btn btn-primary"  %>
+  <%= link_to t('folders_archives'), folders_path, method: :get , class: "btn btn-primary" %>
+  <%= link_to t('back'), folder_path(@back_folder), class: "btn btn-primary" if @archive.folder_id != 1000 %>
+  <%= link_to t('back'), folders_path, method: :get, class: "btn btn-primary" if @archive.folder_id == 1000 %>
 
 <% end %>
