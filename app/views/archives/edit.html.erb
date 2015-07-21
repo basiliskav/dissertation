@@ -10,16 +10,10 @@
   <%= f.label :text %> <br />
   <%= f.text_area :text, value: @archive.text %>
   <br>
-<<<<<<< HEAD
-  <%= f.submit "Update", class: "btn btn-primary"  %>
-  <%= link_to "Φάκελοι / Αρχεία", folders_path, method: :get , class: "btn btn-primary" %>
-  <%= link_to "back", folder_path(Folder.find(@archive.folder_id)), class: "btn btn-primary" if @archive.folder_id != 1000 %>
-  <%= link_to "back", folders_path, method: :get, class: "btn btn-primary" if @archive.folder_id == 1000 %>
-=======
+
   <%= f.submit t('update'), class: "btn btn-primary"  %>
   <%= link_to t('folders_archives'), folders_path, method: :get , class: "btn btn-primary" %>
   <%= link_to t('back'), folder_path(@back_folder), class: "btn btn-primary" if @archive.folder_id != 1000 %>
   <%= link_to t('back'), folders_path, method: :get, class: "btn btn-primary" if @archive.folder_id == 1000 %>
->>>>>>> device_el
 
 <% end %>
