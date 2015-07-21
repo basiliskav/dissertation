@@ -7,6 +7,7 @@ gem 'bootstrap-sass', '2.3.2.0'
 gem 'cancan', '~>1.6.0'
 gem 'figaro'
 gem 'sprockets', '2.11.0'
+gem "wysiwyg-rails"
 
 
 group :development do
