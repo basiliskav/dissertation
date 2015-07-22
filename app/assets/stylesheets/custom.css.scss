@@ -137,3 +137,32 @@ input {
 
 
 
+.folder{
+  position:relative;
+  background-image: url("folder_image.png");
+  width: 100px;
+  height: 75px;
+  cursor: move;
+}
+
+.dragme_archive{
+  position:relative;
+  background-image: url("archive_image.png");
+  width: 77px;
+  height: 100px;
+  cursor: move;
+}
+
+#draggable {
+  background-color: white;
+  border: 1px solid #000;
+}
+
+.dragme{
+    position:relative;
+    // width: 270px;
+    // height: 203px;
+    cursor: move;
+}
+
+
