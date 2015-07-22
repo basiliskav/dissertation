@@ -8,16 +8,10 @@
   <%= f.label :name %> <br />
   <%= f.text_field :name, value: @folder.name %>
   <br>
-<<<<<<< HEAD
-  <%= f.submit "Update it !", class: "btn btn-primary" %>
-  <%= link_to "Φάκελοι / Αρχεία", folders_path, method: :get , class: "btn btn-primary" %>
-  <%= link_to "back", folder_path(Folder.find(@folder.parent_id)), class: "btn btn-primary" if @folder.parent_id != 1000 %>
-  <%= link_to "back", folders_path, method: :get, class: "btn btn-primary" if @folder.parent_id == 1000 %>
-=======
+
   <%= f.submit t('update'), class: "btn btn-primary" %>
   <%= link_to t('folders_archives'), folders_path, method: :get , class: "btn btn-primary" %>
   <%= link_to t('back'), folder_path(@back_folder), class: "btn btn-primary" if @folder.parent_id != 1000 %>
   <%= link_to t('back'), folders_path, method: :get, class: "btn btn-primary" if @folder.parent_id == 1000 %>
->>>>>>> device_el
 
 <% end %>
