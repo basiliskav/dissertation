@@ -2,8 +2,9 @@
 <h2><%= @archive.name %></h2>
 
 <p>
-  <%= @archive.text %>
+  <%= @archive.text.html_safe %>
 </p>
+
 <br>
 <%= link_to "Φάκελοι / Αρχεία", folders_path, method: :get, class: "btn btn-primary" %>
 <%= link_to "back", folder_path(Folder.find(@archive.folder_id)), class: "btn btn-primary" if @archive.folder_id != 1000 %>

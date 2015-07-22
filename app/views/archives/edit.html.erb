@@ -5,12 +5,11 @@
 
   <%= render "shared/error_messages", source: @archive %>
 
-  <%= f.label :name %> <br />
-  <%= f.text_field :name, value: @archive.name %>
-  <%= f.label :text %> <br />
-  <%= f.text_area :text, value: @archive.text %>
-  <br>
+  <%= f.label :name %> <br>
+  <%= f.text_field :name, value: @archive.name %><br><br>
+  <%= f.cktext_area :text, value: @archive.text %>
 
+  <br>
   <%= f.submit t('update'), class: "btn btn-primary"  %>
   <%= link_to t('folders_archives'), folders_path, method: :get , class: "btn btn-primary" %>
   <%= link_to t('back'), folder_path(@back_folder), class: "btn btn-primary" if @archive.folder_id != 1000 %>
