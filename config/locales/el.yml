@@ -2,10 +2,10 @@ el:
   title: "Πτυχιακή εργασία"
   home: "Αρχική Σελίδα"
   welcome_message: "Καλωσήρθατε στην Πτυχιακή εργασία μου"
-  copyright: "Πτυχιακή εργασία Βασίλειος Καβάσης 2014-2015"
+  copyright: "Πτυχιακή εργασία Βασίλειος Καβάσης 2015-2016"
   contact: "Επικοινωνία"
   contact_details: "Επικοινωνήστε μαζί μου στο email basiliskavasis@gmail.com"
-  dissertation: "Πτυχιακή Εργασία"
+  dissertation: "ΠΤΥΧΙΑΚΗ ΕΡΓΑΣΙΑ"
   sign_out: "Αποσύνδεση"
   edit_profile: "Επεξεργασία Λογαριασμού"
   sign_in: "Είσοδος"
@@ -37,6 +37,7 @@ el:
   new_password: "Ξεχάσατε τον Κωδικό σας;"
   reset_password: "Αποστολή Οδηγιών Επαναφοράς Κωδικού"
   change_password: "Αλλαγή Κωδικού"
+  remember_me: "Να με θυμάσαι"
   activerecord:
     models:
       archive: "Αρχείο"

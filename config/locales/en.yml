@@ -2,7 +2,7 @@ en:
   title: "Dissertation"
   home: "Home Page"
   welcome_message: "Welcome to my Dissertation"
-  copyright: "Dissertation Vasileios Kavasis 2014-2015"
+  copyright: "Dissertation Vasileios Kavasis 2015-2016"
   contact: "Contact"
   contact_details: "Contact me by email basiliskavasis@gmail.com"
   dissertation: "Dissertation"
@@ -37,3 +37,4 @@ en:
   new_password: "Forgot your password?"
   reset_password: "Send me reset password instructions"
   change_password: "Change your password"
+  remember_me: "Remember me"

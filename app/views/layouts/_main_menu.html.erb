@@ -1,7 +1,7 @@
 <div class="secondaryNav-inner pull-left">
   <%= link_to t('dissertation'), root_path, id: "logo" %>
 </div>
-<% if !user_signed_in? %>
-  <%= render 'layouts/languages' %>
-<% end %>
+
+<%= render 'layouts/languages' %>
+
 
