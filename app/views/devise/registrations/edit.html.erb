@@ -5,24 +5,24 @@
 
   <%= render "devise/shared/error_messages" %>
 
-  <div><%= f.label :username %><br />
-  <%= f.text_field :username %></div>
+  <div><%= f.label :username %>
+  <%= f.text_field :username %></div><br />
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <div><%= f.label :email %>
+  <%= f.email_field :email, :autofocus => true %></div><br />
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div><%= f.label :password %> <i><%= t('leave_blank_password') %></i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
+  <div><%= f.label :password %> <i><%= t('leave_blank_password') %></i><br>
+  <%= f.password_field :password, :autocomplete => "off" %></div><br />
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <div><%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %></div><br />
 
-  <div><%= f.label :current_password %> <i><%= t('confirm_current_password') %></i><br />
-  <%= f.password_field :current_password %></div>
+  <div><%= f.label :current_password %> <i><%= t('confirm_current_password') %></i><br>
+  <%= f.password_field :current_password %></div><br />
 
   <div><%= f.submit t('update'), class: "btn btn-primary" %></div>
 <% end %>

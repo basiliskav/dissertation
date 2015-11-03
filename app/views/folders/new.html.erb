@@ -5,15 +5,16 @@
 
   <%= render "shared/error_messages", source: @folder %>
 
-  <%= f.label :name %><br />
-  <%= f.text_field :name %>
+  <%= f.label :name %>
+  <%= f.text_field :name %> <br><br>
+
 
   <% if @fid %>
     <%= f.hidden_field :parent_id, value: @fid %>
   <% else %>
     <%= f.hidden_field :parent_id, value: 1000 %>
   <% end %>
-  <br>
+
   <%= f.submit t('create'), class: "btn btn-primary" %>
   <%= link_to t('folders_archives'), folders_path, method: :get , class: "btn btn-primary" %>
   <%= link_to t('back'), folder_path(@back_folder), class: "btn btn-primary" if @fid %>

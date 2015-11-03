@@ -25,5 +25,30 @@
   <% end %>
 <% end %>
 <br>
+
+<% if @user.admin %>
+  <% User.all.each do |user| %>
+    <% if !user.admin %>
+      <%= user.username %> <br>
+      <% user.folders.each do |folder| %>
+        <% if folder.parent_id == 1000 %>
+          <li>
+            F - <%= folder.name %>
+          </li>
+        <% end %>
+      <% end %>
+      <% user.archives.each do |archive| %>
+        <% if archive.folder_id == 1000 %>
+          <li>
+            A - <%= archive.name %>
+          </li>
+        <% end %>
+      <% end %>
+      <br>
+    <% end -%>
+  <% end -%>
+<% end -%>
+<br><br>
+
 <%= link_to t('new_folder'), new_folder_path, :class => "btn btn-large btn-primary" %>
 <%= link_to t('new_archive'), new_folder_archive_path(:folder_id), :class => "btn btn-large btn-primary" %>

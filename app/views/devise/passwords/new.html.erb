@@ -5,8 +5,8 @@
 
   <%= render "devise/shared/error_messages" %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <div><%= f.label :email %>
+  <%= f.email_field :email, :autofocus => true %></div><br />
 
   <div><%= f.submit t('reset_password'), class: "btn btn-primary" %></div>
 <% end %>

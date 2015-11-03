@@ -5,9 +5,8 @@
 
   <%= render "shared/error_messages", source: @folder %>
 
-  <%= f.label :name %> <br />
-  <%= f.text_field :name, value: @folder.name %>
-  <br>
+  <%= f.label :name %>
+  <%= f.text_field :name, value: @folder.name %> <br><br>
 
   <%= f.submit t('update'), class: "btn btn-primary" %>
   <%= link_to t('folders_archives'), folders_path, method: :get , class: "btn btn-primary" %>
