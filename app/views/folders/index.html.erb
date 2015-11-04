@@ -20,7 +20,8 @@
     <li>
       A - <%= link_to archive.name, folder_archive_path(archive.folder_id, archive.id) %> |
       <%= link_to t('delete'), folder_archive_path(archive.folder_id, archive.id), method: :delete, data: { confirm: "#{t('confirm')}" } %> |
-      <%= link_to t('edit'), edit_folder_archive_path(archive.folder_id, archive.id) %>
+      <%= link_to t('edit'), edit_folder_archive_path(archive.folder_id, archive.id) %> |
+      <%= link_to t('download'), folder_archive_path(archive.folder_id, archive.id,format: "docx") %>
     </li>
   <% end %>
 <% end %>

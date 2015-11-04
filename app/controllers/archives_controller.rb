@@ -1,7 +1,11 @@
 class ArchivesController < ApplicationController
 
+respond_to :docx, :html
+
+
   def show
     find_archive
+    respond_with(@archive, filename: @archive.name, word_template: "show.docx")
   end
 
   def new

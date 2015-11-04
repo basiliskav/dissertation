@@ -38,6 +38,7 @@ el:
   reset_password: "Αποστολή Οδηγιών Επαναφοράς Κωδικού"
   change_password: "Αλλαγή Κωδικού"
   remember_me: "Να με θυμάσαι"
+  download: "Λήψη"
   activerecord:
     models:
       archive: "Αρχείο"
