@@ -1,0 +1,21 @@
+{
+  "status": "Ok",
+  "result":
+    {
+      "templates":
+        [
+          {
+            "id": 1,
+            "guid": "fh3479hfsuohf9sdfhsoif",
+            "name": "document_test_one.doc",
+            "field_count": 1
+          },
+          {
+            "id": 2,
+            "guid": "398y9fhdsofosd8fys98shf",
+            "name": "document_test_two.doc",
+            "field_count": 3
+          }
+        ]
+    }
+}

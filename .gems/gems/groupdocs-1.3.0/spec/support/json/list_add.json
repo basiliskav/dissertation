@@ -1,0 +1,12 @@
+{
+  "status": "Ok",
+  "result":
+    {
+      "list":
+        {
+          "id": "osdns9fuyw",
+          "name": "Test1",
+          "values": "Test1;Test2"
+        }
+    }
+}

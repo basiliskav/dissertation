@@ -1,0 +1,32 @@
+{
+  "result":
+    {
+      "views":
+        [
+          {
+            "document":
+              {
+                "url": "http://groupdocs.com",
+                "name": "test.pdf",
+                "id": 1,
+                "guid": null
+              },
+            "short_url": "http://groupdocs.com",
+            "viewed_on": 1330178915757
+          },
+          {
+            "document":
+              {
+                "url": "http://groupdocs.com",
+                "name": "test.doc",
+                "id": 2,
+                "guid": null
+              },
+            "short_url": "http://groupdocs.com",
+            "viewed_on": 1331022248680
+          }
+        ]
+    },
+  "status": "Ok",
+  "error_message": null
+}

@@ -1,0 +1,30 @@
+{
+  "result":
+    {
+      "id": 1,
+      "guid": "9dfhs9vhfivjdf0vj0difmvp",
+      "status": "Archived",
+      "documents":
+      {
+        "inputs":
+        [
+          {
+            "status": "InProgress",
+            "output_formats": "pdf",
+            "outputs":
+            [
+              {
+                "ftype": 19,
+                "error": null,
+                "url": "http://groupdocs.com",
+                "name": "Test.pdf"
+              }
+            ],
+            "id": 123
+          }
+        ]
+      }
+    },
+  "status": "Ok",
+  "error_message": null
+}

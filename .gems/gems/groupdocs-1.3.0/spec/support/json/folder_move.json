@@ -1,0 +1,8 @@
+{
+  "status": "Ok",
+  "result":
+    {
+      "from_path": "Test1",
+      "to_path": "Test2"
+    }
+}

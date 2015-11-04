@@ -1,0 +1,8 @@
+{
+  "result":
+    {
+      "types": ["Pdf", "Tiff", "Jpeg"]
+    },
+  "status": "Ok",
+  "error_message": null
+}

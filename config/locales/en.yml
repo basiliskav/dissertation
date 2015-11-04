@@ -39,3 +39,6 @@ en:
   change_password: "Change your password"
   remember_me: "Remember me"
   download: "Download"
+  upload_file: "Upload File"
+  upload_notice: "The file has been uploaded."
+  delete_notice: "The file has been deleted."

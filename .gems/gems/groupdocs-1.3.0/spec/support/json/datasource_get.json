@@ -1,0 +1,22 @@
+{
+  "result":
+    {
+      "datasource":
+        {
+          "id": 1,
+          "questionnaire_id": 123,
+          "descr": "Description",
+          "fields":
+            [
+              {
+                "name": "Field1",
+                "values": ["Value1", "Value2"]
+              }
+            ],
+          "created_on": 1333021624375,
+          "modified_on": 1333021624375
+        }
+    },
+  "status": "Ok",
+  "error_message": null
+}

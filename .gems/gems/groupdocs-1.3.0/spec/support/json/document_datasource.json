@@ -1,0 +1,10 @@
+{
+  "result":
+    {
+      "job_id": 1,
+      "document_id": 1,
+      "datasource_id": 1
+    },
+  "status": "Ok",
+  "error_message": null
+}

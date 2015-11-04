@@ -1,0 +1,34 @@
+{
+  "result":
+    {
+      "fields":
+        [
+          {
+            "page": 1,
+            "name": "topmostSubform[0].Page1[0].f1_01_0_[0]",
+            "type": null,
+            "rect":
+              {
+                "x": 0.8938259,
+                "y": 0.31941694,
+                "width": 0.0457534268,
+                "height": 0.01388945
+              }
+          },
+          {
+            "page": 2,
+            "name": "topmostSubform[0].Page1[0].f1_02_0_[0]",
+            "type": null,
+            "rect":
+              {
+                "x": 0.8938259,
+                "y": 0.3497212,
+                "width": 0.0457534268,
+                "height": 0.01388945
+              }
+          }
+        ]
+    },
+  "status": "Ok",
+  "error_message": null
+}

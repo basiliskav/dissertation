@@ -1,0 +1,28 @@
+{
+  "result":
+    {
+      "executions":
+        [
+          {
+            "questionnaire_id": 456,
+            "executive": {
+              "id": 789
+            },
+            "approver": {
+              "id": 987
+            },
+            "datasource_id": 654,
+            "status": "Closed"
+          },
+          {
+            "questionnaire_id": 111,
+            "executive": null,
+            "approver": null,
+            "datasource_id": null,
+            "status": "Executed"
+          }
+        ]
+    },
+  "status": "Ok",
+  "error_message": null
+}

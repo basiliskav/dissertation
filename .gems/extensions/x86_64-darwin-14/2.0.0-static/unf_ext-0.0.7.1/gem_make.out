@@ -1,0 +1,13 @@
+/Users/basiliskavasis/.rbenv/versions/2.0.0-p451/bin/ruby -r ./siteconf20151104-29666-cif9rl.rb extconf.rb
+checking for main() in -lstdc++... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling unf.cc
+linking shared-object unf_ext.bundle
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 unf_ext.bundle ./.gem.20151104-29666-1ch05zo
+installing default unf_ext libraries

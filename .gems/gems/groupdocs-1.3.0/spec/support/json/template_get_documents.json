@@ -1,0 +1,15 @@
+{
+  "status": "Ok",
+  "result":
+    {
+      "templateId": "f0dc546a8f3705e3e8d861dee5efa363",
+      "documents":
+        [
+          {
+            "documentId": "1252fbc7c4704d6ff8535a9daeaaff0e",
+            "templateId": "f0dc546a8f3705e3e8d861dee5efa363",
+            "order": 1
+          }
+        ]
+    }
+}

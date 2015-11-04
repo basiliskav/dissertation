@@ -1,0 +1,10 @@
+{
+  "status": "Ok",
+  "result":
+    {
+      "total_space": 1073741824,
+      "avail_space": 1069791590,
+      "doc_credits": 5000,
+      "avail_credits": 4964
+    }
+}

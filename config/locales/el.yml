@@ -39,6 +39,9 @@ el:
   change_password: "Αλλαγή Κωδικού"
   remember_me: "Να με θυμάσαι"
   download: "Λήψη"
+  upload_file: "Ανέβασμα Αρχείου"
+  upload_notice: "Το αρχείο ανέβηκε επιτυχώς"
+  delete_notice: "Το αρχείο διαγράφτηκε"
   activerecord:
     models:
       archive: "Αρχείο"

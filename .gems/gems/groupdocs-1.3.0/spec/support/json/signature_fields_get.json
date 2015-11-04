@@ -1,0 +1,27 @@
+{
+  "status":  "Ok",
+  "result":
+    {
+      "fields":
+        [
+          {
+            "id": "0545e589fb3e27c9bb7a1f59d0e3fcb9",
+            "name": "Signature",
+            "graphSizeW": 0,
+            "graphSizeH": 0,
+            "getDataFrom": null,
+            "regularExpression": null,
+            "fontName": null,
+            "fontColor": null,
+            "fontSize": 0,
+            "fontBold": false,
+            "fontItalic": false,
+            "fontUnderline": false,
+            "isSystem": true,
+            "fieldType": 1,
+            "acceptableValues": null,
+            "defaultValue": null
+          }
+        ]
+    }
+}

@@ -1,0 +1,12 @@
+{
+  "status": "Ok",
+  "result":
+    {
+      "contact":
+        {
+          "id": "osdns9fuyw",
+          "firstName": "Test1",
+          "lastName": "Test1"
+        }
+    }
+}

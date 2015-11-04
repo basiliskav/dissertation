@@ -1,0 +1,23 @@
+{
+  "result":
+    {
+      "document_id": 1,
+      "questionnaires":
+        [
+          {
+            "id": 1,
+            "name": "Q1",
+            "descr": "Description",
+            "pages": null
+          },
+          {
+            "id": 2,
+            "name": "Q2",
+            "descr": "Description",
+            "pages": null
+          }
+        ]
+    },
+  "status": "Ok",
+  "error_message": null
+}

@@ -1,0 +1,35 @@
+{
+  "status": "Ok",
+  "result":
+    {
+      "template":
+        {
+          "id": "f0dc546a8f3705e3e8d861dee5efa363",
+          "name": "New template",
+          "ownerId": 115,
+          "ownerGuid": "67e9cf57a2b9da4d",
+          "reminderTime": 1,
+          "stepExpireTime": 3,
+          "templateExpireTime": 6,
+          "ownerShouldSign": true,
+          "orderedSignature": false,
+          "emailSubject": "",
+          "emailBody": "",
+          "documentsCount": 0,
+          "documentsPages": 0,
+          "recipients":
+            [
+              {
+                "id": "1252fbc7c4704d6ff8535a9daeaaff0e",
+                "firstName": "John",
+                "lastName": "Smith",
+                "email": "test@test.com",
+                "userId": 115,
+                "userGuid": "67e9cf57a2b9da4d",
+                "order": 32767,
+                "roleId": 2
+              }
+            ]
+          }
+    }
+}

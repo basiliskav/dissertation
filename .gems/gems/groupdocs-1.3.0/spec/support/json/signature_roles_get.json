@@ -1,0 +1,17 @@
+{
+  "status": "Ok",
+  "result":
+    {
+      "roles":
+        [
+          {
+            "id": "osdns9fuyw",
+            "name": "Owner",
+            "canEdit": 1,
+            "canSign": 1,
+            "canAnnotate": 1,
+            "canDelegate": 1
+          }
+        ]
+    }
+}

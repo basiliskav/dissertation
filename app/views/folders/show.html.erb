@@ -21,9 +21,21 @@
   <% end %>
 <% end %>
 
+<% if @uploads%>
+  <% @uploads.each do |upload|%>
+    <li>
+      U - <%= link_to upload.attachment, folder_upload_path(upload.folder_id, upload.id) %> |
+      <%= link_to t('delete'), folder_upload_path(upload.folder_id, upload.id), method: :delete, data: { confirm: "#{t('confirm')}" } %> |
+      <%= link_to t('download'), upload.attachment_url %>
+    </li>
+  <% end %>
+<% end %>
+
 <br>
 <%= link_to t('new_folder'), new_folder_path(@folder, :fid => @folder.id), class: "btn btn-primary" %>
 <%= link_to t('new_archive'), new_folder_archive_path(@folder, :fid => @folder.id), class: "btn btn-primary" %>
+<%= link_to t('upload_file'), new_folder_upload_path(@folder,:fid => @folder.id), :class => "btn btn-primary" %>
+
 <%= link_to t('folders_archives'), folders_path, method: :get, class: "btn btn-primary" %>
 <%= link_to t('back'), folder_path(@back_folder), class: "btn btn-primary" if @folder.parent_id != 1000 %>
 <%= link_to t('back'), folders_path, method: :get, class: "btn btn-primary" if @folder.parent_id == 1000 %>

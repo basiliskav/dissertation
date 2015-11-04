@@ -1,0 +1,14 @@
+{
+  "status": "Ok",
+  "result":
+    {
+      "src_file":
+        {
+          "name": "resume.pdf"
+        },
+      "dst_file":
+        {
+          "name": "resume2.pdf"
+        }
+    }
+}

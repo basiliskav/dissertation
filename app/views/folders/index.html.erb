@@ -5,6 +5,31 @@
   <p><strong><%= t('empty') %></strong></p>
 <% end %>
 
+<table class = "table table-bordered table-striped">
+   <thead>
+      <tr>
+         <th>Name</th>
+         <th> </th>
+         <th> </th>
+      </tr>
+   </thead>
+
+   <tbody>
+      <% @uploads.each do |upload| %>
+
+         <tr>
+            <td><%= upload.attachment %></td>
+            <td><%= link_to "Download Resume", upload.attachment_url %></td>
+            <td><%= button_to "Delete",  folder_upload_path(upload.folder_id, upload.id), method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{upload.attachment}?" %></td>
+         </tr>
+
+      <% end %>
+   </tbody>
+
+</table>
+
+
+
 <% @folders.each do |folder| %>
   <% if folder.parent_id == 1000 %>
     <li>
@@ -22,6 +47,17 @@
       <%= link_to t('delete'), folder_archive_path(archive.folder_id, archive.id), method: :delete, data: { confirm: "#{t('confirm')}" } %> |
       <%= link_to t('edit'), edit_folder_archive_path(archive.folder_id, archive.id) %> |
       <%= link_to t('download'), folder_archive_path(archive.folder_id, archive.id,format: "docx") %>
+    </li>
+  <% end %>
+<% end %>
+<br>
+
+<% @uploads.each do |upload| %>
+  <% if upload.folder_id == 1000 %>
+    <li>
+      U - <%= link_to upload.attachment, folder_upload_path(upload.folder_id, upload.id) %> |
+      <%= link_to t('delete'), folder_upload_path(upload.folder_id, upload.id), method: :delete, data: { confirm: "#{t('confirm')}" } %> |
+      <%= link_to t('download'), upload.attachment_url %>
     </li>
   <% end %>
 <% end %>
@@ -45,6 +81,13 @@
           </li>
         <% end %>
       <% end %>
+      <% user.uploads.each do |upload| %>
+        <% if upload.folder_id == 1000 %>
+          <li>
+            A - <%= upload.attachment %>
+          </li>
+        <% end %>
+      <% end %>
       <br>
     <% end -%>
   <% end -%>
@@ -53,3 +96,4 @@
 
 <%= link_to t('new_folder'), new_folder_path, :class => "btn btn-large btn-primary" %>
 <%= link_to t('new_archive'), new_folder_archive_path(:folder_id), :class => "btn btn-large btn-primary" %>
+<%= link_to t('upload_file'), new_folder_upload_path(:folder_id), :class => "btn btn-large btn-primary" %>
