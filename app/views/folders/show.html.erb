@@ -1,35 +1,38 @@
 <% provide(:title, @folder.name) %>
 <h2><%= @folder.name %></h2>
 
-<% if @subfolders %>
-  <% @subfolders.each do |subfolder| %>
-    <li>
-      F - <%= link_to subfolder.name, folder_path(subfolder) %> |
-      <%= link_to t('delete'), subfolder, method: :delete, data: { confirm: "#{t('confirm')}" } %> |
-      <%= link_to t('edit'), edit_folder_path(subfolder) %>
-    </li>
-  <% end %>
-<% end %>
+<table class = "table table-bordered table-striped">
+  <tbody>
 
-<% if @archives %>
-  <% @archives.each do |archive| %>
-    <li>
-      A - <%= link_to archive.name, folder_archive_path(archive.folder_id, archive.id) %> |
-      <%= link_to t('delete'), folder_archive_path(archive.folder_id, archive.id), method: :delete, data: { confirm: "#{t('confirm')}" } %> |
-      <%= link_to t('edit'), edit_folder_archive_path(archive.folder_id, archive.id) %>
-    </li>
-  <% end %>
-<% end %>
+    <% @subfolders.each do |subfolder| %>
+      <tr>
+        <td>F - <%= link_to subfolder.name, folder_path(subfolder) %></td>
+        <td><%= link_to t('edit'), edit_folder_path(subfolder) %></td>
+        <td><%= link_to t('delete'), subfolder, method: :delete, class: "btn btn-small btn-danger", data: { confirm: "#{t('confirm')}" } %></td>
+      </tr>
+    <% end %>
 
-<% if @uploads%>
-  <% @uploads.each do |upload|%>
-    <li>
-      U - <%= link_to upload.attachment, folder_upload_path(upload.folder_id, upload.id) %> |
-      <%= link_to t('delete'), folder_upload_path(upload.folder_id, upload.id), method: :delete, data: { confirm: "#{t('confirm')}" } %> |
-      <%= link_to t('download'), upload.attachment_url %>
-    </li>
-  <% end %>
-<% end %>
+    <% @archives.each do |archive| %>
+      <tr>
+        <td>A - <%= link_to archive.name, folder_archive_path(archive.folder_id, archive.id) %></td>
+        <td>
+          <%= link_to t('edit'), edit_folder_archive_path(archive.folder_id, archive.id) %> |
+          <%= link_to t('download'), folder_archive_path(archive.folder_id, archive.id,format: "docx") %>
+        </td>
+        <td><%= link_to t('delete'), folder_archive_path(archive.folder_id, archive.id), method: :delete, class: "btn btn-small btn-danger", data: { confirm: "#{t('confirm')}" } %></td>
+    </tr>
+    <% end %>
+
+    <% @uploads.each do |upload|%>
+      <tr>
+        <td>U - <%= link_to upload.attachment, folder_upload_path(upload.folder_id, upload.id) %></td>
+        <td><%= link_to t('download'), upload.attachment_url %></td>
+        <td><%= link_to t('delete'), folder_upload_path(upload.folder_id, upload.id), method: :delete,  class: "btn btn-small btn-danger", data: { confirm: "#{t('confirm')}" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 
 <br>
 <%= link_to t('new_folder'), new_folder_path(@folder, :fid => @folder.id), class: "btn btn-primary" %>

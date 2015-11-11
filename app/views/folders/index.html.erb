@@ -6,91 +6,52 @@
 <% end %>
 
 <table class = "table table-bordered table-striped">
-   <thead>
+  <thead>
+    <tr>
+<!--        <th>Name</th>
+       <th> </th>
+       <th> </th>
+ -->    </tr>
+  </thead>
+  <tbody>
+    <% @folders.each do |folder| %>
       <tr>
-         <th>Name</th>
-         <th> </th>
-         <th> </th>
+        <% if folder.parent_id == 1000 %>
+          <td>F - <%= link_to folder.name, folder_path(folder) %></td>
+          <td><%= link_to t('edit'), edit_folder_path(folder) %></td>
+          <td><%= link_to t('delete'), folder, method: :delete, class: "btn btn-small btn-danger", data: { confirm: "#{t('confirm')}" } %></td>
+        <% end %>
       </tr>
-   </thead>
+    <% end %>
 
-   <tbody>
-      <% @uploads.each do |upload| %>
+    <% @archives.each do |archive| %>
+      <tr>
+        <% if archive.folder_id == 1000 %>
+          <td>A - <%= link_to archive.name, folder_archive_path(archive.folder_id, archive.id) %></td>
+          <td>
+            <%= link_to t('edit'), edit_folder_archive_path(archive.folder_id, archive.id) %> |
+            <%= link_to t('download'), folder_archive_path(archive.folder_id, archive.id,format: "docx") %>
+          </td>
+          <td><%= link_to t('delete'), folder_archive_path(archive.folder_id, archive.id), method: :delete, class: "btn btn-small btn-danger", data: { confirm: "#{t('confirm')}" } %></td>
+        <% end %>
+      </tr>
+    <% end %>
 
-         <tr>
-            <td><%= upload.attachment %></td>
-            <td><%= link_to "Download Resume", upload.attachment_url %></td>
-            <td><%= button_to "Delete",  folder_upload_path(upload.folder_id, upload.id), method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{upload.attachment}?" %></td>
-         </tr>
-
-      <% end %>
-   </tbody>
-
+    <% @uploads.each do |upload| %>
+      <tr>
+        <% if upload.folder_id == 1000 %>
+          <td>U - <%= link_to upload.attachment, folder_upload_path(upload.folder_id, upload.id) %></td>
+          <td><%= link_to t('download'), upload.attachment_url %></td>
+          <td><%= link_to t('delete'), folder_upload_path(upload.folder_id, upload.id), method: :delete,  class: "btn btn-small btn-danger", data: { confirm: "#{t('confirm')}" } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 
-
-<% @folders.each do |folder| %>
-  <% if folder.parent_id == 1000 %>
-    <li>
-      F - <%= link_to folder.name, folder_path(folder) %> |
-      <%= link_to t('delete'), folder, method: :delete, data: { confirm: "#{t('confirm')}" } %> |
-      <%= link_to t('edit'), edit_folder_path(folder) %>
-    </li>
-  <% end %>
-<% end %>
-
-<% @archives.each do |archive| %>
-  <% if archive.folder_id == 1000 %>
-    <li>
-      A - <%= link_to archive.name, folder_archive_path(archive.folder_id, archive.id) %> |
-      <%= link_to t('delete'), folder_archive_path(archive.folder_id, archive.id), method: :delete, data: { confirm: "#{t('confirm')}" } %> |
-      <%= link_to t('edit'), edit_folder_archive_path(archive.folder_id, archive.id) %> |
-      <%= link_to t('download'), folder_archive_path(archive.folder_id, archive.id,format: "docx") %>
-    </li>
-  <% end %>
-<% end %>
-<br>
-
-<% @uploads.each do |upload| %>
-  <% if upload.folder_id == 1000 %>
-    <li>
-      U - <%= link_to upload.attachment, folder_upload_path(upload.folder_id, upload.id) %> |
-      <%= link_to t('delete'), folder_upload_path(upload.folder_id, upload.id), method: :delete, data: { confirm: "#{t('confirm')}" } %> |
-      <%= link_to t('download'), upload.attachment_url %>
-    </li>
-  <% end %>
-<% end %>
-<br>
-
 <% if @user.admin %>
-  <% User.all.each do |user| %>
-    <% if !user.admin %>
-      <%= user.username %> <br>
-      <% user.folders.each do |folder| %>
-        <% if folder.parent_id == 1000 %>
-          <li>
-            F - <%= folder.name %>
-          </li>
-        <% end %>
-      <% end %>
-      <% user.archives.each do |archive| %>
-        <% if archive.folder_id == 1000 %>
-          <li>
-            A - <%= archive.name %>
-          </li>
-        <% end %>
-      <% end %>
-      <% user.uploads.each do |upload| %>
-        <% if upload.folder_id == 1000 %>
-          <li>
-            A - <%= upload.attachment %>
-          </li>
-        <% end %>
-      <% end %>
-      <br>
-    <% end -%>
-  <% end -%>
+  <%= render "shared/all_data_for_admin"%>
 <% end -%>
 <br><br>
 
