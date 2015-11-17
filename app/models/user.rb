@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
   has_many :folders, dependent: :destroy
   has_many :archives, dependent: :destroy
+  has_many :uploads, dependent: :destroy
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup

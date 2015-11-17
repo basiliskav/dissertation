@@ -1,0 +1,12 @@
+{
+  "result":
+    {
+      "id": 1,
+      "documentGuid": "30c799ca61866ff6121eb397e4f51659317b8befb682d9da4d85e540ac6849ba",
+      "annotationGuid": "44656ecedd3ff906",
+      "replyGuid": null,
+      "sessionGuid": "fe17dc12144a3f4e"
+    },
+  "status": "Ok",
+  "error_message": null
+}

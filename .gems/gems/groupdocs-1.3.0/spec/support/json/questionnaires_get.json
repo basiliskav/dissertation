@@ -1,0 +1,40 @@
+{
+  "result": {
+    "questionnaires": [
+      {
+        "resolved_executions": 0,
+        "pages": [],
+        "document_ids": [
+          "bd2416cc0f9473d05195b784fa9cec1cc7f07d1a37795ddd84c88f5acee57b94"
+        ],
+        "id": 654,
+        "guid": "210C69449FC44EF0AE088D380CF91467",
+        "name": "Fedor",
+        "descr": "Ivanov",
+        "status": "Draft",
+        "assigned_questions": 0,
+        "total_questions": 0,
+        "modified": 0,
+        "expires": 0
+      },
+      {
+        "resolved_executions": 0,
+        "pages": [],
+        "document_ids": [
+          "bd2416cc0f9473d05195b784fa9cec1cc7f07d1a37795ddd84c88f5acee57b94"
+        ],
+        "id": 655,
+        "guid": "CEF6F03D4E7A43DE8486CB02CC2FCCA2",
+        "name": "Fedor",
+        "descr": "Ivanov",
+        "status": "Draft",
+        "assigned_questions": 0,
+        "total_questions": 0,
+        "modified": 0,
+        "expires": 0
+      }
+    ]
+  },
+  "status": "Ok",
+  "error_message": null
+}

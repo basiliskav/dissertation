@@ -1,0 +1,38 @@
+{
+  "result": {
+    "collectors": [
+      {
+        "id": 812,
+        "guid": "0aebf7e492fcf3b8da3fa95a6a877ad8",
+        "type": "Link",
+        "status": "Active",
+        "questionnaire_id": 17688,
+        "resolved_exectuions": 0,
+        "emails": null,
+        "modified": 1353432641090
+      },
+      {
+        "id": 813,
+        "guid": "3ac93ac53df29eb4ed62b3057a8bfd45",
+        "type": "Email",
+        "status": "Active",
+        "questionnaire_id": 17688,
+        "resolved_exectuions": 0,
+        "emails": null,
+        "modified": 1353432658200
+      },
+      {
+        "id": 814,
+        "guid": "671f1f25d103fd8c4adbb530bc633533",
+        "type": "Embedded",
+        "status": "Active",
+        "questionnaire_id": 17688,
+        "resolved_exectuions": 0,
+        "emails": null,
+        "modified": 1353432665433
+      }
+    ]
+  },
+  "status": "Ok",
+  "error_message": null
+}

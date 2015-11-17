@@ -1,0 +1,16 @@
+{
+  "status": "Ok",
+  "result":
+    {
+      "logs":
+        [
+          {
+            "id": "f0dc546a8f3705e3e8d861dee5efa363",
+            "date": "2012-09-25T07:48:23.0730000Z",
+            "userName": "New template",
+            "action": "Recipient added",
+            "remoteAddress": "8.8.8.8"
+          }
+        ]
+    }
+}

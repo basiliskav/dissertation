@@ -1,0 +1,64 @@
+%h3{:style => "text-align:center;"}
+  %a{:href => "/"} GroupDocs Ruby SDK Samples
+  \- Envelope sample
+.samplecontent{:style => "padding:10px;"}
+  %i This sample will show how to use annotation and user API using Ruby SDK
+  %br/
+  %br/
+  %p
+    You entered:
+  %p
+    UserId = #{(defined? client_id) ? client_id : ""}
+  %p
+    PrivateKey = #{(defined? private_key) ? private_key : ""}
+  %p
+    File name = #{(defined? file_name) ? file_name : ""}
+  %p
+    %font{:color => "red"} #{(defined? err) ? err : ""}
+  %br/
+  #requestForm{:style => "padding:20px; border:1px solid black;"}
+    %p Enter data for request and press "Make request" button
+    %form{:action => "/annotation-sample", :enctype => "multipart/form-data", :method => "post"}
+      %label{:for => "client_id"} GroupDocs ClientID
+      %br/
+      %input{:type=>"text", :name=>"client_id"}
+      %br/
+      %label{:for => "private_key"} GroupDocs PrivateKey
+      %br/
+      %input{:type=>"text", :name=>"private_key"}
+      %br/
+      %label{:for => "file"} File name with extension (filename.doc)
+      %br/
+      %input{:type => "text", :name => "file_name" }/
+      %br/
+      %br/
+      %input{:type => "submit", :value => "Submit"}/
+    %div{:style => "padding:20px; border:1px solid black;"}
+      %p 
+        Results: 
+        %br/
+        #{(defined? iframe_url) ? iframe_url : ""}
+            
+%div{:style => "padding:10px;"}
+  Choose anothe one sample:
+  %ul
+    %li
+      %a{:href => "/sample1"} Sample1 - How to login to GroupDocs using the API
+    %li
+      %a{:href => "/sample2"} Sample2 - How to list files within GroupDocs Storage using the Storage API
+    %li
+      %a{:href => "/sample3"} Sample3 - How to upload a file to GroupDocs using the Storage API
+    %li
+      %a{:href => "/sample4"} Sample4 - How to download a file from GroupDocs Storage using the Storage API
+    %li
+      %a{:href => "/sample5"} Sample5 - How to copy / move a file using the GroupDocs Storage API
+    %li
+      %a{:href => "/sample6"} Sample6 - How to add a Signature to a document in GroupDocs Signature
+    %li
+      %a{:href => "/sample7"} Sample7 - How to create a list of thumbnails for a document
+    %li
+      %a{:href => "/sample8"} Sample8 - How to return a URL representing a single page of a Document
+    %li
+      %a{:href => "/sample9"} Sample9 - How to generate an embedded Viewer URL for a Document
+    %li
+      %a{:href => "/sample10"} Sample10 - How to share a document to other users

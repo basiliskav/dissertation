@@ -1,0 +1,16 @@
+{
+  "result":
+    {
+      "collaborators":
+        [
+          {
+            "primary_email": "test1@email.com"
+          },
+          {
+            "primary_email": "test2@email.com"
+          }
+        ]
+    },
+  "status": "Ok",
+  "error_message": null
+}

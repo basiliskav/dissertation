@@ -1,0 +1,22 @@
+{
+  "status": "Ok",
+  "result":
+    {
+      "folders":
+        [
+          {
+            "id": 1,
+            "created_on": 1330450135,
+            "modified_on": 1330450135
+          }
+        ],
+      "files":
+        [
+          {
+            "id": 2,
+            "created_on": 1330450135,
+            "modified_on": 1330450135
+          }
+        ]
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "result": {
+    "collector":
+      {
+        "id": 812,
+        "guid": "0aebf7e492fcf3b8da3fa95a6a877ad8",
+        "type": "Link",
+        "status": "Active",
+        "questionnaire_id": 17688,
+        "resolved_exectuions": 0,
+        "emails": [],
+        "modified": 1353432641090
+      }
+  },
+  "status": "Ok",
+  "error_message": null
+}

@@ -1,0 +1,24 @@
+{
+  "result": {
+    "name": "test.jpg",
+    "version": 1,
+    "page_count": 1,
+    "page_size": {
+      "Width": 2133,
+      "Height": 1600
+    },
+    "url": "https://api.groupdocs.com/v2.0/123",
+    "doc_type": "Image",
+    "image_urls": [
+      "https://api.groupdocs.com/v2.0/123"
+    ],
+    "token": "2e953f",
+    "pageHtml": null,
+    "pageCss": null,
+    "id": 23250,
+    "guid": "022b7dffecbccbda7e81227f95a415f57253e606f5090f4c60b0d6b12c0d824c"
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1361789232972
+}

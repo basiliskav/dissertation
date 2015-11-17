@@ -1,0 +1,26 @@
+{
+  "result":
+    {
+      "datasources":
+        [
+          {
+            "id": 1,
+            "questionnaire_id": 1,
+            "descr": "Description",
+            "fields": null,
+            "created_on": 1333599236,
+            "modified_on": 1333599236
+          },
+          {
+            "id": 2,
+            "questionnaire_id": 1,
+            "descr": "Description",
+            "fields": null,
+            "created_on": 1333599299,
+            "modified_on": 1333599299
+          }
+        ]
+    },
+  "status": "Ok",
+  "error_message": null
+}

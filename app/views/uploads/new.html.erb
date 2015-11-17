@@ -1,0 +1,15 @@
+<div class = "well">
+   <%= form_for @upload , url:folder_uploads_path , html: { multipart: true } do |f| %>
+
+    <%= f.label :attachment %>
+    <%= f.file_field :attachment %>
+
+    <% if @fid %>
+      <%= f.hidden_field :folder_id, :value => @fid %>
+    <% else %>
+      <%= f.hidden_field :folder_id, :value => 1000 %>
+    <% end %>
+    <br>
+    <%= f.submit t('upload_file'), class: "btn btn-primary" %>
+  <% end %>
+</div>

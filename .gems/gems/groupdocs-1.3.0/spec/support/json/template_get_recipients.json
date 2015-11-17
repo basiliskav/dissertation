@@ -1,0 +1,20 @@
+{
+  "status": "Ok",
+  "result":
+    {
+      "templateId": "f0dc546a8f3705e3e8d861dee5efa363",
+      "recipients":
+        [
+          {
+            "id": "1252fbc7c4704d6ff8535a9daeaaff0e",
+            "firstName": "John",
+            "lastName": "Smith",
+            "email": "test@test.com",
+            "userId": 115,
+            "userGuid": "67e9cf57a2b9da4d",
+            "order": 32767,
+            "roleId": 2
+          }
+        ]
+    }
+}

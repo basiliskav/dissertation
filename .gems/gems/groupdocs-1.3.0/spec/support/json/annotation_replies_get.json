@@ -1,0 +1,25 @@
+{
+  "result":
+    {
+      "annotationGuid": "44656ecedd3ff906",
+      "replies":
+      [
+        {
+          "guid": "0ee8bacd",
+          "userGuid": "8f3b68ed784b2702",
+          "userName": "test@test.com",
+          "text": "Test reply 1",
+          "repliedOn": 1334124512797
+        },
+        {
+          "guid": "d27350b6",
+          "userGuid": "8f3b68ed784b2702",
+          "userName": "test@test.com",
+          "text": "Test reply 2",
+          "repliedOn": 1334124571640
+        }
+      ]
+    },
+  "status": "Ok",
+  "error_message": null
+}

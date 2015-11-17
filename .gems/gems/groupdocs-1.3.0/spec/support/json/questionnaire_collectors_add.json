@@ -1,0 +1,10 @@
+{
+  "result":
+    {
+      "questionnaire_id": "44656ecedd3ff906",
+      "collector_id": 123456,
+      "collector_guid": "0ee8bacd"
+    },
+  "status": "Ok",
+  "error_message": null
+}

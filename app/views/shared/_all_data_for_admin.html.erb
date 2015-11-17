@@ -1,0 +1,35 @@
+<table class = "table table-bordered table-striped">
+  <% User.all.each do |user| %>
+
+    <% if !user.admin %>
+      <thead>
+        <th style="text-align:center;font-size:150%"><%= user.username %> <br></th>
+      </thead>
+
+      <tbody>
+        <% if user.folders.count == 0 && user.archives.count == 0 %>
+          <tr><td><p><strong><%= t('empty_from_admin') %></strong></p></td></tr>
+        <% end %>
+
+        <% user.folders.each do |folder| %>
+          <% if folder.parent_id == 1000 %>
+            <tr><td>F - <%= folder.name %></td></tr>
+          <% end %>
+        <% end %>
+
+        <% user.archives.each do |archive| %>
+          <% if archive.folder_id == 1000 %>
+            <tr><td>A - <%= archive.name %></td></tr>
+          <% end %>
+        <% end %>
+
+        <% user.uploads.each do |upload| %>
+          <% if upload.folder_id == 1000 %>
+            <tr><td>U - <%= upload.attachment %></td></tr>
+            <td><hr></td>
+          <% end %>
+        <% end %>
+      </tbody>
+    <% end -%>
+  <% end -%>
+</table>

@@ -1,0 +1,40 @@
+{
+  "result":
+    {
+      "job_status": "Archived",
+      "inputs":
+      [
+        {
+          "status": "InProgress",
+          "output_formats": "pdf",
+          "outputs":
+          [
+            {
+              "ftype": 19,
+              "error": null,
+              "url": "http://groupdocs.com",
+              "name": "Test.pdf"
+            }
+          ],
+          "id": 123
+        },
+        {
+          "status": "Scheduled",
+          "output_formats": "tiff",
+          "outputs":
+          [
+            {
+              "ftype": 15,
+              "error": null,
+              "url": "http://groupdocs.com",
+              "name": "CV.doc"
+            }
+          ],
+          "id": 345
+        }
+      ],
+      "outputs": null
+    },
+  "status": "Ok",
+  "error_message": null
+}

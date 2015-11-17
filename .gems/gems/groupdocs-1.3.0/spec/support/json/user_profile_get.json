@@ -1,0 +1,24 @@
+{
+  "result": {
+    "user": {
+      "nickname": "test@test.com",
+      "firstname": "First",
+      "lastname": "Last",
+      "pkey": "iwhfsfy8sdufh9hfsfsd9",
+      "pswd_salt": null,
+      "claimed_id": null,
+      "token": null,
+      "storage": null,
+      "photo": null,
+      "active": false,
+      "news_eanbled": false,
+      "signedupOn": 1335963525287,
+      "roles": null,
+      "id": 85,
+      "guid": "8sd7tfsdf",
+      "primary_email": "test@test.com"
+    }
+  },
+  "status": "Ok",
+  "error_message": null
+}

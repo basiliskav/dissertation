@@ -1,0 +1,58 @@
+{
+  "result":
+    {
+      "jobs":
+        [
+          {
+            "id": 1,
+            "status": "Archived",
+            "documents":
+            {
+              "inputs":
+              [
+                {
+                  "status": "InProgress",
+                  "output_formats": "pdf",
+                  "outputs":
+                  [
+                    {
+                      "ftype": 19,
+                      "error": null,
+                      "url": "http://groupdocs.com",
+                      "name": "Test.pdf"
+                    }
+                  ],
+                  "id": 123
+                }
+              ]
+            }
+          },
+          {
+            "id": 2,
+            "status": "Completed",
+            "documents":
+            {
+              "inputs":
+              [
+                {
+                  "status": "Scheduled",
+                  "output_formats": "tiff",
+                  "outputs":
+                  [
+                    {
+                      "ftype": 15,
+                      "error": null,
+                      "url": "http://groupdocs.com",
+                      "name": "CV.doc"
+                    }
+                  ],
+                  "id": 345
+                }
+              ]
+            }
+          }
+        ]
+    },
+  "status": "Ok",
+  "error_message": null
+}

@@ -1,0 +1,17 @@
+{
+  "result": {
+    "metrics":
+      [
+        {
+          "id": "1",
+          "name": "Free"
+        },
+        {
+          "id": "2",
+          "name": "Individual"
+        }
+      ]
+    },
+  "status": "Ok",
+  "error_message": null
+}

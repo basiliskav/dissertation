@@ -1,0 +1,18 @@
+{
+  "result":
+    {
+      "reviewerContacts":
+      [
+        {
+          "emailAddress": "test@test.com",
+          "FullName": "John Smith"
+        },
+        {
+          "emailAddress": "test1@test.com",
+          "FullName": "Alan Smith"
+        }
+      ]
+    },
+  "status": "Ok",
+  "error_message": null
+}

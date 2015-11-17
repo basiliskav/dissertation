@@ -1,0 +1,15 @@
+{
+  "result":
+    {
+      "page_count": 1,
+      "views_count": 15,
+      "last_view":
+        {
+          "document": {},
+          "short_url": "https://dev-api.groupdocs.com/v2.0/53/viewer/440e29",
+          "viewed_on": 1331467451493
+        }
+    },
+  "status": "Ok",
+  "error_message": null
+}

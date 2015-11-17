@@ -1,0 +1,6 @@
+require 'groupdocs/signature/shared/document_methods'
+require 'groupdocs/signature/shared/entity_fields'
+require 'groupdocs/signature/shared/entity_methods'
+require 'groupdocs/signature/shared/field_methods'
+require 'groupdocs/signature/shared/recipient_methods'
+require 'groupdocs/signature/shared/resource_methods'

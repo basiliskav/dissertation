@@ -4,12 +4,14 @@ class FoldersController < ApplicationController
     curr_user
     @archives = @user.archives
     @folders = @user.folders
+    @uploads = @user.uploads
   end
 
   def show
     find_folder
     @subfolders = @folder.subfolders.where(user_id: @user.id)
     @archives = @folder.archives.where(user_id: @user.id)
+    @uploads = @folder.uploads.where(user_id: @user.id)
     @back_folder = Folder.find(@folder.parent_id) if @folder.parent_id != 1000
   end
 

@@ -1,0 +1,14 @@
+{
+  "result":
+    {
+      "access": "Private",
+      "sharers":
+        [
+          {
+            "primary_email": "test@test.com"
+          }
+        ]
+    },
+  "status": "Ok",
+  "error_message": null
+}

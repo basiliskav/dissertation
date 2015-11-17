@@ -1,0 +1,19 @@
+{
+  "status": "Ok",
+  "result":
+    {
+      "signatures":
+        [
+          {
+            "id": "osdns9fuyw",
+            "firstName": "Test1",
+            "lastName": "Test1"
+          },
+          {
+            "id": "asdifjh9fdgd9",
+            "firstName": "Test2",
+            "lastName": "Test2"
+          }
+        ]
+    }
+}
