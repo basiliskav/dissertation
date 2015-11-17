@@ -1,6 +1,6 @@
 class UploadsController < ApplicationController
 
-# respond_to :docx, :html
+# respond_to :jpeg
 
   def show
     @upload = Upload.find(params[:id])
