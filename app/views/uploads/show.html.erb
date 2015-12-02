@@ -1,3 +1,9 @@
 <p>
   <%= image_tag @upload.attachment.url %>
 </p>
+
+<br>
+
+<%= link_to "Φάκελοι / Αρχεία", folders_path, method: :get, class: "btn btn-primary" %>
+<%= link_to "back", folder_path(Folder.find(@upload.folder_id)), class: "btn btn-primary" if @upload.folder_id != 1000 %>
+<%= link_to "back", folders_path, method: :get, class: "btn btn-primary" if @upload.folder_id == 1000 %>

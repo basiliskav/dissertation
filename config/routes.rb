@@ -8,7 +8,11 @@ DissertionRb::Application.routes.draw do
   resources :users
   resources :folders do
     resources :archives
-    resources :uploads
+    resources :uploads do
+      member do
+        get 'download'
+      end
+    end
   end
 
   match '/users', :to => 'users#index', :via => 'get'
