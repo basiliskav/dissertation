@@ -1,9 +1,9 @@
+<%= render "shared/error_messages", source: @upload %>
 <div class = "well">
-   <%= form_for @upload , url:folder_uploads_path , html: { multipart: true } do |f| %>
+  <%= form_for @upload , url:folder_uploads_path , html: { multipart: true } do |f| %>
 
     <%= f.label :attachment %>
     <%= f.file_field :attachment %>
-
     <% if @fid %>
       <%= f.hidden_field :folder_id, :value => @fid %>
     <% else %>
@@ -11,5 +11,8 @@
     <% end %>
     <br>
     <%= f.submit t('upload_file'), class: "btn btn-primary" %>
+    <%= link_to t('folders_archives'), folders_path, method: :get , class: "btn btn-primary" %>
+    <%= link_to t('back'), folder_path(@back_folder), class: "btn btn-primary" if @fid %>
+    <%= link_to t('back'), folders_path, method: :get, class: "btn btn-primary" if !@fid %>
   <% end %>
 </div>

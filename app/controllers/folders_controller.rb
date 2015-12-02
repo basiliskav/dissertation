@@ -1,29 +1,30 @@
 class FoldersController < ApplicationController
 
+  before_action :curr_user
+  before_action :find_folder, only:[:show,:edit,:update,:destroy]
+
   def index
-    curr_user
     @archives = @user.archives
     @folders = @user.folders
     @uploads = @user.uploads
   end
 
   def show
-    find_folder
-    @subfolders = @folder.subfolders.where(user_id: @user.id)
+    # @folder.subfolders
+      @subfolders = @folder.subfolders.where(user_id: @user.id)
+    # end
     @archives = @folder.archives.where(user_id: @user.id)
     @uploads = @folder.uploads.where(user_id: @user.id)
     @back_folder = Folder.find(@folder.parent_id) if @folder.parent_id != 1000
   end
 
   def new
-    curr_user
     @folder = @user.folders.new
     @fid = params[:fid]
     @back_folder = Folder.where(id: @fid).take if @fid
   end
 
   def create
-    curr_user
     @folder = @user.folders.create(folder_params)
     if @folder.save
       redirect_to folder_path(@folder)
@@ -33,12 +34,10 @@ class FoldersController < ApplicationController
   end
 
   def edit
-    find_folder
     @back_folder = Folder.find(@folder.parent_id) if @folder.parent_id != 1000
   end
 
   def update
-    find_folder
     if @folder.update_attributes(folder_params)
       redirect_to folders_path
     else
@@ -47,7 +46,6 @@ class FoldersController < ApplicationController
   end
 
   def destroy
-    find_folder
     @folder.destroy
     redirect_to folders_url
   end
@@ -58,7 +56,6 @@ class FoldersController < ApplicationController
   end
 
   def find_folder
-    curr_user
     @folder = @user.folders.where(id: params[:id],user_id: @user.id).take
   end
 

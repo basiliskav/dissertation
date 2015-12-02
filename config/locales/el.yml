@@ -61,6 +61,8 @@ el:
         password_confirmation: "Επιβεβαίωση Κωδικού"
         current_password: "Παλιός Κωδικός"
         signin: "Email"
+      upload:
+        attachment: "Αρχείο"
     errors:
       models:
         archive:
@@ -70,3 +72,5 @@ el:
         user:
           blank: "δεν μπορεί να είναι κενό"
           taken: "χρησιμοποιείται ήδη"
+        upload:
+          blank: "δεν μπορεί να είναι κενό"

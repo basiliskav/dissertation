@@ -1,22 +1,21 @@
 class ArchivesController < ApplicationController
 
-respond_to :docx, :html
+  respond_to :docx, :html
 
+  before_action :curr_user
+  before_action :find_archive, only:[:show,:destroy,:edit,:update]
 
   def show
-    find_archive
     respond_with(@archive, filename: @archive.name, word_template: "show.docx")
   end
 
   def new
-    curr_user
     @archive = @user.archives.new
     @fid = params[:fid]
     @back_folder = Folder.where(id: @fid).take if @fid
   end
 
   def create
-    curr_user
     @archive = @user.archives.create(archive_params)
     if @archive.save
       redirect_to folder_archive_path(@archive.folder_id, @archive.id)
@@ -26,12 +25,10 @@ respond_to :docx, :html
   end
 
   def edit
-    find_archive
     @back_folder = Folder.find(@archive.folder_id) if @archive.folder_id != 1000
   end
 
   def update
-    find_archive
     if @archive.update_attributes(archive_params)
       redirect_to folders_path
     else
@@ -40,7 +37,6 @@ respond_to :docx, :html
   end
 
   def destroy
-    find_archive
     @archive.destroy
     redirect_to folders_path(@folder)
   end
@@ -51,7 +47,6 @@ respond_to :docx, :html
   end
 
   def find_archive
-    curr_user
     @archive = @user.archives.where(id: params[:id],user_id: @user.id).take
   end
 

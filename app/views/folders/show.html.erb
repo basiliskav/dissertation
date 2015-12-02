@@ -1,5 +1,5 @@
-<% provide(:title, @folder.name) %>
-<h2><%= @folder.name %></h2>
+<% provide(:title,@folder.name) %>
+<h2>Folder : <%= @folder.name %></h2>
 
 <table class = "table table-bordered table-striped">
   <tbody>
@@ -20,7 +20,7 @@
           <%= link_to t('download'), folder_archive_path(archive.folder_id, archive.id,format: "docx") %>
         </td>
         <td><%= link_to t('delete'), folder_archive_path(archive.folder_id, archive.id), method: :delete, class: "btn btn-small btn-danger", data: { confirm: "#{t('confirm')}" } %></td>
-    </tr>
+      </tr>
     <% end %>
 
     <% @uploads.each do |upload|%>

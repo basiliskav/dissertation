@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20151104145512) do
   add_index "folders", ["user_id"], name: "index_folders_on_user_id"
 
   create_table "uploads", force: true do |t|
-    t.string   "attachment"
+    t.string   "attachment", null: false
     t.integer  "user_id"
     t.integer  "folder_id"
     t.datetime "created_at"
