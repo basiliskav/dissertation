@@ -6,13 +6,6 @@
 <% end %>
 
 <table class = "table table-bordered table-striped">
-  <thead>
-    <tr>
-<!--        <th>Name</th>
-       <th> </th>
-       <th> </th>
- -->    </tr>
-  </thead>
   <tbody>
     <% @folders.each do |folder| %>
       <tr>
@@ -41,9 +34,7 @@
       <tr>
         <% if upload.folder_id == 1000 %>
           <td>U - <%= link_to upload.attachment, folder_upload_path(upload.folder_id, upload.id) %></td>
-          <!-- <td><%= link_to t('download'), upload.attachment_url%></td> -->
           <td><%= link_to t('download'), download_folder_upload_path(upload.folder_id, upload.id) %></td>
-
           <td><%= link_to t('delete'), folder_upload_path(upload.folder_id, upload.id), method: :delete,  class: "btn btn-small btn-danger", data: { confirm: "#{t('confirm')}" } %></td>
         <% end %>
       </tr>

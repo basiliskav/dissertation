@@ -45,3 +45,6 @@ en:
   new_password: "New Password"
   confirm_new_password: "Confirm New Password"
   waiting_confirmation: "Currently waiting confirmation for:"
+  change_to_admin: "Change to Admin"
+  change_to_user: "Change to User"
+  and_files: "and Files"

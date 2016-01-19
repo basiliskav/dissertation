@@ -45,6 +45,9 @@ el:
   new_password: "Νέος Κωδικός"
   confirm_new_password: "Επιβεβαίωση Νέου Κωδικού"
   waiting_confirmation: "Αναμονή για επιβεβαίωση του email:"
+  change_to_admin: "Αλλαγή σε Admin"
+  change_to_user: "Αλλαγή σε Χρήστη"
+  and_files: "και Αρχεία"
   activerecord:
     models:
       archive: "Αρχείο"

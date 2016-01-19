@@ -1,9 +1,16 @@
 <table class = "table table-bordered table-striped">
   <% User.all.each do |user| %>
 
-    <% if !user.admin %>
+    <% if user != current_user %>
       <thead>
-        <th style="text-align:center;font-size:150%"><%= user.username %> | <%= link_to t('delete'), user, :data => { :confirm => "#{t('confirm')}" }, :method => :delete %> <br></th>
+        <th style="text-align:center;font-size:150%"><%= user.username %>
+          <% if user.admin == false %>
+            | <%= link_to t('change_to_admin'), user,:data => { :confirm => "#{t('confirm')}" }, :method => :put
+ %>
+          <% else %>
+            | <%= link_to t('change_to_user'), user,:data => { :confirm => "#{t('confirm')}" }, :method => :put  %>
+          <% end %>
+        | <%= link_to t('delete'), user, :data => { :confirm => "#{t('confirm')}" }, :method => :delete %><br></th>
       </thead>
 
       <tbody>
