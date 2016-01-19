@@ -3,7 +3,14 @@
   <h1><%= t('welcome_message') %></h1>
   <% if user_signed_in? %>
     <%= link_to t('folders_archives'), folders_path, method: :get , class: "btn btn-large btn-primary" %>
+
+    <% if current_user.admin %>
+      <br> <br><%= link_to t('users'), users_path, method: :get , class: "btn btn-large btn-primary" %>
+    <% end %>
+
   <% else %>
     <%= link_to t('sign_up'), new_user_registration_path, method: :get , class: "btn btn-large btn-primary" %>
+    <%= t('or') %>
+    <%= link_to t('sign_in'), user_session_path, method: :get , class: "btn btn-large btn-primary" %>
   <% end %>
 </div>

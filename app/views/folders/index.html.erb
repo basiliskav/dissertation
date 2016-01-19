@@ -51,10 +51,6 @@
   </tbody>
 </table>
 
-
-<% if @user.admin %>
-  <%= render "shared/all_data_for_admin"%>
-<% end -%>
 <br><br>
 
 <%= link_to t('new_folder'), new_folder_path, :class => "btn btn-large btn-primary" %>

@@ -1,12 +1,12 @@
 el:
   title: "Πτυχιακή εργασία"
   home: "Αρχική Σελίδα"
-  welcome_message: "Καλωσήρθατε στην Πτυχιακή εργασία μου"
+  welcome_message: "Διαχείρηση Αρχείων"
   copyright: "Πτυχιακή εργασία Βασίλειος Καβάσης 2015-2016"
   contact: "Επικοινωνία"
   contact_details: "Επικοινωνήστε μαζί μου στο email: basiliskavasis@gmail.com"
-  dissertation: "ΠΤΥΧΙΑΚΗ ΕΡΓΑΣΙΑ"
-  sign_out: "Αποσύνδεση"
+  home_page: "Αρχική Σελίδα"
+  sign_out: "Έξοδος"
   edit_profile: "Επεξεργασία Λογαριασμού"
   sign_in: "Είσοδος"
   sign_up: "Εγγραφή"
@@ -29,12 +29,11 @@ el:
   leave_blank_password: "(αφήστε το κενό αν δεν θέλετε να το αλλάξετε)"
   confirm_current_password: "(τρέχων κωδικός για επιβεβαίωση αλλαγών)"
   resend_confirmation_instructions: "Επανάληψη Αποστολής Οδηγιών Επιβεβαίωσης"
-  cancel_account: "Απενεργοποιήση Λογαριασμού"
+  cancel_account: "Διαγραφή Λογαριασμού"
   forgot_password: "Ξεχάσατε τον κωδικό σας;"
   confiramtion_instructions: "Δεν λάβατε οδηγίες επιβεβαίωσης;"
   unlock_instructions: "Δεν λάβατε οδηγίες ξεκλειδώματος;"
   resend_unlock_instructions: "Επανάληψη Αποστολής Οδηγιών Ξεκλειδώματος"
-  new_password: "Ξεχάσατε τον Κωδικό σας;"
   reset_password: "Αποστολή Οδηγιών Επαναφοράς Κωδικού"
   change_password: "Αλλαγή Κωδικού"
   remember_me: "Να με θυμάσαι"
@@ -43,6 +42,9 @@ el:
   upload_notice: "Το αρχείο ανέβηκε επιτυχώς"
   delete_notice: "Το αρχείο διαγράφτηκε"
   empty_from_admin: "Ο Χρήστης δεν έχει Αρχεία ή Φακέλους"
+  new_password: "Νέος Κωδικός"
+  confirm_new_password: "Επιβεβαίωση Νέου Κωδικού"
+  waiting_confirmation: "Αναμονή για επιβεβαίωση του email:"
   activerecord:
     models:
       archive: "Αρχείο"
@@ -72,5 +74,8 @@ el:
         user:
           blank: "δεν μπορεί να είναι κενό"
           taken: "χρησιμοποιείται ήδη"
+          invalid: "λανθασμένο"
+          too_short: "μικρότερος από 8 ψηφία"
+          confirmation: "δεν ταιριάζει με τον Κωδικό"
         upload:
           blank: "δεν μπορεί να είναι κενό"

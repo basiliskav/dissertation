@@ -60,7 +60,7 @@ p {
   margin-right: 10px;
   font-size: 1.7em;
   color: #fff;
-  text-transform: uppercase;
+  //text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
@@ -68,7 +68,7 @@ p {
 }
 
 #logo:hover {
-  color: #fff;
+  color: lightblue;
   text-decoration: none;
 }
 
@@ -134,6 +134,7 @@ input {
     color: red;
   }
 }
+
 
 
 

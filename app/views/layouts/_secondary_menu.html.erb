@@ -2,10 +2,10 @@
   <% if user_signed_in? %>
     <div class="secondaryNav-inner pull-right">
       <span>
-        <%= link_to t('sign_out'), destroy_user_session_path, method: :delete %>
-        <span style="color:white"> | </span>
         <%= link_to t('edit_profile'), edit_user_registration_path, method: :get %>
         <% current_user.canceled_account %>
+        <span style="color:white"> | </span>
+        <%= link_to t('sign_out'), destroy_user_session_path, method: :delete %>
       </span>
     </div>
   <% else %>
