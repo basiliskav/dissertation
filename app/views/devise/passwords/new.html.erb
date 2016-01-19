@@ -1,12 +1,12 @@
-<% provide(:title, t('new_password')) %>
-<h2><%= t('new_password') %></h2>
+<% provide(:title, t('forgot_password')) %>
+<h2><%= t('forgot_password') %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
 
   <%= render "devise/shared/error_messages" %>
 
-  <div><%= f.label :email %>
-  <%= f.email_field :email, :autofocus => true %></div><br />
+  <div><%= f.label :username %>
+  <%= f.text_field :signin, :autofocus => true %></div><br/>
 
   <div><%= f.submit t('reset_password'), class: "btn btn-primary" %></div>
 <% end %>

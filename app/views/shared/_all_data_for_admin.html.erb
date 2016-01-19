@@ -3,7 +3,7 @@
 
     <% if !user.admin %>
       <thead>
-        <th style="text-align:center;font-size:150%"><%= user.username %> <br></th>
+        <th style="text-align:center;font-size:150%"><%= user.username %> | <%= link_to t('delete'), user, :data => { :confirm => "#{t('confirm')}" }, :method => :delete %> <br></th>
       </thead>
 
       <tbody>

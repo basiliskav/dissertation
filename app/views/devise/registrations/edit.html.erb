@@ -9,11 +9,11 @@
   <%= f.text_field :username %></div><br />
 
   <div><%= f.label :email %>
-  <%= f.email_field :email, :autofocus => true %></div><br />
+  <%= f.email_field :email, :autofocus => true %></div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+    <div><%= t('waiting_confirmation') %> <%=  resource.unconfirmed_email %></div>
+  <% end %><br>
 
   <div><%= f.label :password %> <i><%= t('leave_blank_password') %></i><br>
   <%= f.password_field :password, :autocomplete => "off" %></div><br />
