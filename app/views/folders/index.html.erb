@@ -10,9 +10,13 @@
     <% @folders.each do |folder| %>
       <tr>
         <% if folder.parent_id == 1000 %>
-          <td>F - <%= link_to folder.name, folder_path(folder) %></td>
+
+          <td width="50" style="text-align:center">
+            <%= image_tag("folder.png",size: "35x35", :alt => "Folder") %>
+          </td>
+          <td><%= link_to folder.name, folder_path(folder) %></td>
           <td><%= link_to t('edit'), edit_folder_path(folder) %></td>
-          <td><%= link_to t('delete'), folder, method: :delete, class: "btn btn-small btn-danger", data: { confirm: "#{t('confirm')}" } %></td>
+          <td width="70"><%= link_to t('delete'), folder, method: :delete, class: "btn btn-small btn-danger", data: { confirm: "#{t('confirm')}" } %></td>
         <% end %>
       </tr>
     <% end %>
@@ -20,12 +24,16 @@
     <% @archives.each do |archive| %>
       <tr>
         <% if archive.folder_id == 1000 %>
-          <td>A - <%= link_to archive.name, folder_archive_path(archive.folder_id, archive.id) %></td>
+
+          <td width="50"  style="text-align:center">
+            <%= image_tag("archive.png",size: "35x35", :alt => "Folder") %>
+          </td>
+          <td><%= link_to archive.name, folder_archive_path(archive.folder_id, archive.id) %></td>
           <td>
             <%= link_to t('edit'), edit_folder_archive_path(archive.folder_id, archive.id) %> |
             <%= link_to t('download'), folder_archive_path(archive.folder_id, archive.id,format: "docx") %>
           </td>
-          <td><%= link_to t('delete'), folder_archive_path(archive.folder_id, archive.id), method: :delete, class: "btn btn-small btn-danger", data: { confirm: "#{t('confirm')}" } %></td>
+          <td width="70"><%= link_to t('delete'), folder_archive_path(archive.folder_id, archive.id), method: :delete, class: "btn btn-small btn-danger", data: { confirm: "#{t('confirm')}" } %></td>
         <% end %>
       </tr>
     <% end %>
@@ -33,9 +41,13 @@
     <% @uploads.each do |upload| %>
       <tr>
         <% if upload.folder_id == 1000 %>
-          <td>U - <%= link_to upload.attachment, folder_upload_path(upload.folder_id, upload.id) %></td>
+
+          <td width="50"  style="text-align:center">
+            <%= image_tag("upload.png",size: "35x35", :alt => "Folder") %>
+          </td>
+          <td><%= link_to upload.attachment, folder_upload_path(upload.folder_id, upload.id) %></td>
           <td><%= link_to t('download'), download_folder_upload_path(upload.folder_id, upload.id) %></td>
-          <td><%= link_to t('delete'), folder_upload_path(upload.folder_id, upload.id), method: :delete,  class: "btn btn-small btn-danger", data: { confirm: "#{t('confirm')}" } %></td>
+          <td width="70"><%= link_to t('delete'), folder_upload_path(upload.folder_id, upload.id), method: :delete,  class: "btn btn-small btn-danger", data: { confirm: "#{t('confirm')}" } %></td>
         <% end %>
       </tr>
     <% end %>
