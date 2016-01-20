@@ -18,7 +18,7 @@ class ArchivesController < ApplicationController
   def create
     @archive = @user.archives.create(archive_params)
     if @archive.save
-      redirect_to folder_archive_path(@archive.folder_id, @archive.id)
+      custom_redirect
     else
       render 'new'
     end
@@ -30,7 +30,7 @@ class ArchivesController < ApplicationController
 
   def update
     if @archive.update_attributes(archive_params)
-      redirect_to folders_path
+      custom_redirect
     else
       render 'edit'
     end
@@ -38,7 +38,7 @@ class ArchivesController < ApplicationController
 
   def destroy
     @archive.destroy
-    redirect_to folders_path(@folder)
+    custom_redirect
   end
 
   private
@@ -52,5 +52,10 @@ class ArchivesController < ApplicationController
 
   def curr_user
     @user = current_user
+  end
+
+  def custom_redirect
+    redirect_to folders_path if @archive.folder_id == 1000
+    redirect_to folder_path(Folder.find(@archive.folder_id)) if @archive.folder_id != 1000
   end
 end

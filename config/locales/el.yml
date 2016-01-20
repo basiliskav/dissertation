@@ -48,6 +48,9 @@ el:
   change_to_admin: "Αλλαγή σε Admin"
   change_to_user: "Αλλαγή σε Χρήστη"
   and_files: "και Αρχεία"
+  errors:
+    messages:
+      extension_white_list_error: "μη επιτρεπτό. Δεν επιτρέπεται το ανέβασμα αρχείων τύπου %{extension}, επιτρεπόμενοι τύποι: %{allowed_types}"
   activerecord:
     models:
       archive: "Αρχείο"

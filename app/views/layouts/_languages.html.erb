@@ -1,7 +1,9 @@
 <div class="secondaryNav-inner  pull-right">
   <span>
-    <%= link_to "English", locale: "en" %>
-    <span style="color:white"> | </span>
-    <%= link_to "Ελληνικά", locale: "el" %>
+    <% if !user_signed_in? %>
+      <%= link_to "English", locale: "en" %>
+      <span style="color:white"> | </span>
+      <%= link_to "Ελληνικά", locale: "el" %>
+    <% end %>
   </span>
 </div>
