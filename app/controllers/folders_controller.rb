@@ -25,7 +25,7 @@ class FoldersController < ApplicationController
   def create
     @folder = @user.folders.create(folder_params)
     if @folder.save
-      redirect_to folder_path(@folder)
+      custom_redirect
     else
       render 'new'
     end
@@ -37,7 +37,7 @@ class FoldersController < ApplicationController
 
   def update
     if @folder.update_attributes(folder_params)
-      redirect_to folders_path
+      custom_redirect
     else
       render 'edit'
     end
@@ -45,7 +45,7 @@ class FoldersController < ApplicationController
 
   def destroy
     @folder.destroy
-    redirect_to folders_url
+    custom_redirect
   end
 
   private
@@ -59,5 +59,10 @@ class FoldersController < ApplicationController
 
   def curr_user
     @user = current_user
+  end
+
+  def custom_redirect
+    redirect_to folders_path if @folder.parent_id == 1000
+    redirect_to folder_path(Folder.find(@folder.parent_id)) if @folder.parent_id != 1000
   end
 end
