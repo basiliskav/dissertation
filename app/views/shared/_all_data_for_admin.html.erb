@@ -30,7 +30,7 @@
         <% user.archives.each do |archive| %>
           <% if archive.folder_id == 1000 %>
             <tr>
-              <td width="50"  style="text-align:center"><%= image_tag("archive.png",size: "35x35", :alt => "Folder") %></td>
+              <td width="50"  style="text-align:center"><%= image_tag("archive.png",size: "35x35", :alt => "Archive") %></td>
               <td><%= archive.name %></td>
             </tr>
           <% end %>
@@ -39,7 +39,7 @@
         <% user.uploads.each do |upload| %>
           <% if upload.folder_id == 1000 %>
             <tr>
-              <td width="50"  style="text-align:center"><%= image_tag("upload.png",size: "35x35", :alt => "Folder") %></td>
+              <td width="50"  style="text-align:center"><%= image_tag("upload.png",size: "35x35", :alt => "Upload") %></td>
               <td><%= upload.attachment_identifier %></td>
             </tr>
           <% end %>
