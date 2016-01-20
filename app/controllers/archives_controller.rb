@@ -6,7 +6,6 @@ class ArchivesController < ApplicationController
   before_action :find_archive, only:[:show,:destroy,:edit,:update]
 
   def show
-    @a=@archive.text
     respond_with(@archive, filename: @archive.name, word_template: "show.docx")
   end
 
@@ -18,6 +17,7 @@ class ArchivesController < ApplicationController
 
   def create
     @archive = @user.archives.create(archive_params)
+    @archive.name = @archive.name+".docx"
     if @archive.save
       custom_redirect
     else
