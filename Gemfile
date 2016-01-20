@@ -18,6 +18,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'carrierwave-viewer'
 gem 'ckeditor'
+gem 'docx', '~> 0.2.07', :require => ["docx"]
 
 group :development do
   gem 'sqlite3', '1.3.8'

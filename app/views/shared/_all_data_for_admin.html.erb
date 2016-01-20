@@ -3,7 +3,7 @@
 
     <% if user != current_user %>
       <thead>
-        <th style="text-align:center;font-size:150%"><%= user.username %>
+        <th colspan="2" style="text-align:center;font-size:150%;"><%= user.username %>
           <% if user.admin == false %>
             | <%= link_to t('change_to_admin'), user,:data => { :confirm => "#{t('confirm')}" }, :method => :put
  %>
@@ -15,25 +15,33 @@
 
       <tbody>
         <% if user.folders.count == 0 && user.archives.count == 0 %>
-          <tr><td><p><strong><%= t('empty_from_admin') %></strong></p></td></tr>
+          <tr><td colspan="2"><p><strong><%= t('empty_from_admin') %></strong></p></td></tr>
         <% end %>
 
         <% user.folders.each do |folder| %>
           <% if folder.parent_id == 1000 %>
-            <tr><td>F - <%= folder.name %></td></tr>
+            <tr>
+              <td width="50" style="text-align:center"><%= image_tag("folder.png",size: "35x35", :alt => "Folder") %></td>
+              <td><%= folder.name %></td>
+            </tr>
           <% end %>
         <% end %>
 
         <% user.archives.each do |archive| %>
           <% if archive.folder_id == 1000 %>
-            <tr><td>A - <%= archive.name %></td></tr>
+            <tr>
+              <td width="50"  style="text-align:center"><%= image_tag("archive.png",size: "35x35", :alt => "Folder") %></td>
+              <td><%= archive.name %></td>
+            </tr>
           <% end %>
         <% end %>
 
         <% user.uploads.each do |upload| %>
           <% if upload.folder_id == 1000 %>
-            <tr><td>U - <%= upload.attachment %></td></tr>
-            <td><hr></td>
+            <tr>
+              <td width="50"  style="text-align:center"><%= image_tag("upload.png",size: "35x35", :alt => "Folder") %></td>
+              <td><%= upload.attachment_identifier %></td>
+            </tr>
           <% end %>
         <% end %>
       </tbody>

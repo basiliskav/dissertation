@@ -21,6 +21,7 @@ en:
   users: "Users"
   index: "Index"
   empty: "You have no Folders or Files"
+  empty_folder: "Empty Folder"
   new_archive: "New Archive"
   new_folder: "New Folder"
   edit_archive: "Edit Archive"

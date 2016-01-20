@@ -45,7 +45,7 @@
           <td width="50"  style="text-align:center">
             <%= image_tag("upload.png",size: "35x35", :alt => "Folder") %>
           </td>
-          <td><%= link_to upload.attachment, upload.attachment_url, :target => "_blank" %></td>
+          <td><%= link_to upload.attachment_identifier, upload.attachment_url, :target => "_blank" %></td>
           <td><%= link_to t('download'), download_folder_upload_path(upload.folder_id, upload.id) %></td>
           <td width="70"><%= link_to t('delete'), folder_upload_path(upload.folder_id, upload.id), method: :delete,  class: "btn btn-small btn-danger", data: { confirm: "#{t('confirm')}" } %></td>
         <% end %>
