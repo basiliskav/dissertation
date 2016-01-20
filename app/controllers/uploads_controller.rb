@@ -1,9 +1,16 @@
+require 'docx'
+
 class UploadsController < ApplicationController
+
 
   before_action :curr_user
   before_action :find_upload, only:[:show,:destroy,:download]
 
   def show
+    @ext=@upload.attachment.file.extension
+    if @ext=="docx"
+      @doc = Docx::Document.open('public/new.docx')
+    end
   end
 
   def new
@@ -15,6 +22,7 @@ class UploadsController < ApplicationController
   def create
     @upload = @user.uploads.create(upload_params)
     if @upload.save
+      check_if_docx
       if @upload.folder_id == 1000
         redirect_to folders_path, notice: t('upload_notice')
       else
@@ -49,5 +57,12 @@ class UploadsController < ApplicationController
 
   def upload_params
     params.require(:upload).permit(:attachment, :folder_id)
+  end
+
+  def check_if_docx
+    if @upload.attachment.file.extension=="docx"
+        @archive = @user.archives.create(:name => @upload.attachment_identifier, :text => "#{Docx::Document.open("public/#{@upload.attachment_url}")}", :folder_id => @upload.folder_id)
+    end
+    @upload.destroy
   end
 end
