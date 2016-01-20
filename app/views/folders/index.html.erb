@@ -26,7 +26,7 @@
         <% if archive.folder_id == 1000 %>
 
           <td width="50"  style="text-align:center">
-            <%= image_tag("archive.png",size: "35x35", :alt => "Folder") %>
+            <%= image_tag("archive.png",size: "35x35", :alt => "Archive") %>
           </td>
           <td><%= link_to archive.name, folder_archive_path(archive.folder_id, archive.id) %></td>
           <td>
@@ -43,7 +43,7 @@
         <% if upload.folder_id == 1000 %>
 
           <td width="50"  style="text-align:center">
-            <%= image_tag("upload.png",size: "35x35", :alt => "Folder") %>
+            <%= image_tag("upload.png",size: "35x35", :alt => "Upload") %>
           </td>
           <td><%= link_to upload.attachment_identifier, upload.attachment_url, :target => "_blank" %></td>
           <td><%= link_to t('download'), download_folder_upload_path(upload.folder_id, upload.id) %></td>
