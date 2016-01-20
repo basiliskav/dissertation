@@ -1,6 +1,6 @@
 class Folder < ActiveRecord::Base
 
-  validates :name, presence: true
+  validates :name, presence: true, :uniqueness => {:scope => [:parent_id,:user_id]}
 
   belongs_to :user
   belongs_to :parent, :class_name => "Folder"
