@@ -61,8 +61,8 @@ class UploadsController < ApplicationController
 
   def check_if_docx
     if @upload.attachment.file.extension=="docx"
-        @archive = @user.archives.create(:name => @upload.attachment_identifier, :text => "#{Docx::Document.open("public/#{@upload.attachment_url}")}", :folder_id => @upload.folder_id)
+      @archive = @user.archives.create(:name => @upload.attachment_identifier, :text => "#{Docx::Document.open("public/#{@upload.attachment_url}")}", :folder_id => @upload.folder_id)
+      @upload.destroy
     end
-    @upload.destroy
   end
 end
