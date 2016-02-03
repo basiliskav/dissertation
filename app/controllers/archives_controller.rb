@@ -17,12 +17,13 @@ class ArchivesController < ApplicationController
 
   def create
     @archive = @user.archives.create(archive_params)
-    @archive.name = @archive.name+".docx"
     if @archive.save
       custom_redirect
     else
       render 'new'
     end
+    @archive.name = @archive.name+".docx"
+    @archive.save
   end
 
   def edit

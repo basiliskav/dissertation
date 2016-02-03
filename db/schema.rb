@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20151104145512) do
 
   create_table "archives", force: true do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.text     "text"
     t.integer  "user_id"
     t.integer  "folder_id"
