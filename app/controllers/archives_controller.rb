@@ -22,8 +22,6 @@ class ArchivesController < ApplicationController
     else
       render 'new'
     end
-    @archive.name = @archive.name+".docx"
-    @archive.save
   end
 
   def edit
